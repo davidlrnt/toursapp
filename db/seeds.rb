@@ -10,16 +10,12 @@
 # require 'open-uri'
 # require 'active_record/fixtures'
 
-# ["Windows", "Linux", "Mac OS X"].each do |os|
-#   OperatingSystem.find_or_create_by_name(os)
-# end
-
 # encoding: utf-8
 
-Country.delete_all
 
-# CSV.foreach("db/seeds/countries.rb") do |row|
-# end
+Country.delete_all
+City.delete_all
+
 
 
 open("db/seeds/countries.txt") do |countries|
@@ -28,7 +24,13 @@ open("db/seeds/countries.txt") do |countries|
     Country.create!(:name => name, :code => codeiso)
   end
 end
+require 'csv'
+require 'pp'
 
-binding.pry
-
-# Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "operating_systems")
+File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|
+  row = CSV.parse(csv_line.gsub('"', '\''))
+  c = Country.find_by(:code => row.first[0].upcase)
+  unless c.nil?
+  c.cities.create(name: row.first[1], accent: row.first[2], region: row.first[3], lat: row.first[5], long: row.first[6])
+  end
+end
