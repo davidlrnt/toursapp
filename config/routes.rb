@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'comments/new'
+
+  get 'comments/edit'
+
+  get 'comments/show'
+
+  get 'user/index'
+
+  get 'user/show'
+
+  get 'user/new'
+
+  get 'user/create'
+  
+  resources :users
+  root to: 'home#index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
