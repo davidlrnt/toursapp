@@ -15,7 +15,7 @@
 # end
 
 
-require './db/seeds/countries.rb'
+#require './db/seeds/countries.rb'
 require 'json'
 
 
@@ -291,26 +291,9 @@ countries = [
 
 
 
-Country.delete_all
+Dir.open(./db/seeds/).entries.each do |file_name|
+  binding.pry
+end
 
-
-# CSV.foreach("db/seeds/countries.rb") do |row|
-#   binding.pry
-# end
-file = File.read("db/seeds/countries.rb")
-
-# data_hash = JSON.parse(file)
-
-binding.pry
-
-# File.read("db/seeds/countries.json") do |countries|
-#   countries.each do |country|
-#       binding.pry
-
-#     codefips, codeiso, tld, name = country.chomp.split(" ")
-#     # binding.pry
-#     # Country.create!(:name => name, :code => codeiso)
-#   end
-# end
 
 # Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "operating_systems")
