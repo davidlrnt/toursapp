@@ -15,9 +15,8 @@
 # end
 
 
-require './db/seeds/countries.rb'
-require 'json'
 
+require 'json'
 
 countries = [
   ["AA","AW",".aw","Aruba"],
@@ -289,7 +288,7 @@ countries = [
 ]
 
 
-
+binding.pry
 
 Country.delete_all
 
