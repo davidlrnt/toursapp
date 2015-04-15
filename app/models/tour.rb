@@ -7,4 +7,6 @@ class Tour < ActiveRecord::Base
   has_many :reviews
   has_many :tag_tours
   has_many :tags, through: :tag_tours
+
+  validates :title, :description, presence: true
 end
