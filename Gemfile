@@ -63,3 +63,7 @@ group :production do
 end
 
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'iconv'
+gem 'pry'
+gem 'pry-nav'
+gem 'devise'
