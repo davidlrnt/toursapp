@@ -8,6 +8,14 @@
   <%= link_to 'Login', new_user_session_path %>
   <% end %>
   </div>
+  <%= form_for :search, url: searches_path  do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.label :category %>
+    <%= f.collection_select :category, Category.all, :name, :name %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
+    <%= f.submit "Find" %>
+  <% end %>
+
 </div>
-
-
