@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   #   post 'sign_in', :to => 'devise/sessions#create', :as => :user_session
   # end
   # get "/users/omniauth_callbacks" => "users/omniauth_callbacks#facebook"
+
+  
   root 'home#index'
-  resources :users
+  resources :users, :only => [:index, :show]
 
   
 
