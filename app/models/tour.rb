@@ -1,5 +1,6 @@
 class Tour < ActiveRecord::Base
   belongs_to :category
+  belongs_to :user
   has_many :city_tours
   has_many :cities, through: :city_tours
   has_many :location_tours

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #   post 'sign_in', :to => 'devise/sessions#create', :as => :user_session
   # end
   # get "/users/omniauth_callbacks" => "users/omniauth_callbacks#facebook"
+
   root 'home#index'
   resources :users
   resources :tours do
@@ -18,8 +19,15 @@ Rails.application.routes.draw do
     resources :tags
   end
 
+  resources :search
+
+  resources :users, :only => [:index, :show]
   resources :searches
 
+
+  authenticate :user do
+    resources :tours
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
