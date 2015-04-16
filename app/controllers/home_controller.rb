@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    render :index
+    @search = Search.new
   end
 
   def show

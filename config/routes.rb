@@ -10,10 +10,17 @@ Rails.application.routes.draw do
   # get "/users/omniauth_callbacks" => "users/omniauth_callbacks#facebook"
   root 'home#index'
   resources :users
+  resources :tours do
+    resources :locations do
+      resources :comments
+    end
+    resources :reviews
+    resources :tags
+  end
 
-  
+  resources :searches
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
