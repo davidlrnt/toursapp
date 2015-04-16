@@ -2,8 +2,8 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
-    binding.pry
-    # redirect_to result_tour_path
+    @tours = @search.get_tours
+    render 'results'
   end
 
   def show
