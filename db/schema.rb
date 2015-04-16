@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150415193723) do
     t.string   "title"
     t.string   "long"
     t.string   "lat"
+    t.integer  "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

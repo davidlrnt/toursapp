@@ -6,10 +6,15 @@ require 'json'
 
 # encoding: utf-8
 
+ActiveRecord::Base.establish_connection
+ActiveRecord::Base.connection.tables.each do |table|
+  next if table == 'schema_migrations'
+  # MySQL and PostgreSQL
+  # ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
 
-Country.delete_all
-City.delete_all
-Category.delete_all
+  # SQLite
+  ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+end
 
 
 
@@ -38,4 +43,22 @@ categories = JSON.parse(File.read("db/seeds/categories.json"))
   categories["Categories"].each do |category|
   Category.create!(name: category)
 end
+
+tours = JSON.parse(File.read("db/seeds/tours.json"))
+  tours.each do |tour|
+  c = City.find_by(name: tour[4].downcase)
+  # binding.pry
+  t = c.tours.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+  # binding.pry
+  t.tags.create!(name: tour[3])
+  # binding.pry
+end
+
+locations = JSON.parse(File.read("db/seeds/locations.json"))
+  locations.each do |location|
+    tour = Tour.find_by(location[0])
+    tour.locations.create(title: location[1], long: location[2], lat: location[3], step: location[4] )
+  # Location.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+end
+
 
