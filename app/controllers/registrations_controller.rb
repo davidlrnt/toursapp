@@ -1,7 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   def update
-		binding.pry
     @user = User.find(current_user.id)
+    @user.update(update_params)
+    redirect_to users_path
   end
 
   private
@@ -13,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
   #     params[:user][:password].present?
   # end
 
-	def update_resource(resource, params)
-		resource.update_without_password(params)
-	end
+  def update_params
+    params.require(:user).permit(:name, :email, :dob, :gender)
+  end
 end
