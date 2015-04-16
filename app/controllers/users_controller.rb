@@ -13,9 +13,6 @@ class UsersController < ApplicationController
   def edit
     binding.pry
   end
-  private
 
-  def user_params
-    params.require(:user).permit(:name, :gender, :dob, :email)
-  end
+
 end
