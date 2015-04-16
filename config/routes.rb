@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  # devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  # devise_scope :user do
+  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  #   post 'sign_in', :to => 'devise/sessions#create', :as => :user_session
+  # end
+  # get "/users/omniauth_callbacks" => "users/omniauth_callbacks#facebook"
+  root 'home#index'
+  resources :users
+
+  
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
