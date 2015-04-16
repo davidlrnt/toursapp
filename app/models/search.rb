@@ -9,6 +9,7 @@ class Search
 
 
   def get_tours
+    binding.pry
     ["Tour1","Tour2","Tour3"]
   end
 end
