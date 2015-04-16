@@ -3,9 +3,16 @@ class UsersController < ApplicationController
   def index
   end
 
+  def update
+    binding.pry
+  end
+
   def show
   end
 
+  def edit
+    binding.pry
+  end
   private
 
   def user_params
