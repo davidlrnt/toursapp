@@ -8,8 +8,4 @@ class HomeController < ApplicationController
     redirect_to user_registration_path
   end
 
-  def find
-    @search = Search.new
-  end
-
 end

@@ -9,6 +9,7 @@ require 'json'
 
 Country.delete_all
 City.delete_all
+Category.delete_all
 
 
 
@@ -20,6 +21,8 @@ open("db/seeds/countries.txt") do |countries|
   end
 end
 
+
+
 require 'csv'
 require 'pp'
 
@@ -30,3 +33,9 @@ File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|
   c.cities.create(name: row.first[1], accent: row.first[2], region: row.first[3], lat: row.first[5], long: row.first[6])
   end
 end
+
+categories = JSON.parse(File.read("db/seeds/categories.json"))
+  categories["Categories"].each do |category|
+  Category.create!(name: category)
+end
+
