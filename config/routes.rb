@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   # end
   # get "/users/omniauth_callbacks" => "users/omniauth_callbacks#facebook"
 
-
   root 'home#index'
   resources :users
   resources :tours do
@@ -19,6 +18,8 @@ Rails.application.routes.draw do
     resources :reviews
     resources :tags
   end
+
+  resources :search
 
   resources :users, :only => [:index, :show]
 
