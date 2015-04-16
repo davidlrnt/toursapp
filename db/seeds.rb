@@ -10,6 +10,16 @@ require 'json'
 Country.delete_all
 City.delete_all
 Category.delete_all
+Tour.delete_all
+Tag.delete_all
+Location.delete_all
+Country.reset_pk_sequence
+City.reset_pk_sequence
+Category.reset_pk_sequence
+Tour.reset_pk_sequence
+Tag.reset_pk_sequence
+Location.reset_pk_sequence
+
 
 
 
@@ -38,4 +48,22 @@ categories = JSON.parse(File.read("db/seeds/categories.json"))
   categories["Categories"].each do |category|
   Category.create!(name: category)
 end
+
+tours = JSON.parse(File.read("db/seeds/tours.json"))
+  tours.each do |tour|
+  c = City.find_by(name: tour[4].downcase)
+  # binding.pry
+  t = c.tours.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+  # binding.pry
+  t.tags.create!(name: tour[3])
+  # binding.pry
+end
+
+locations = JSON.parse(File.read("db/seeds/locations.json"))
+  locations.each do |location|
+    tour = Tour.find_by(location[0])
+    tour.locations.create(title: location[1], long: location[2], lat: location[3], step: location[4] )
+  # Location.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+end
+
 
