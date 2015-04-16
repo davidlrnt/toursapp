@@ -1,3 +1,15 @@
 
 <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 
+<%# form_for Search.new, :as => :Search do |f| %>
+<%= form_for @search do |f| %>
+<% binding.pry %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :tags %>
+  <%= f.text_field :tags %>
+  <%= f.submit "Find" %>
+<% end %>
