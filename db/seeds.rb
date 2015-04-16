@@ -6,19 +6,30 @@ require 'json'
 
 # encoding: utf-8
 
+ActiveRecord::Base.establish_connection
+ActiveRecord::Base.connection.tables.each do |table|
+  next if table == 'schema_migrations'
+  # MySQL and PostgreSQL
+  # ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
 
-Country.delete_all
-City.delete_all
-Category.delete_all
-Tour.delete_all
-Tag.delete_all
-Location.delete_all
-Country.reset_pk_sequence
-City.reset_pk_sequence
-Category.reset_pk_sequence
-Tour.reset_pk_sequence
-Tag.reset_pk_sequence
-Location.reset_pk_sequence
+  # SQLite
+  ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+end
+
+# Country.delete_all
+# City.delete_all
+# Category.delete_all
+# Tour.delete_all
+# Tag.delete_all
+# Location.delete_all
+# CityTour.delete_all
+# Country.reset_pk_sequence
+# City.reset_pk_sequence
+# Category.reset_pk_sequence
+# Tour.reset_pk_sequence
+# Tag.reset_pk_sequence
+# Location.reset_pk_sequence
+# CityTour.reset_pk_sequence
 
 
 
