@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
-  has_many :category_users
+  has_many :category_users, foreign_key: "guide_id"
   has_many :categories, through: :category_users
-  has_many :comments
-  has_many :reviews
+  has_many :category_tags, through: :categories
+  has_many :tags, through: :category_tags
+  has_many :tours, through: :tags
+  has_many :locations, through: :tours, foreign_key: "guide_id"
+  has_many :comments, through: :tours, foreign_key: "guide_id"
+
+  has_many :comments, foreign_key: "traveler_id"
+  has_many :reviews, through: :tours, foreign_key: "traveler_id"
+  has_many :tours, through: :categories, foreign_key: "traveler_id"
 
   validates :email, presence: true, uniqueness: true
   # Include default devise modules. Others available are:
