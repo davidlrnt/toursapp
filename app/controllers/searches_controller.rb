@@ -9,8 +9,6 @@ class SearchesController < ApplicationController
   def show
   end
 
-
-
 private
 
   def search_params

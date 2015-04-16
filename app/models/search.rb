@@ -9,6 +9,6 @@ class Search
 
 
   def get_tours
-    ["Tour1","Tour2","Tour3"]
+
   end
 end

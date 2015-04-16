@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :tags
   end
 
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show], :controllers =>{:registrations => "registrations"}
   resources :searches
 
   # The priority is based upon order of creation: first created -> highest priority.
