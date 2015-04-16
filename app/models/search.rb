@@ -10,6 +10,25 @@ class Search
 
   def get_tours
     binding.pry
-    ["Tour1","Tour2","Tour3"]
+    category = Category.find_by(name: @category)
+    @tours = Tour.where(category: category)
+    @results = []
+    @tours.each do |tour|
+      tour.cities.each do |city|
+        if @city.downcase == city.name
+          @results << tour
+        end
+      end
+    end
+    @moreresults =[]
+    @results.each do |tour|
+      tour.tags.each do |tag|
+        if @tags == tag.name
+          @moreresults << tour
+        end
+      end
+    end
+    @moreresults
   end
+
 end
