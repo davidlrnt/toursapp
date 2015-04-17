@@ -9,7 +9,6 @@ class Search
 
 
   def get_tours
-    binding.pry
     category = Category.find_by(name: @category)
     @tours = Tour.where(category: category)
     @results = []
