@@ -8,18 +8,12 @@
         <%= link_to 'New Tour', new_tour_path %>
     <% else %>
       <p>You are not signed in.</p>
+
       <%= link_to 'Log In', new_user_session_path %>
       <%= link_to 'Register', new_user_registration_path %>
   <% end %>
-  </div>
-  <%= form_for :search, url: searches_path  do |f| %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    <%= f.label :category %>
-    <%= f.collection_select :category, Category.all, :name, :name %>
-    <%= f.label :tags %>
-    <%= f.text_field :tags %>
-    <%= f.submit "Find" %>
-  <% end %>
 
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<%= link_to "Create a Tour!", new_tour_path %>
+  </div>
 </div>
