@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :tours
+
+  post '/participate', to: 'tours#participate'
+  post '/quit', to: 'tours#quit'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

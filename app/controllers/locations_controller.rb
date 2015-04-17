@@ -2,9 +2,13 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
+
   end
 
   def edit
+  end
+
+  def show
   end
 
   def create
@@ -46,4 +50,3 @@ private
   end
 
 end
-

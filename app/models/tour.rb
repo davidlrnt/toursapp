@@ -18,4 +18,13 @@ class Tour < ActiveRecord::Base
 
 
   validates :title, :description, presence: true
+
+
+  def participate(user)
+    self.participants << user
+  end
+
+  def quit(user)
+    self.participants.delete(user)
+  end
 end
