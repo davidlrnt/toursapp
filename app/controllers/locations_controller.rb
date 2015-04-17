@@ -7,6 +7,10 @@ class LocationsController < ApplicationController
   def edit
   end
 
+  def show
+    binding.pry
+  end
+
   def create
     tour = Tour.find(params["tour_id"])
     @location = tour.locations.create(location_params)

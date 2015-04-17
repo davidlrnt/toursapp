@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+<h1>Tour Guide:</h1>
+<%= @tour.guide.name %>
+
+<h3>Title:</h3>
+<%= @tour.title %>
+<h3>Description:</h3>
+<%= @tour.description %>
+<h3>Tags:</h3>
+<ul>
+  <% @tour.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+  <% end %>
+</ul>
+<br>
+<% if @tour.cities.count > 1 %>
+<h3>Cities:</h3>
+<% else %>
+<h3>City:</h3>
+<% end %>
+<ul>
+  <% @tour.cities.each do |city| %>
+  <li><%= city.accent %></li>
+  <% end %>
+</ul>
+
+<h3>Locations:</h3>
+<ul>
+  <% @tour.locations.each do |location| %>
+  <li><%= location.title %></li>
+  <li><%= location.address %></li>
+  <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
+  <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %>
+
+
+
+
+  <% end %>
+</ul>
+
+ <%= form_for [@tour, @location] do |f|  %>
+ <%= f.hidden_field :tour_id, :value => @tour.id %>
+    <%= f.label :title %>
+    <%= f.text_field  :title %>
+    <%= f.label :address %>
+    <%= f.text_field  :address %>
+    <%= f.submit "Create Location" %>
+ <%end%>
+
+ <%# @tour.comments.each do |comment| %>
+ <%#= comment.content %>
+ <%# end %>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>
