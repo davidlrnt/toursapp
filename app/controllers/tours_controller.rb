@@ -1,19 +1,29 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
+  before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
   def new
     @tour = Tour.new
   end
 
   def create
-    ## PENDING!!!!! IF TOUR PARAMS INCLUDES CITY, TOUR.CREATE! WILL CREATE THAT CITY, FIGURE OUT WHERE THAT IS HAPPENING BEHIND THE SCENES AND CHANGE WHERE THE CITY IS BEING CREATED TO FIND_BY INSTEAD
     city = set_city
-    @tour = Tour.create!(tour_params)
+    @tour = Tour.new(tour_params)
     @tour.cities << city
-    # binding.pry
-    redirect_to :controller => 'tours/locations', :action => 'index'
+    respond_to do |format|
+      if @tour.save
+        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @tour }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @tour.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  def show
+    @location = Location.new
+  end
 
 private
   def tour_params
@@ -22,7 +32,10 @@ private
 
   def set_city
     city = params.require(:tour).permit(:cities_attributes => [:id, :name])
-    # binding.pry
     City.find_by(name: city["cities_attributes"]["0"]["name"])
+  end
+
+  def set_tour
+    @tour = Tour.find(params[:id])
   end
 end

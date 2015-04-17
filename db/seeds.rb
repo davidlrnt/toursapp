@@ -57,7 +57,7 @@ end
 locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|
     tour = Tour.find_by(location[0])
-    tour.locations.create(title: location[1], long: location[2], lat: location[3], step: location[4] )
+    tour.locations.create(title: location[1], lat: location[2], lng: location[3], step: location[4] )
   # Location.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
 end
 

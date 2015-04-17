@@ -2,6 +2,7 @@ class CreateTours < ActiveRecord::Migration
   def change
     create_table :tours do |t|
       t.references :category, index: true
+      t.references :guide, index: true
       t.string :title
       t.string :description
 

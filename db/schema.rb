@@ -82,8 +82,9 @@ ActiveRecord::Schema.define(version: 20150415193723) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "title"
-    t.string   "long"
+    t.string   "address"
     t.string   "lat"
+    t.string   "lng"
     t.integer  "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(version: 20150415193723) do
 
   create_table "tours", force: :cascade do |t|
     t.integer  "category_id"
+    t.integer  "guide_id"
     t.string   "title"
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -124,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150415193723) do
   end
 
   add_index "tours", ["category_id"], name: "index_tours_on_category_id"
+  add_index "tours", ["guide_id"], name: "index_tours_on_guide_id"
 
   create_table "user_categories", force: :cascade do |t|
     t.integer  "user_id"
