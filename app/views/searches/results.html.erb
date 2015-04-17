@@ -3,14 +3,6 @@
 <h1><%= tour.description %></h1>
 <h1><%= tour.tags.first.name %></h1>
 <h1><%= tour.cities.first.name %></h1>
-<% tour.locations.each do |location| %>
-<%= location.title %>
-<%= location.long %>
-<%= location.lat %>
-<%= location.step %>
-
-
-<% end  %>
-
+<%= link_to 'See Tour', tour_path(tour) %>
 <br><br>
 <% end %>
