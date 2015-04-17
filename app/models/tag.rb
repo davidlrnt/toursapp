@@ -5,6 +5,6 @@ class Tag < ActiveRecord::Base
 	has_many :tag_tours
 	has_many :tours, through: :tag_tours
 
-	validates :name, uniqueness: true
+  validates_uniqueness_of :name
 
 end
