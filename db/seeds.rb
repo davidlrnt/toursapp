@@ -1,9 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 require 'json'
-
-
-
 # encoding: utf-8
 
 ActiveRecord::Base.establish_connection
@@ -16,9 +13,6 @@ ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
 end
 
-
-
-
 open("db/seeds/countries.txt") do |countries|
   countries.each do |country|
     codefips, codeiso, tld, name = country.chomp.force_encoding("ISO-8859-1").encode("utf-8", replace: nil).split(' ', 4)
@@ -26,10 +20,13 @@ open("db/seeds/countries.txt") do |countries|
   end
 end
 
-
-
 require 'csv'
 require 'pp'
+
+users = JSON.parse(File.read("db/seeds/users.json"))
+  users.each do |user|
+    user = User.create(email: user[0], name: user[1], gender: user[2], dob: user[3], password: user[4], password_confirmation: user[4])
+  end
 
 File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|
   row = CSV.parse(csv_line.gsub('"', '\''))
@@ -60,5 +57,3 @@ locations = JSON.parse(File.read("db/seeds/locations.json"))
     tour.locations.create(title: location[1], long: location[2], lat: location[3], step: location[4] )
   # Location.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
 end
-
-

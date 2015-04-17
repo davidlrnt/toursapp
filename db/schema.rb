@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150415193723) do
 
   create_table "tours", force: :cascade do |t|
     t.integer  "category_id"
+    t.integer  "guide_id"
     t.string   "title"
     t.string   "description"
     t.datetime "created_at",  null: false

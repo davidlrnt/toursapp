@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tours
+  has_many :tours, foreign_key: "guide_id"
   has_many :categories, through: :category_users
   has_many :category_tags, through: :categories
   has_many :tags, through: :category_tags
@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments, foreign_key: "traveler_id"
   has_many :reviews, through: :tours, foreign_key: "traveler_id"
 
-  validates :name, :dob, :gender, presence: true
+  validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
          user.provider ||= auth.provider
          user.uid = auth.uid
          user.email = auth.info.email
+         user.name = auth.extra.raw_info.first_name + auth.extra.raw_info.last_name
+         user.gender = auth.extra.raw_info.gender
          user.password = Devise.friendly_token[0,20]
     end
   end
