@@ -8,12 +8,6 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div><%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %></div>
-  <div><%= f.select :gender, ["Male", "Female"] %> </div>
-  <div><%= f.label :dob %><br />
-      <%= f.date_field :dob %></div>
-
   <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
@@ -32,4 +26,4 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "user/shared/links" %>

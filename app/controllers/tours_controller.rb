@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :authenticate_user!
+	before_action :authenticate_user!, :except => [:show, :index]
 
   def new
     @tour = Tour.new
@@ -25,5 +25,4 @@ private
     # binding.pry
     City.find_by(name: city["cities_attributes"]["0"]["name"])
   end
-
 end

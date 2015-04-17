@@ -1,14 +1,21 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
+    binding.pry
+
+  end
+
+  def update
   end
 
   def show
   end
 
   def edit
-    @user = User.create(current_user)
+    binding.pry
   end
+
 
   def destroy
   end
