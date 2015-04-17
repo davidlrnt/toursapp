@@ -82,8 +82,9 @@ ActiveRecord::Schema.define(version: 20150415193723) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "title"
-    t.string   "long"
+    t.string   "address"
     t.string   "lat"
+    t.string   "lng"
     t.integer  "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
