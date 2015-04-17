@@ -5,6 +5,7 @@
       <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
         <%= link_to 'Profile', users_path %>
         <%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %>
+        <%= link_to 'New Tour', new_tour_path %>
     <% else %>
       <p>You are not signed in.</p>
       <%= link_to 'Log In', new_user_session_path %>
