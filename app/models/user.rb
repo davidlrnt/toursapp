@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments, foreign_key: "traveler_id"
   has_many :reviews, through: :tours, foreign_key: "traveler_id"
 
+  validates :name, :dob, :gender, presence: true
   validates :email, presence: true, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -4,10 +4,22 @@ class RegistrationsController < Devise::RegistrationsController
     if @user.update(update_params)
        # Sign in the user by passing validation in case their password changed
        sign_in @user, :bypass => true
+       set_flash_message :notice, :updated
        redirect_to root_path
      else
        render "edit"
      end
+  end
+
+  def create
+    @user = User.new(create_params)
+    if @user.save
+      flash[:notice] = "Successfully created account"
+      sign_in :user, @user
+      redirect_to @user
+    else
+      render "new"
+    end
   end
 
   private
@@ -21,5 +33,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update_params
     params.require(:user).permit(:name, :dob, :gender, :password, :password_confirmation)
+  end
+  def create_params
+    params.require(:user).permit(:email, :name, :dob, :gender, :password, :password_confirmation)
   end
 end

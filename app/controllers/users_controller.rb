@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    binding.pry
+
   end
 
   def update
-    binding.pry
   end
 
   def show
