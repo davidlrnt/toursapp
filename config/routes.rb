@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :tags
   end
 
-  resources :search
+  resources :cities
 
   resources :users, :only => [:index, :show]
   resources :searches

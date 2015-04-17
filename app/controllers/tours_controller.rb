@@ -2,10 +2,6 @@ class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
 
-	def index
-		@tours = Tour.all
-	end
-
   def new
     @tour = Tour.new
   end
@@ -26,6 +22,7 @@ class ToursController < ApplicationController
   end
 
   def show
+		binding.pry
     @location = Location.new
   end
 
