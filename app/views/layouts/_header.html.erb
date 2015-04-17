@@ -4,13 +4,12 @@
     <p>Welcome <%= current_user.email %></p>
       <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
         <%= link_to 'Profile', users_path %>
-        <%= link_to 'Edit Profile', edit_user_registration_path %>
+        <%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %>
     <% else %>
       <p>You are not signed in.</p>
       <%= link_to 'Log In', new_user_session_path %>
       <%= link_to 'Register', new_user_registration_path %>
   <% end %>
-<% end %>
   </div>
   <%= form_for :search, url: searches_path  do |f| %>
     <%= f.label :city %>
