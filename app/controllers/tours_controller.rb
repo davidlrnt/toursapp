@@ -11,7 +11,7 @@ class ToursController < ApplicationController
     @tour = Tour.create!(tour_params)
     @tour.cities << city
     # binding.pry
-    redirect_to tour_locations_url
+    redirect_to :controller => 'tours/locations', :action => 'index'
   end
 
 
