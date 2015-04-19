@@ -23,6 +23,8 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  background-color: #CEEAF5;
+  font-family: verdana;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -33,4 +35,16 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+
+#map
+{
+    position: absolute;
+    z-index: -1;
+    float: left;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    opacity: 0.5;
 }
