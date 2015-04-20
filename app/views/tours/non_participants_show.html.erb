@@ -41,7 +41,24 @@
  <%# end %>
  <%= link_to "JOIN TOUR", [@tour, :locations] %>
 
-   <div id="map" style="opacity: 0.9;">
+  
+
+
+
+ <% if user_signed_in? %>
+   <%= form_tag("/participate") %>
+   <%= hidden_field_tag(:user_id, current_user.id) %>
+   <%= hidden_field_tag(:id, @tour.id) %>
+   <%= submit_tag("Participate") %>
+ <% else %>
+   <%= link_to "Log In", new_user_session_path %>
+   or
+   <%= link_to "Sign Up", new_user_registration_path %>
+   To Participate
+ <% end %><br>
+ <%= link_to 'Back', tours_path %>
+
+ <div id="map" style="opacity: 0.9;">
 
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
@@ -124,20 +141,3 @@
 
 
 
-
-
-
-=======
- <% if user_signed_in? %>
-   <%= form_tag("/participate") %>
-   <%= hidden_field_tag(:user_id, current_user.id) %>
-   <%= hidden_field_tag(:id, @tour.id) %>
-   <%= submit_tag("Participate") %>
- <% else %>
-   <%= link_to "Log In", new_user_session_path %>
-   or
-   <%= link_to "Sign Up", new_user_registration_path %>
-   To Participate
- <% end %><br>
->>>>>>> 7d7b04363a1db8c192f01c6e78223e5642bccc11
-<%= link_to 'Back', tours_path %>

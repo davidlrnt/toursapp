@@ -44,7 +44,7 @@ end
 tours = JSON.parse(File.read("db/seeds/tours.json"))
   tours.each do |tour|
   c = City.find_by(name: tour[4].downcase)
-  t = c.tours.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+  t = c.tours.create!(category_id: tour[0] ,title: tour[1] , description: tour[2], guide_id: User.first.id)
   t.tags.create!(name: tour[3])
 end
 
