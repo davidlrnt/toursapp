@@ -1,6 +1,11 @@
-See how far You go already
-
+<div class="user_progress">
+  <h2>Your Progress</h2>
+<% @tour.locations.each do |location| %>  
+  <li><%= label_tag(:title, location.title)%>
+  <li><%= submit_tag('Check the fuck in, yo') %>
+<% end %>
 <%= form_tag('/quit') %>
 <%= hidden_field_tag(:user_id, current_user.id) %>
 <%= hidden_field_tag(:id, @tour.id) %>
 <%= submit_tag"Quit" %>
+</div>

@@ -13,11 +13,11 @@ class LocationsController < ApplicationController
 
   def create
     tour = Tour.find(params["tour_id"])
-    @location = tour.locations.new(location_params)
+    @location = Location.new(location_params)
     if @location.save
+      tour.locations << @location
       @location.update(@location.get_coordinates)
       flash[:notice] = "Successfully Add location"
-      binding.pry
       redirect_to "/tours/#{tour.id}"
     else
       flash[:alert] = "Necessary forms need to be filled in."
