@@ -27,7 +27,7 @@ class Search
         end
       end
     end
-    @moreresults
+    @moreresults.empty? ? @results : @moreresults
   end
 
 end

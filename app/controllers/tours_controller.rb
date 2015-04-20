@@ -10,6 +10,9 @@ class ToursController < ApplicationController
     @tour = Tour.new
   end
 
+  def edit
+  end
+
   def create
     city = set_city
     @tour = Tour.new(tour_params)
@@ -28,12 +31,26 @@ class ToursController < ApplicationController
   end
 
   def show
-    # binding.pry
     if @tour.guide == current_user
       @location = Location.new
       render 'guide_show'
     else
       render 'non_participants_show'
+    end
+  end
+
+  def update
+    respond_to do |format|
+      city = set_city
+      @tour.cities << city
+      @tour.tags << set_tags
+      if @tour.update(tour_params)
+        format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @tour.errors, status: :unprocessable_entity }
+      end
     end
   end
 
