@@ -22,11 +22,10 @@ class Tour < ActiveRecord::Base
 
   def participate(user)
     self.participants << user
-    user.trips << self
   end
 
   def quit(user)
     self.participants.delete(user)
-    
+
   end
 end

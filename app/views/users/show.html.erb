@@ -6,7 +6,6 @@
         <li><%= link_to guide.title, tour_path(guide.id)  %><br>
         <% end %>
         <h3>Tours I'm On</h3>
-				<% binding.pry %>
         <% current_user.trips.each do |participant| %>
           <li><%= participant.title %>
           <li><%= participant.description %>

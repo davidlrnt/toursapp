@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 
   def show
     @trips = current_user.trips
+    binding.pry
   end
 
   def edit
-    binding.pry
   end
 
 
