@@ -2,20 +2,16 @@
   <h2>Your Progress</h2>
 <% @tour.locations.each do |location| %>
   <li><%= label_tag(:title, location.title)%>
-  <li><%= submit_tag('Check the fuck in, yo') %>
+  <li><%= submit_tag('Check in') %>
 <% end %>
-<br>
-<br>
-<br>
 <br>
 <% @tour.comments.each do |comment| %>
+  <li>
   <%= link_to "#{comment.traveler.name}", comment.traveler %> wrote:
-  <%= comment.created_at %>
-  <li><%= comment.content %></li>
-<% end %>
-<br>
-<br>
-<br>
+  <%= comment.content %>
+  <%= comment.created_at %><br>
+  </li>
+  <% end %>
 <br>
 <%= form_for [@tour, @comment] do |f| %>
   <%= f.label "Leave a comment: " %>

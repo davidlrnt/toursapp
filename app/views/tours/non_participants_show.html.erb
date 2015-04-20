@@ -36,9 +36,11 @@
 </ul>
 
  <% @tour.comments.each do |comment| %>
- <%= link_to "#{comment.traveler.name}", "/user/#{comment.traveler.id}" %> wrote:
- <%= comment.content %><br>
- <%= comment.created_at %>
+   <li>
+     <%= link_to "#{comment.traveler.name}", "/user/#{comment.traveler.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at %>
+   </li>
  <% end %>
 
  <% if user_signed_in? %>
