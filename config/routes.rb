@@ -22,16 +22,18 @@ Rails.application.routes.draw do
 
   resources :cities
 
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :personal_show]
   resources :searches
 
 
   authenticate :user do
     resources :tours
+  end
 
   post '/participate', to: 'tours#participate'
   post '/quit', to: 'tours#quit'
-  end
+  get '/user', to: 'users#personal_show'
+  get '/user/:id', to: 'users#public_show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

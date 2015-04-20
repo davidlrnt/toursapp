@@ -27,7 +27,6 @@
 <h3>Locations:</h3>
 <div class="location">
   <ul>
-    <% binding.pry %>
     <% @tour.locations.each do |location| %>
     <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
     <%= location.address %><br>

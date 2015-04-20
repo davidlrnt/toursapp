@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     @tour.comments << @comment
     @comment.traveler = current_user
+    @comment.save
     redirect_to @tour
   end
 

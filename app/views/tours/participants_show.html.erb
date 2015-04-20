@@ -9,6 +9,8 @@
 <br>
 <br>
 <% @tour.comments.each do |comment| %>
+  <%= link_to "#{comment.traveler.name}", comment.traveler %> wrote:
+  <%= comment.created_at %>
   <li><%= comment.content %></li>
 <% end %>
 <br>
