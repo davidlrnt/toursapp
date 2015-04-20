@@ -27,4 +27,8 @@ class Tour < ActiveRecord::Base
   def quit(user)
     self.participants.delete(user)
   end
+
+  def get_directions
+    # binding.pry
+  end
 end

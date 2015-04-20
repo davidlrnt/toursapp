@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :edit, :update, :destroy, :participate, :quit]
+  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit]
 
   def new
     @tour = Tour.new
@@ -63,6 +63,11 @@ class ToursController < ApplicationController
 		@tour.quit(user)
 		redirect_to root_path
 	end
+
+  def get_directions
+    @directions = @tour.get_directions
+    render 'directions'
+  end
 
 private
   def tour_params

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   post '/participate', to: 'tours#participate'
   post '/quit', to: 'tours#quit'
+  get "/tours/:id/directions", to: 'tours#get_directions'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
