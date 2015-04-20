@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :locations do
       resources :comments
     end
+    resources :comments
     resources :reviews
     resources :tags
   end

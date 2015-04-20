@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420160621) do
+ActiveRecord::Schema.define(version: 20150420212836) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -53,15 +53,17 @@ ActiveRecord::Schema.define(version: 20150420160621) do
   add_index "city_tours", ["tour_id"], name: "index_city_tours_on_tour_id"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "traveler_id"
     t.integer  "location_id"
+    t.integer  "tour_id"
     t.string   "content"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "comments", ["location_id"], name: "index_comments_on_location_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["tour_id"], name: "index_comments_on_tour_id"
+  add_index "comments", ["traveler_id"], name: "index_comments_on_traveler_id"
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +71,16 @@ ActiveRecord::Schema.define(version: 20150420160621) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "guide_comments", force: :cascade do |t|
+    t.integer  "guide_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "guide_comments", ["comment_id"], name: "index_guide_comments_on_comment_id"
+  add_index "guide_comments", ["guide_id"], name: "index_guide_comments_on_guide_id"
 
   create_table "location_tours", force: :cascade do |t|
     t.integer  "tour_id"
@@ -135,6 +147,16 @@ ActiveRecord::Schema.define(version: 20150420160621) do
   end
 
   add_index "tours", ["category_id"], name: "index_tours_on_category_id"
+
+  create_table "traveler_comments", force: :cascade do |t|
+    t.integer  "traveler_id"
+    t.integer  "comment_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "traveler_comments", ["comment_id"], name: "index_traveler_comments_on_comment_id"
+  add_index "traveler_comments", ["traveler_id"], name: "index_traveler_comments_on_traveler_id"
 
   create_table "user_categories", force: :cascade do |t|
     t.integer  "user_id"

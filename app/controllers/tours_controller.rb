@@ -27,6 +27,7 @@ class ToursController < ApplicationController
   end
 
   def show
+		@comment = Comment.new
     if @tour.guide == current_user
       @location = Location.new
       render 'guide_show'

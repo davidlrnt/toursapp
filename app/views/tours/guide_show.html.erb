@@ -30,7 +30,6 @@
     <% binding.pry %>
     <% @tour.locations.each do |location| %>
     <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-    <img src="<%= location.image_url %>"/><br>
     <%= location.address %><br>
     <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
     <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %><br>
