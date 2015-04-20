@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417185745) do
+ActiveRecord::Schema.define(version: 20150420160621) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -86,8 +86,10 @@ ActiveRecord::Schema.define(version: 20150417185745) do
     t.string   "lat"
     t.string   "lng"
     t.integer  "step"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+    t.string   "image_url"
   end
 
   create_table "participant_tours", force: :cascade do |t|

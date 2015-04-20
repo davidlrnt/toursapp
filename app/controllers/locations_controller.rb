@@ -13,9 +13,16 @@ class LocationsController < ApplicationController
 
   def create
     tour = Tour.find(params["tour_id"])
-    @location = tour.locations.create(location_params)
-    @location.update(@location.get_coordinates)
-    redirect_to "/tours/#{tour.id}"
+    @location = tour.locations.new(location_params)
+    if @location.save
+      @location.update(@location.get_coordinates)
+      flash[:notice] = "Successfully Add location"
+      binding.pry
+      redirect_to "/tours/#{tour.id}"
+    else
+      flash[:alert] = "Necessary forms need to be filled in."
+      redirect_to(:back)
+    end
   end
 
   def update
@@ -41,7 +48,7 @@ class LocationsController < ApplicationController
 
 private
   def location_params
-    params.require(:location).permit(:title, :address, :lat, :lng, :step)
+    params.require(:location).permit(:title, :address, :lat, :lng, :step, :description, :image_url)
   end
 
   def set_location
