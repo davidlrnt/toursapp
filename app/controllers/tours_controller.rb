@@ -1,10 +1,6 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :edit, :update, :destroy]
-
-	def index
-		@tours = Tour.all
-	end
+  before_action :set_tour, only: [:show, :edit, :update, :destroy, :participate, :quit]
 
   def new
     @tour = Tour.new
@@ -34,7 +30,9 @@ class ToursController < ApplicationController
     if @tour.guide == current_user
       @location = Location.new
       render 'guide_show'
-    else
+		elsif @tour.participants.include?(current_user)
+			render 'participants_show'
+		else
       render 'non_participants_show'
     end
   end
@@ -53,6 +51,18 @@ class ToursController < ApplicationController
       end
     end
   end
+
+	def participate
+		user = User.find_by(id: params[:user_id])
+		@tour.participate(user)
+		redirect_to @tour
+	end
+
+	def quit
+		user = User.find_by(id: params[:user_id])
+		@tour.quit(user)
+		redirect_to root_path
+	end
 
 private
   def tour_params

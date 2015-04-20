@@ -1,0 +1,6 @@
+See how far You go already
+
+<%= form_tag('/quit') %>
+<%= hidden_field_tag(:user_id, current_user.id) %>
+<%= hidden_field_tag(:id, @tour.id) %>
+<%= submit_tag"Quit" %>

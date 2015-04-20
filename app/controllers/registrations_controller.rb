@@ -16,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
     if @user.save
       flash[:notice] = "Successfully created account"
       sign_in :user, @user
-      redirect_to @user
+      redirect_to root_path
     else
       render "new"
     end

@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
-  has_many :tours, foreign_key: "guide_id"
+  has_many :tours, foreign_key: "guide_id", dependent: :destroy
   has_many :categories, through: :category_users
   has_many :category_tags, through: :categories
   has_many :tags, through: :category_tags
   has_many :locations, through: :tours, foreign_key: "guide_id"
   has_many :comments, through: :tours, foreign_key: "guide_id"
 
-  has_many :comments, foreign_key: "traveler_id"
-  has_many :reviews, through: :tours, foreign_key: "traveler_id"
+  has_many :participant_tours, foreign_key: "participant_id"
+  has_many :trips, through: :participant_tours, source: :tours
+  has_many :comments, foreign_key: "participant_id"
+  has_many :reviews, through: :tours, foreign_key: "participant_id"
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
