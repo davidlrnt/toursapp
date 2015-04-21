@@ -10,15 +10,24 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-
+  <%= render 'layouts/nav' %>
   <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-<%= yield %>
+  <% flash.each do |key, value| %>
+    <div class="text-center <%= flash_class(key) %>">
+    <%= value %>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>

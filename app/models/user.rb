@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :participant_tours, foreign_key: "participant_id"
   has_many :trips, through: :participant_tours, source: :tour
-  has_many :location_travelers, foreign_key: "traveler_id"
-  has_many :places, through: :location_travelers, source: :location
+  has_many :location_participants, foreign_key: "participant_id"
+  has_many :places, through: :location_participants, source: :location
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
   validates :name, presence: true
@@ -21,6 +21,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
+
+  acts_as_messageable
+  
+  def mailboxer_name
+   self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
 
   def self.from_omniauth(auth)
        where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -2,8 +2,8 @@ class Location < ActiveRecord::Base
 	has_many :location_tours
 	has_many :tours, through: :location_tours
 	has_many :comments
-	has_many :location_travelers
-	has_many :travelers, through: :location_travelers, class_name: "User"
+	has_many :location_participants
+	has_many :participants, through: :location_participants, class_name: "User"
 	belongs_to :guide, class_name: "User"
 	validates :title, presence: true
 
