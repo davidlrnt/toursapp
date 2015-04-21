@@ -100,19 +100,22 @@ ActiveRecord::Schema.define(version: 20150420143115) do
   create_table "participant_tours", force: :cascade do |t|
     t.integer  "participant_id"
     t.integer  "tour_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "completed",      default: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "participant_id"
+    t.integer  "tour_id"
+    t.text     "content"
+    t.integer  "rating"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "tour_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_index "reviews", ["participant_id"], name: "index_reviews_on_participant_id"
   add_index "reviews", ["tour_id"], name: "index_reviews_on_tour_id"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "tag_tours", force: :cascade do |t|
     t.integer  "tag_id"

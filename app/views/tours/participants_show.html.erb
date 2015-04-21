@@ -3,15 +3,47 @@
 
 <div class="user_progress">
   <h2>Your Progress</h2>
-  Completed: 0/10
+
+  <%= number_to_percentage((@progress*100), precision: 0) %>
 <ul>
+<% @x =0 %>
 <% @tour.locations.each do |location| %>
+<% if current_user.checked_in_locations.include?(location) %>
+<% @x += 1 %>
+<h3>YOU'VE BEEN TO <%= location.title %></h3>
+<% else %>
 <%= form_tag("#{@tour.id}/locations/#{location.id}/checkin", :method => "post") do %>
-   <%= label_tag(:title, location.title)%><br>
-   <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
+  <%= hidden_field_tag :tour_id , @tour.id %>
+  <%= label_tag(:title, location.title)%><br>
+  <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
 <% end %>
 <br>
 <% end %>
+<% end %>
+<% if @progress == 1.0 %>
+<% @review = Review.new %>
+<%= form_for [@tour, @review] do |f| %>
+  <div class="field">
+    <%= f.select :rating, options_for_select(0..5), { prompt: "Rating" } %>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %><br>
+    <%= f.hidden_field :tour_id, :value => @tour.id  %>
+    <%= f.hidden_field :participant_id, :value => @user.id  %>
+  </div>
+    <div class="field">
+  <div class="actions">
+    <%= f.submit "Submit Review"%>
+  </div>
+
+<% end %>
+
+
+
+
+
+<% end %>
+
+
 </ul>
 </div>
 

@@ -27,12 +27,14 @@ class ToursController < ApplicationController
   end
 
   def show
+    @user = current_user
     if @tour.guide == current_user
       @location = Location.new
       render 'guide_show'
-		elsif @tour.participants.include?(current_user)
-			render 'participants_show'
-		else
+    elsif @tour.participants.include?(current_user)
+      @progress = @tour.progress(@user)
+      render 'participants_show'
+    else
       render 'non_participants_show'
     end
   end

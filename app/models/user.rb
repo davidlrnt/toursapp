@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   has_many :comments, foreign_key: "participant_id"
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
-  has_many :participant_locations
-  has_many :locations, through: :participant_locations, foreign_key: "participant_id"
+  has_many :participant_locations, foreign_key: "participant_id"
+  has_many :checked_in_locations, through: :participant_locations, source: :location, foreign_key: "participant_id"
 
 
   validates :name, presence: true
@@ -24,6 +24,9 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+  def checkin(location)
+    checked_in_locations << location
+  end
 
   def self.from_omniauth(auth)
        where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
