@@ -1,5 +1,6 @@
 <div class="user_progress">
   <h2>Your Progress</h2>
+<%= binding.pry %>
 <% @tour.locations.each do |location| %>
   <li><%= label_tag(:title, location.title)%>
   <li><%= submit_tag('Check in') %>

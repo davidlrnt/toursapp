@@ -37,7 +37,7 @@
 
  <% @tour.comments.each do |comment| %>
    <li>
-     <%= link_to "#{comment.traveler.name}", "/user/#{comment.traveler.id}" %> wrote:
+     <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
    <%= comment.content %>
    <%= comment.created_at.to_date %>
    </li>

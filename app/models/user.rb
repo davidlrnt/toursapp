@@ -3,12 +3,14 @@ class User < ActiveRecord::Base
   has_many :categories, through: :category_users
   has_many :category_tags, through: :categories
   has_many :tags, through: :category_tags
-  has_many :locations, through: :tours, foreign_key: "guide_id"
+  has_many :locations, through: :tours
   has_many :guide_comments
   has_many :comments, through: :guide_comments, foreign_key: "guide_id"
 
   has_many :participant_tours, foreign_key: "participant_id"
-  has_many :trips, through: :participant_tours, source: :tour  
+  has_many :trips, through: :participant_tours, source: :tour
+  has_many :location_travelers, foreign_key: "traveler_id"
+  has_many :places, through: :location_travelers, source: :location
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
   validates :name, presence: true
@@ -19,7 +21,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   devise :omniauthable, :omniauth_providers => [:facebook]
-
 
   def self.from_omniauth(auth)
        where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -39,5 +40,4 @@ class User < ActiveRecord::Base
      end
    end
  end
-
 end

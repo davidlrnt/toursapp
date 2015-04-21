@@ -49,9 +49,17 @@
     <%= f.submit "Create Location" %>
  <%end%>
 
- <%# @tour.comments.each do |comment| %>
- <%#= comment.content %>
- <%# end %>
+ <% @tour.comments.each do |comment| %>
+   <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %><br>
+ <% end %>
+ <br>
+ <%= form_for [@tour, @comment] do |f| %>
+   <%= f.label "Leave a comment: " %>
+   <%= f.text_field :content %>
+   <%= f.submit "Post" %>
+ <% end %>
 
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>
