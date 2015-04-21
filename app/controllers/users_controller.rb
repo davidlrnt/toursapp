@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def public_show
-    @user = User.find_by(params[:id])
+    @user = User.find_by(id: params[:id])
     @trips = @user.trips
     @tours = @user.tours
   end

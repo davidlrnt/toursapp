@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments, through: :guide_comments, foreign_key: "guide_id"
 
   has_many :participant_tours, foreign_key: "participant_id"
-  has_many :trips, through: :participant_tours, source: :tour
-  has_many :traveler_comments
-  has_many :comments, through: :traveler_comments, foreign_key: "traveler_id"
+  has_many :trips, through: :participant_tours, source: :tour  
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
   validates :name, presence: true

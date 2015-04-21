@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.references :traveler, index: true
+      t.references :participant, index: true
       t.references :location, index: true
       t.references :tour, index: true
       t.string :content

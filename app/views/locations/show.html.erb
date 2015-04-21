@@ -1,4 +1,6 @@
-<img src="<%= @location.image_url %>"/><br>
+<% if @location.image_url %>
+	<img src=<%= @location.image_url %> width="350" height="400"/><br>
+<% end %>
 <%= @location.title %><br>
 <%= @location.description %><br>
 <%= @location.address if @location.address %><br>

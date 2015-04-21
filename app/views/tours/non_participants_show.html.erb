@@ -39,10 +39,10 @@
    <li>
      <%= link_to "#{comment.traveler.name}", "/user/#{comment.traveler.id}" %> wrote:
    <%= comment.content %>
-   <%= comment.created_at %>
+   <%= comment.created_at.to_date %>
    </li>
  <% end %>
-
+<br>
  <% if user_signed_in? %>
    <%= form_tag("/participate") %>
    <%= hidden_field_tag(:user_id, current_user.id) %>

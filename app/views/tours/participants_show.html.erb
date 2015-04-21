@@ -6,19 +6,16 @@
 <% end %>
 <br>
 <% @tour.comments.each do |comment| %>
-  <li>
-  <%= link_to "#{comment.traveler.name}", comment.traveler %> wrote:
+  <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
   <%= comment.content %>
-  <%= comment.created_at %><br>
-  </li>
-  <% end %>
+  <%= comment.created_at.to_date %><br>
+<% end %>
 <br>
 <%= form_for [@tour, @comment] do |f| %>
   <%= f.label "Leave a comment: " %>
   <%= f.text_field :content %>
   <%= f.submit "Post" %>
 <% end %>
-
 
 <%= form_tag('/quit') %>
 <%= hidden_field_tag(:user_id, current_user.id) %>

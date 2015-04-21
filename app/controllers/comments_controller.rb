@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @tour = Tour.find_by(id: params[:tour_id])
     @comment = Comment.create(comment_params)
     @tour.comments << @comment
-    @comment.traveler = current_user
+    @comment.participant = current_user
     @comment.save
     redirect_to @tour
   end
