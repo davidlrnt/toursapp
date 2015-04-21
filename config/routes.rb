@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   post '/quit', to: 'tours#quit'
   get "/tours/:id/directions", to: 'tours#get_directions'
   end
+  post "/tours/:id/locations/:id/checkin", to: 'locations#checkin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :comments, through: :tours, foreign_key: "guide_id"
 
   has_many :participant_tours, foreign_key: "participant_id"
-  has_many :trips, through: :participant_tours, source: :participant
+  has_many :trips, through: :participant_tours, source: :tour
   has_many :comments, foreign_key: "participant_id"
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 

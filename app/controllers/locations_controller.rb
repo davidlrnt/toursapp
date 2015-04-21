@@ -39,6 +39,10 @@ class LocationsController < ApplicationController
     end
   end
 
+  def checkin
+    binding.pry
+  end
+
 private
   def location_params
     params.require(:location).permit(:title, :address, :lat, :lng, :step)

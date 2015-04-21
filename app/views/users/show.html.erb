@@ -1,2 +1,19 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<%= form_for @user do |f| %>
+  <div class="user">
+    <div class="form">
+      <h3>Tours I've Created</h3>
+      <% current_user.tours.each do |guide| %>
+        <li><%= link_to guide.title, tour_path(guide.id)  %><br>
+        <% end %>
+        <h3>Tours I'm On</h3>
+        <% current_user.trips.each do |participant| %>
+          <li><%= participant.title %>
+          <li><%= participant.description %>
+          <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
+        <% end %>
+        <h3>My Friends</h3>
+        <li>Friend 1
+        <li>Friend 2
+      </div>
+  </div>
+<% end %>

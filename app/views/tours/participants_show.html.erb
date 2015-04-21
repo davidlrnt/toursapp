@@ -1,6 +1,19 @@
-Completed: 0/10
 
 
+
+<div class="user_progress">
+  <h2>Your Progress</h2>
+  Completed: 0/10
+<ul>
+<% @tour.locations.each do |location| %>
+<%= form_tag("#{@tour.id}/locations/#{location.id}/checkin", :method => "post") do %>
+   <%= label_tag(:title, location.title)%><br>
+   <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
+<% end %>
+<br>
+<% end %>
+</ul>
+</div>
 
 <%= form_tag('/quit') %>
 <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -56,7 +69,7 @@ Completed: 0/10
  <%= link_to 'Back', tours_path %>
 
 
-   <div id="map" style="opacity: 0.9;">
+   <div id="map" style="opacity: 0.9;"></div>
 
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>

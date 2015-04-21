@@ -40,6 +40,7 @@
  <%#= comment.content %>
  <%# end %>
 
+
  <% if user_signed_in? %>
    <%= form_tag("/participate") %>
    <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -53,8 +54,7 @@
  <% end %><br>
  <%= link_to 'Back', tours_path %>
 
-
-   <div id="map" style="opacity: 0.9;">
+ <div id="map" style="opacity: 0.9;">
 
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
@@ -134,9 +134,4 @@
     }
     autoCenter();
   </script>
-
-
-
-
-
 
