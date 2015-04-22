@@ -27,4 +27,26 @@ class Tour < ActiveRecord::Base
     self.participants.delete(user)
 
   end
+
+  def progress(user)
+    x = 0
+    locations.each do |location|
+      if user.checked_in_locations.include?(location)
+        x += 1
+      end
+    end
+    if x == locations.count
+    user.participant_tours.find_by(self.id).update(completed: true)
+    completed(user)
+    end
+    x.to_f/locations.count.to_f
+  end
+
+  def completed(user)
+    participant_tours.where(completed = true)
+  end
+
+  def get_directions
+    # binding.pry
+  end
 end

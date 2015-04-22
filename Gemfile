@@ -30,6 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'httparty'
 
+#generate associations diagram
+gem 'rails-erd'
+
 gem 'figaro'
 
 group :development, :test do

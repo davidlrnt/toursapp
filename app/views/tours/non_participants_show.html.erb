@@ -6,6 +6,11 @@
 <%= @tour.title %>
 <h3>Description:</h3>
 <%= @tour.description %>
+<br><br>
+<% @tour.reviews.each do |review| %>
+<%= review.rating %>/5<br>
+<%= review.content %><br><br>
+<% end %><br>
 <h3>Tags:</h3>
 <ul>
   <% @tour.tags.each do |tag| %>

@@ -48,6 +48,9 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+  
+  get "/tours/:id/directions", to: 'tours#get_directions'
+  post "/tours/:id/locations/:id/checkin", to: 'locations#checkin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

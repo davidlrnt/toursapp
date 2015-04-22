@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   has_many :places, through: :location_participants, source: :location
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
+  has_many :participant_locations, foreign_key: "participant_id"
+  has_many :checked_in_locations, through: :participant_locations, source: :location, foreign_key: "participant_id"
+
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   # Include default devise modules. Others available are:
@@ -22,14 +26,19 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+
   acts_as_messageable
-  
+
   def mailboxer_name
    self.name
   end
 
   def mailboxer_email(object)
     self.email
+  end
+
+  def checkin(location)
+    checked_in_locations << location
   end
 
   def self.from_omniauth(auth)
@@ -47,7 +56,8 @@ class User < ActiveRecord::Base
    super.tap do |user|
      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
        user.email = data["email"] if user.email.blank?
-     end
-   end
- end
+      end
+    end
+  end
+
 end

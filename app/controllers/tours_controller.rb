@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :edit, :update, :destroy, :participate, :quit]
+  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit]
 
   def new
     @tour = Tour.new
@@ -28,12 +28,14 @@ class ToursController < ApplicationController
 
   def show
 		@comment = Comment.new
+    @user = current_user
     if @tour.guide == current_user
       @location = Location.new
       render 'guide_show'
-		elsif @tour.participants.include?(current_user)
-			render 'participants_show'
-		else
+    elsif @tour.participants.include?(current_user)
+      @progress = @tour.progress(@user)
+      render 'participants_show'
+    else
       render 'non_participants_show'
     end
   end
@@ -64,6 +66,11 @@ class ToursController < ApplicationController
 		@tour.quit(user)
 		redirect_to root_path
 	end
+
+  def get_directions
+    @directions = @tour.get_directions
+    render 'directions'
+  end
 
 private
   def tour_params

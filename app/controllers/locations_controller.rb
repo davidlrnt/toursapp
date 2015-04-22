@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin]
 
   def index
 
@@ -46,6 +46,11 @@ class LocationsController < ApplicationController
     end
   end
 
+  def checkin
+    current_user.checkin(@location)
+    redirect_to @tour
+  end
+
 private
   def location_params
     params.require(:location).permit(:title, :address, :lat, :lng, :step, :description, :image_url)
@@ -55,5 +60,4 @@ private
     @location = Location.find(params[:id])
     @tour = Tour.find(params[:tour_id])
   end
-
 end
