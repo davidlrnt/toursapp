@@ -56,7 +56,7 @@
  <% end %>
  <br>
  <%= form_for [@tour, @comment] do |f| %>
-   <%= f.label "Leave a comment: " %>
+   <%= f.label "Leave a comment for this tour: " %>
    <%= f.text_field :content %>
    <%= f.submit "Post" %>
  <% end %>

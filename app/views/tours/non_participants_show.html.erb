@@ -8,34 +8,33 @@
 <%= @tour.description %>
 <br><br>
 <% @tour.reviews.each do |review| %>
-<%= review.rating %>/5<br>
-<%= review.content %><br><br>
+  <%= review.rating %>/5<br>
+  <%= review.content %><br><br>
 <% end %><br>
 <h3>Tags:</h3>
 <ul>
-  <% @tour.tags.each do |tag| %>
+<% @tour.tags.each do |tag| %>
   <li><%= tag.name %></li>
-  <% end %>
+<% end %>
 </ul>
 <br>
 <% if @tour.cities.count > 1 %>
-<h3>Cities:</h3>
+  <h3>Cities:</h3>
 <% else %>
-<h3>City:</h3>
+  <h3>City:</h3>
 <% end %>
 <ul>
-  <% @tour.cities.each do |city| %>
+<% @tour.cities.each do |city| %>
   <li><%= city.accent %></li>
-  <% end %>
+<% end %>
 </ul>
 
 <h3>Locations:</h3>
 <ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
-  <li><%= location.title %></li>
-  <li><%= location.address %></li>
-
+    <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
+    <%= location.address %><br>
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
