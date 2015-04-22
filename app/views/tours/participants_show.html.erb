@@ -21,6 +21,11 @@
 <% end %>
 <% end %>
 <% if @progress == 1.0 %>
+<% if @user.trips.find(@tour.id).reviews.first %>
+<h3>Your Review:</h3>
+<%= @user.trips.find(@tour.id).reviews.first.rating %>/5<br>
+<%= @user.trips.find(@tour.id).reviews.first.content %>
+<% else %>
 <% @review = Review.new %>
 <%= form_for [@tour, @review] do |f| %>
   <div class="field">
@@ -34,7 +39,7 @@
   <div class="actions">
     <%= f.submit "Submit Review"%>
   </div>
-
+<% end %>
 <% end %>
 
 
@@ -58,8 +63,7 @@
 
 <p id="notice"><%= notice %></p>
 <h1>Tour Guide:</h1>
-<%= @tour.guide.name %>
-
+<%= link_to @tour.guide.name, @tour.guide %>
 <h3>Title:</h3>
 <%= @tour.title %>
 <h3>Description:</h3>

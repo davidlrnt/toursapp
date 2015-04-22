@@ -10,6 +10,12 @@ class UsersController < ApplicationController
 
   def show
     @trips = current_user.trips
+    if @user.id == params["id"].to_i
+      render 'private_show'
+    else
+      @user = User.find(params["id"])
+      render 'public_show'
+    end
   end
 
   def edit
