@@ -24,8 +24,12 @@ class Tour < ActiveRecord::Base
   end
 
   def quit(user)
+    # binding.pry
     self.participants.delete(user)
-
+    user.checked_in_locations.each do |location|
+      user.checked_in_locations.delete(location) if location.tours.where(id: self.id).include?(self)
+    end
+    user.trips.delete(self)
   end
 
   def progress(user)

@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
+    binding.pry
     respond_to do |format|
       if @review.save
         format.html { redirect_to @tour, notice: 'Review was successfully created.' }
@@ -23,7 +24,7 @@ private
   end
 
   def set_tour
-    @tour = Tour.find_by(params[:tour_id])
+    @tour = Tour.find_by(id: params[:tour_id])
   end
 
   def set_guiderating
