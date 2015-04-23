@@ -1,12 +1,17 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit]
+  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit, :amazon]
 
   def new
     @tour = Tour.new
   end
 
   def edit
+  end
+
+  def amazon
+    @tour.images.create(image_url: params["key"])
+    redirect_to @tour
   end
 
   def create
@@ -18,7 +23,9 @@ class ToursController < ApplicationController
 		current_user.get_badge("guide")
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        @uploader = Tour.new.image
+        @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/amazon"
+        format.html { render "imageupload", notice: 'Tour was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tour }
       else
         format.html { render action: 'new' }

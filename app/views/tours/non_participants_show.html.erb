@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<img src="http://student-resources.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
 <h1>Tour Guide:</h1>
 <%= link_to @tour.guide.name, @tour.guide %>
 

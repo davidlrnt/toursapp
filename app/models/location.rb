@@ -7,9 +7,16 @@ class Location < ActiveRecord::Base
 	belongs_to :guide, class_name: "User"
 	validates :title, presence: true
 
+  mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
+  mount_uploader :audio, AudioUploader
+
+
   has_many :participant_locations
   has_many :participants, through: :participant_locations
-
+  has_many :images
+  has_many :audios
+  has_many :videos
 
   def get_coordinates
     zipcode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?'

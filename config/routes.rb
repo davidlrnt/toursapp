@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get '/tours/:id/amazon', to: 'tours#amazon'
+
+  get '/tours/:id/locations/:id/video_amazon', to: 'locations#video_amazon'
+  get '/tours/:id/locations/:id/image_amazon', to: 'locations#image_amazon'
+  get '/tours/:id/locations/:id/audio_amazon', to: 'locations#audio_amazon'
+
+  get '/tours/:id/locations/:id/content', to: 'locations#content'
+
+  get 'image/new'
+
   # devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 
@@ -27,13 +37,15 @@ Rails.application.routes.draw do
   resources :tags
   resources :cities
 
-  resources :users, :only => [:index, :personal_show]
+  resources :users, :only => [:index, :edit, :personal_show]
   resources :searches
 
 
   authenticate :user do
     resources :tours
   end
+
+
 
   post '/participate', to: 'tours#participate'
   post '/quit', to: 'tours#quit'

@@ -11,6 +11,11 @@ class Tour < ActiveRecord::Base
   has_many :tags, through: :tag_tours
   has_many :participant_tours
   has_many :participants, through: :participant_tours
+  has_many :images
+  has_many :audios
+  has_many :videos
+
+  mount_uploader :image, ImageUploader
 
   accepts_nested_attributes_for :tags, reject_if: lambda {|attributes| attributes['name'].blank?}
   accepts_nested_attributes_for :cities, reject_if: lambda {|attributes| attributes['name'].blank?}

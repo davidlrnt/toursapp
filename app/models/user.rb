@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
 
   has_many :guideratings, foreign_key: "guide_id"
 
+  has_many :images
+
+  has_many :audios, foreign_key: "guide_id"
+  has_many :audios, foreign_key: "participant_id"
+
+  has_many :videos, foreign_key: "guide_id"
+  has_many :videos, foreign_key: "participant_id"
 
   has_many :participant_tours, foreign_key: "participant_id"
   has_many :trips, through: :participant_tours, source: :tour
@@ -21,6 +28,8 @@ class User < ActiveRecord::Base
 
   has_many :badge_users
   has_many :badges, through: :badge_users
+
+  mount_uploader :image, ImageUploader
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true

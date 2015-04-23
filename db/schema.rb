@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423165435) do
+ActiveRecord::Schema.define(version: 20150423204646) do
+
+  create_table "audios", force: :cascade do |t|
+    t.string   "audio_url"
+    t.integer  "location_id"
+    t.integer  "tour_id"
+    t.integer  "guide_id"
+    t.integer  "participant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "badge_users", force: :cascade do |t|
     t.integer  "user_id"
@@ -107,6 +117,19 @@ ActiveRecord::Schema.define(version: 20150423165435) do
 
   add_index "guideratings", ["guide_id"], name: "index_guideratings_on_guide_id"
 
+  create_table "images", force: :cascade do |t|
+    t.string   "image_url"
+    t.integer  "location_id"
+    t.integer  "tour_id"
+    t.integer  "guide_id"
+    t.integer  "participant_id"
+    t.integer  "comment_id"
+    t.integer  "review_id"
+    t.integer  "city_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "location_participants", force: :cascade do |t|
     t.integer  "location_id"
     t.integer  "participant_id"
@@ -135,6 +158,9 @@ ActiveRecord::Schema.define(version: 20150423165435) do
     t.datetime "updated_at",  null: false
     t.text     "description"
     t.string   "image_url"
+    t.string   "image"
+    t.string   "audio"
+    t.string   "video"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -258,6 +284,8 @@ ActiveRecord::Schema.define(version: 20150423165435) do
     t.float    "average_score"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "image"
+    t.string   "imrl"
   end
 
   add_index "tours", ["category_id"], name: "index_tours_on_category_id"
@@ -292,9 +320,20 @@ ActiveRecord::Schema.define(version: 20150423165435) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "video_url"
+    t.integer  "location_id"
+    t.integer  "tour_id"
+    t.integer  "guide_id"
+    t.integer  "participant_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
 end

@@ -1,0 +1,32 @@
+ADD DESCRIPTION
+ <%= form_for [@tour, @location] do |f|  %>
+ <%= f.hidden_field :tour_id, :value => @tour.id %>
+    <%= f.label :description %>
+    <%= f.text_area  :description %><br>
+    <%= f.submit "Submit Description" %>
+ <%end%>
+ADD IMAGE
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>
+
+ADD VIDEO
+
+
+<%= direct_upload_form_for @uploadervideo do |f| %>
+  <%= f.file_field :video %>
+  <%= f.submit %>
+<% end %>
+
+
+ADD AUDIO
+
+
+<%= direct_upload_form_for @uploaderaudio do |f| %>
+  <%= f.file_field :audio %>
+  <%= f.submit %>
+<% end %>
+
+

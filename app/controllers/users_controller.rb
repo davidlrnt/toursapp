@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_user, only: [:show]
 
+  def edit
+    binding.pry
+    @image = Image.new
+  end
+
   def show
     if @user.id == params["id"].to_i
        @tours = @user.tours
@@ -20,4 +25,7 @@ private
     @user = current_user
   end
 
+  def reg_params
+    params.require(:user).permit(:name, :image, :email, :location, :gender, :dob, :average_score)
+  end
 end

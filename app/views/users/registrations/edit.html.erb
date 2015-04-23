@@ -2,6 +2,13 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
+  <div class="field">
+  <%#= image_tag @image.image_url.to_s if @image.image_url.present? %>
+ <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache%>
+  <%= submit_tag "Upload" %>
+  </div>
+
   <div><%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %></div>
   <div><%= f.select :gender, ["Male", "Female"] %> </div>
@@ -22,6 +29,16 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+<% end %>
+
+ <%#   @uploader = User.new.image %>
+ <%#   @uploader.success_action_redirect = new_user_url %>
+
+ <%# direct_upload_form_for @uploader do |f| %>
+  <%# f.file_field :image %>
+  <%# f.submit %>
+
+  <%#= form_for(:uploader, as: resource_name. url: registration_path())
 <% end %>
 
 <h3>Delete Account</h3>

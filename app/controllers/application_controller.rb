@@ -19,7 +19,8 @@ private
 protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :dob, :gender, :password, :password_confirmation)
+      u.permit(:name, :dob, :gender, :password, :password_confirmation, :image, :image_cache)
+
     end
   end
 end
