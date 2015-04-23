@@ -23,7 +23,7 @@ private
   end
 
   def set_tour
-    @tour = Tour.find_by(params[:tour_id])
+    @tour = Tour.find_by(id: params[:tour_id])
   end
 
   def set_guiderating
