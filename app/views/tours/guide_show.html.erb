@@ -19,7 +19,7 @@
 <h3>City:</h3>
 <% end %>
 <ul>
-  <% @tour.cities.each do |city| %>
+  <% @tour.cities.uniq.each do |city| %>
   <li><%= city.accent %></li>
   <% end %>
 </ul>

@@ -13,7 +13,6 @@ class ToursController < ApplicationController
     city = set_city
     @tour = Tour.new(tour_params)
     @tour.cities << city
-    @tour.tags << set_tags
     current_user.tours << @tour
     respond_to do |format|
       if @tour.save

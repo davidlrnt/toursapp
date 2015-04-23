@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :locations do
     resources :comments
   end
-
+  resources :tags
   resources :cities
 
   resources :users, :only => [:index, :personal_show]

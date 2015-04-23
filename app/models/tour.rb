@@ -53,4 +53,16 @@ class Tour < ActiveRecord::Base
   def set_average
     update(average_score: reviews.sum(:rating).to_f/reviews.count.to_f)
   end
+
+  def tag_name
+    tags.try(:name)
+  end
+
+  def tag_name=(name)
+    self.tags << Tag.find_or_create_by_name(name) if name.present?
+  end
+
+
+
+
 end
