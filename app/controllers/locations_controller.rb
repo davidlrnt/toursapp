@@ -13,13 +13,29 @@ class LocationsController < ApplicationController
   end
 
   def content
-    @uploader = Tour.new.image
-    @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/amazon"
+    @uploader = Location.new.image
+    @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/image_amazon"
+    @uploaderaudio = Location.new.audio
+    @uploaderaudio.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/audio_amazon"
+    @uploadervideo = Location.new.video
+    @uploadervideo.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/video_amazon"
   end
 
-  def amazon
+  def image_amazon
     @location = Location.find(params[:id])
     @location.images.create(image_url: params["key"])
+    redirect_to (:back)
+  end
+
+  def video_amazon
+    @location = Location.find(params[:id])
+    @location.videos.create(video_url: params["key"])
+    redirect_to (:back)
+  end
+
+  def audio_amazon
+    @location = Location.find(params[:id])
+    @location.audios.create(audio_url: params["key"])
     redirect_to (:back)
   end
 

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   get '/tours/:id/amazon', to: 'tours#amazon'
-  post '/tours/:id/amazon', to: 'tours#amazon'
-  get '/tours/:id/locations/:id/amazon', to: 'locations#amazon'
-  get '/tours/:id/locations/:id/content', to: 'locations#content'
 
+  get '/tours/:id/locations/:id/video_amazon', to: 'locations#video_amazon'
+  get '/tours/:id/locations/:id/image_amazon', to: 'locations#image_amazon'
+  get '/tours/:id/locations/:id/audio_amazon', to: 'locations#audio_amazon'
+
+  get '/tours/:id/locations/:id/content', to: 'locations#content'
 
   get 'image/new'
 

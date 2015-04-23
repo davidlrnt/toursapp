@@ -7,9 +7,9 @@ class Location < ActiveRecord::Base
 	belongs_to :guide, class_name: "User"
 	validates :title, presence: true
 
-  # mount_uploader :image, ImageUploader
-  # mount_uploader :video, VideoUploader
-  # mount_uploader :audio, AudioUploader
+  mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
+  mount_uploader :audio, AudioUploader
 
 
   has_many :participant_locations

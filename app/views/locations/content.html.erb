@@ -15,7 +15,7 @@ ADD IMAGE
 ADD VIDEO
 
 
-<%= direct_upload_form_for @uploader do |f| %>
+<%= direct_upload_form_for @uploadervideo do |f| %>
   <%= f.file_field :video %>
   <%= f.submit %>
 <% end %>
@@ -24,7 +24,7 @@ ADD VIDEO
 ADD AUDIO
 
 
-<%= direct_upload_form_for @uploader do |f| %>
+<%= direct_upload_form_for @uploaderaudio do |f| %>
   <%= f.file_field :audio %>
   <%= f.submit %>
 <% end %>
