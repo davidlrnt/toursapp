@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
+    binding.pry
     respond_to do |format|
       if @review.save
         format.html { redirect_to @tour, notice: 'Review was successfully created.' }

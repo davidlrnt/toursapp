@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :participant_locations, foreign_key: "participant_id"
   has_many :checked_in_locations, through: :participant_locations, source: :location, foreign_key: "participant_id"
 
+  has_many :badge_users
+  has_many :badges, through: :badge_users
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
