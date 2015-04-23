@@ -2,11 +2,9 @@ class ReviewsController < ApplicationController
   before_action :set_tour, only: [:create, :edit]
   after_action :set_guiderating, :set_tourrating, only: [:create, :edit]
 
-
   def create
     @review = Review.create(review_params)
     current_user.get_badge("review")
-    binding.pry
     respond_to do |format|
       if @review.save
         format.html { redirect_to @tour, notice: 'Review was successfully created.' }
@@ -17,7 +15,6 @@ class ReviewsController < ApplicationController
       end
     end
   end
-
 
 private
   def review_params

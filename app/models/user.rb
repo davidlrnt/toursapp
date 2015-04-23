@@ -66,28 +66,13 @@ class User < ActiveRecord::Base
   end
 
   def get_badge(badge_type)
-    if badge_type == "guide"
-      if self.tours.count > 5
-        counter = nil
-      else
-        counter = self.tours.count
-      end
-    elsif badge_type == "review"
-      if Review.where(participant_id: self.id).count > 5
-        counter = nil
-      else
-        counter = Review.where(participant_id: self.id).count
-      end
-    elsif badge_type == "participant"
-      if self.participant_tours.where(completed: true).count > 5
-        counter = nil
-      else
-        counter = self.participant_tours.where(completed: true).count
-      end
+    counter = set_count(badge_type)
+    if counter <= 5 && counter > 0
+      @badge = Badge.find_badge(badge_type, counter)
+      self.badges << @badge if !self.badges.include?(@badge)
     end
-    @badge = Badge.find_badge(badge_type, counter)
-    self.badges << @badge if !@badge.nil?
   end
+
 
   def self.new_with_session(params, session)
    super.tap do |user|
@@ -99,6 +84,16 @@ class User < ActiveRecord::Base
 
   def set_average
     update(average_score: guideratings.sum(:rating).to_f/guideratings.all.count.to_f)
+  end
+
+  def set_count(badge_type)
+    if badge_type == "guide"
+      return counter = self.tours.count
+    elsif badge_type == "review"
+      return counter = Review.where(participant_id: self.id).count
+    elsif badge_type == "participant"
+      return counter = self.participant_tours.where(completed: true).count
+    end
   end
 
 end
