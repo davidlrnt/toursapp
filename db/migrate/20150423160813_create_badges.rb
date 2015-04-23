@@ -2,7 +2,7 @@ class CreateBadges < ActiveRecord::Migration
   def change
     create_table :badges do |t|
       t.integer :requirement
-      t.string :name, :description, :type
+      t.string :name, :description, :badge_type
 
       t.timestamps null: false
     end

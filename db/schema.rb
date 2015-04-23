@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423160813) do
+ActiveRecord::Schema.define(version: 20150423165435) do
+
+  create_table "badge_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "badges", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "requirement"
     t.string   "name"
     t.string   "description"
+    t.string   "badge_type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

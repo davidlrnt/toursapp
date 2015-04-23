@@ -25,8 +25,8 @@ require 'pp'
 
 badges = JSON.parse(File.read("db/seeds/badges.json"))
   badges.each do |badge|
-    badge = Badge.create(name: ba)
-
+    badge = Badge.create(name: badge[0], requirement: badge[1], badge_type: badge[2], description: badge[3] )
+  end
 
 users = JSON.parse(File.read("db/seeds/users.json"))
   users.each do |user|
