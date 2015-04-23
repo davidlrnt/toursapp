@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422142545) do
+ActiveRecord::Schema.define(version: 20150422203942) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -210,6 +210,13 @@ ActiveRecord::Schema.define(version: 20150422142545) do
 
   add_index "reviews", ["participant_id"], name: "index_reviews_on_participant_id"
   add_index "reviews", ["tour_id"], name: "index_reviews_on_tour_id"
+
+  create_table "tag_suggestions", force: :cascade do |t|
+    t.string   "term"
+    t.integer  "popularity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tag_tours", force: :cascade do |t|
     t.integer  "tag_id"
