@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_tour, only: [:create, :edit]
+  after_action :set_guiderating, :set_tourrating, only: [:create, :edit]
+
 
   def create
     @review = Review.create(review_params)
@@ -22,5 +24,14 @@ private
 
   def set_tour
     @tour = Tour.find_by(params[:tour_id])
+  end
+
+  def set_guiderating
+    @tour.guide.guideratings.create(rating: params["review"]["rating"])
+    @tour.guide.set_average
+  end
+
+  def set_tourrating
+    @tour.set_average
   end
 end

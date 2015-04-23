@@ -2,12 +2,9 @@
   <% if @tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
-
-      <ul>
-      <% @tour.errors.full_messages.each do |msg| %>
+      <ul><% @tour.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <% end %></ul>
     </div>
   <% end %>
 
@@ -19,15 +16,13 @@
     <%= f.label :category %>
     <%= f.collection_select :category_id, Category.all, :id, :name %>
   </div>
-    <div class="field">
-
-    <%# f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
-
-    <%= f.fields_for(:tags, Tag.new) do |tag_form| %>
-      <p>Add a new tag:</p><br>
-      <%= tag_form.label :name %>
-      <%= tag_form.text_field :name %>
-    <% end %>
+  <div class="field">
+  <%# f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+  <%= f.fields_for(:tags, Tag.new) do |tag_form| %>
+    <p>Add a new tag:</p><br>
+    <%= tag_form.label :name %>
+    <%= tag_form.text_field :name %>
+  <% end %>
   </div>
   <div class="field">
   <h1> Cities </h1>
@@ -36,10 +31,7 @@
     <%= t.text_field :name %><br>
     <% end %>
   </div>
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
-
 <% end %>

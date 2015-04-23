@@ -1,0 +1,55 @@
+<% if @location.image_url %>
+	<img src=<%= @location.image_url %> width="350" height="400"/><br>
+<% end %>
+<%= @location.title %><br>
+<%= @location.description %><br>
+<%= @location.address if @location.address %><br>
+
+
+<% if current_user.checked_in_locations.include?(@location) %>
+<p>You've been here</p>
+<% else %>
+<button id="check" onclick="getLocation()">Check In!</button>
+<p id="checkp"></p>
+<% end %>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(ajaxPosition);
+
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+function ajaxPosition(position) {
+ $.post("<%= @location.id %>/checkin",
+    {
+      position,
+      tour_id : <%= @tour.id %>,
+      dataType : 'json',
+    },
+    function(data, status){
+      if (data == "ok") {
+        $("#check").hide();
+        $("#checkp").text("You've been here!")
+      } else {
+        alert("You are not in the right location")
+      }
+
+    });
+}
+</script>
+
+
+<%= link_to "Back", @tour %>

@@ -7,6 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :gender
       t.date   :dob
+      t.float :average_score, default: 0.0
       t.string :location
 
       ## Recoverable

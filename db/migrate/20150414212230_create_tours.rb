@@ -5,6 +5,7 @@ class CreateTours < ActiveRecord::Migration
       t.integer :guide_id
       t.string :title
       t.string :description
+      t.float :average_score
 
       t.timestamps null: false
     end

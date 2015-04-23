@@ -3,12 +3,17 @@ class User < ActiveRecord::Base
   has_many :categories, through: :category_users
   has_many :category_tags, through: :categories
   has_many :tags, through: :category_tags
-  has_many :locations, through: :tours, foreign_key: "guide_id"
-  has_many :comments, through: :tours, foreign_key: "guide_id"
+  has_many :locations, through: :tours
+  has_many :guide_comments
+  has_many :comments, through: :guide_comments, foreign_key: "guide_id"
+
+  has_many :guideratings, foreign_key: "guide_id"
+
 
   has_many :participant_tours, foreign_key: "participant_id"
   has_many :trips, through: :participant_tours, source: :tour
-  has_many :comments, foreign_key: "participant_id"
+  has_many :location_participants, foreign_key: "participant_id"
+  has_many :places, through: :location_participants, source: :location
   has_many :reviews, through: :tours, foreign_key: "participant_id"
 
   has_many :participant_locations, foreign_key: "participant_id"
@@ -24,8 +29,27 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
-  def checkin(location)
+
+  acts_as_messageable
+
+  def mailboxer_name
+   self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
+
+  def checkin_static(location)
     checked_in_locations << location
+  end
+
+  def checkin(location, coords)
+    if location.lat.to_f.round(2) == coords["latitude"].to_f.round(2) && location.lng.to_f.round(2) == coords["longitude"].to_f.round(2)
+    checked_in_locations << location
+    else
+      "wrong location"
+    end
   end
 
   def self.from_omniauth(auth)
@@ -43,8 +67,12 @@ class User < ActiveRecord::Base
    super.tap do |user|
      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
        user.email = data["email"] if user.email.blank?
-     end
-   end
- end
+      end
+    end
+  end
+
+  def set_average
+    update(average_score: guideratings.sum(:rating).to_f/guideratings.all.count.to_f)
+  end
 
 end

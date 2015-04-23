@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Tour Guide:</h1>
-<%= @tour.guide.name %>
+<%= link_to @tour.guide.name, @tour.guide %>
 
 <h3>Title:</h3>
 <%= @tour.title %>
@@ -25,27 +25,41 @@
 </ul>
 
 <h3>Locations:</h3>
-<ul>
-  <% @tour.locations.each do |location| %>
-  <li><%= location.title %></li>
-  <li><%= location.address %></li>
-  <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
-  <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %>
-  <% end %>
-</ul>
+<div class="location">
+  <ul>
+    <% @tour.locations.each do |location| %>
+    <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
+    <%= location.address %><br>
+    <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
+    <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %><br>
+    <% end %>
+  </ul>
+</div>
 
  <%= form_for [@tour, @location] do |f|  %>
  <%= f.hidden_field :tour_id, :value => @tour.id %>
     <%= f.label :title %>
-    <%= f.text_field  :title %>
-    <%= f.label :address %>
-    <%= f.text_field  :address %>
+    <%= f.text_field  :title %><br>
+    <%= f.label :address %><br>
+    <%= f.text_field  :address %><br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+    <%= f.label :image_url %><br>
+    <%= f.url_field :image_url %><br>
     <%= f.submit "Create Location" %>
  <%end%>
 
- <%# @tour.comments.each do |comment| %>
- <%#= comment.content %>
- <%# end %>
+ <% @tour.comments.each do |comment| %>
+   <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %><br>
+ <% end %>
+ <br>
+ <%= form_for [@tour, @comment] do |f| %>
+   <%= f.label "Leave a comment: " %>
+   <%= f.text_field :content %>
+   <%= f.submit "Post" %>
+ <% end %>
 
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>

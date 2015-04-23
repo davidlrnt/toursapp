@@ -27,6 +27,7 @@ class ToursController < ApplicationController
   end
 
   def show
+		@comment = Comment.new
     @user = current_user
     if @tour.guide == current_user
       @location = Location.new
@@ -73,7 +74,7 @@ class ToursController < ApplicationController
 
 private
   def tour_params
-    params.require(:tour).permit(:title, :description, :category_id )
+    params.require(:tour).permit(:title, :description, :category_id, :tour_id )
   end
 
   def set_city

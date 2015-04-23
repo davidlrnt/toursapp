@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 <h1>Tour Guide:</h1>
-<%= @tour.guide.name %>
+<%= link_to @tour.guide.name, @tour.guide %>
 
 <h3>Title:</h3>
 <%= @tour.title %>
+<h3>Tour Score:</h3>
+<%= @tour.average_score %>
 <h3>Description:</h3>
 <%= @tour.description %>
 <br><br>
@@ -40,11 +42,14 @@
   <% end %>
 </ul>
 
-
- <%# @tour.comments.each do |comment| %>
- <%#= comment.content %>
- <%# end %>
-
+ <% @tour.comments.each do |comment| %>
+   <li>
+     <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %>
+   </li>
+ <% end %>
+<br>
  <% if user_signed_in? %>
    <%= form_tag("/participate") %>
    <%= hidden_field_tag(:user_id, current_user.id) %>
@@ -138,4 +143,3 @@
     }
     autoCenter();
   </script>
-

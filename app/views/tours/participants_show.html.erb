@@ -1,9 +1,5 @@
-
-
-
 <div class="user_progress">
   <h2>Your Progress</h2>
-
   <%= number_to_percentage((@progress*100), precision: 0) %>
 <ul>
 <% @x =0 %>
@@ -12,19 +8,21 @@
 <% @x += 1 %>
 <h3>YOU'VE BEEN TO <%= location.title %></h3>
 <% else %>
-<%= form_tag("#{@tour.id}/locations/#{location.id}/checkin", :method => "post") do %>
+<%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %>
   <%= hidden_field_tag :tour_id , @tour.id %>
-  <%= label_tag(:title, location.title)%><br>
+  <%= label_tag(:address, location.address)%><br>
+  <%= link_to location.title, [@tour , location] %>
+  <!-- "#{@tour.id}/location/#{location.id}" -->
   <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
 <% end %>
 <br>
 <% end %>
 <% end %>
 <% if @progress == 1.0 %>
-<% if @user.trips.find(@tour.id).reviews.first %>
+<% if !@user.trips.find(@tour.id).reviews.where(participant_id: @user.id).empty? %>
 <h3>Your Review:</h3>
-<%= @user.trips.find(@tour.id).reviews.first.rating %>/5<br>
-<%= @user.trips.find(@tour.id).reviews.first.content %>
+<%= @user.trips.find(@tour.id).reviews.where(participant_id: @user.id).first.rating %>/5<br>
+<%= @user.trips.find(@tour.id).reviews.where(participant_id: @user.id).first.content %>
 <% else %>
 <% @review = Review.new %>
 <%= form_for [@tour, @review] do |f| %>
@@ -41,14 +39,7 @@
   </div>
 <% end %>
 <% end %>
-
-
-
-
-
 <% end %>
-
-
 </ul>
 </div>
 
@@ -66,6 +57,8 @@
 <%= link_to @tour.guide.name, @tour.guide %>
 <h3>Title:</h3>
 <%= @tour.title %>
+<h3>Tour Score:</h3>
+<%= @tour.average_score %>
 <h3>Description:</h3>
 <%= @tour.description %>
 <h3>Tags:</h3>
@@ -98,9 +91,9 @@
 </ul>
 
 
- <%# @tour.comments.each do |comment| %>
- <%#= comment.content %>
- <%# end %>
+ <% @tour.comments.each do |comment| %>
+ <%= comment.content %>
+ <% end %>
 
  <%= link_to 'Back', tours_path %>
 
@@ -185,9 +178,3 @@
     }
     autoCenter();
   </script>
-
-
-
-
-
-

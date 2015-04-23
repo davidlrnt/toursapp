@@ -15,24 +15,44 @@ Rails.application.routes.draw do
     resources :locations do
       resources :comments
     end
+    resources :comments
     resources :reviews
     resources :tags
   end
 
   resources :cities
 
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :personal_show]
   resources :searches
 
 
   authenticate :user do
     resources :tours
+  end
 
   post '/participate', to: 'tours#participate'
   post '/quit', to: 'tours#quit'
-  get "/tours/:id/directions", to: 'tours#get_directions'
+  # get '/user', to: 'users#personal_show'
+  # get '/user/:id', to: 'users#public_show'
+
+  # mailbox folder routes
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+
+  #conversations
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
   end
+
+  get "/tours/:id/directions", to: 'tours#get_directions'
   post "/tours/:id/locations/:id/checkin", to: 'locations#checkin'
+  post "/tours/:id/locations/:id/checkinstatic", to: 'locations#checkin_static'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

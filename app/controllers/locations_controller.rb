@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static]
 
   def index
 
@@ -13,9 +13,16 @@ class LocationsController < ApplicationController
 
   def create
     tour = Tour.find(params["tour_id"])
-    @location = tour.locations.create(location_params)
-    @location.update(@location.get_coordinates)
-    redirect_to "/tours/#{tour.id}"
+    @location = Location.new(location_params)
+    if @location.save
+      tour.locations << @location
+      @location.update(@location.get_coordinates)
+      flash[:notice] = "Successfully Add location"
+      redirect_to "/tours/#{tour.id}"
+    else
+      flash[:alert] = "Necessary forms need to be filled in."
+      redirect_to(:back)
+    end
   end
 
   def update
@@ -39,14 +46,26 @@ class LocationsController < ApplicationController
     end
   end
 
-  def checkin
-    current_user.checkin(@location)
+  def checkin_static
+    current_user.checkin_static(@location)
     redirect_to @tour
+  end
+
+  def checkin
+    if current_user.checkin(@location, params["position"]["coords"]) == "wrong location"
+      respond_to do |format|
+          format.json { render json: "error".to_json }
+      end
+    else
+      respond_to do |format|
+          format.json { render json: "ok".to_json }
+      end
+    end
   end
 
 private
   def location_params
-    params.require(:location).permit(:title, :address, :lat, :lng, :step)
+    params.require(:location).permit(:title, :address, :lat, :lng, :step, :description, :image_url)
   end
 
   def set_location
