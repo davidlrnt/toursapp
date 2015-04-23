@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<img src="http://student-resources.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+<%= @tour.image_url %>
 <h1>Tour Guide:</h1>
 <%= link_to @tour.guide.name, @tour.guide %>
 
@@ -28,8 +30,9 @@
 <div class="location">
   <ul>
     <% @tour.locations.each do |location| %>
-    <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
+    <%= link_to "#{location.title}", tour_location_path(@tour,location) %>
     <%= location.address %><br>
+    <%= link_to "test", "/tours/#{@tour.id}/locations/#{location.id}/content/?tour_id=#{@tour.id}" %>
     <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
     <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %><br>
     <% end %>
@@ -40,12 +43,8 @@
  <%= f.hidden_field :tour_id, :value => @tour.id %>
     <%= f.label :title %>
     <%= f.text_field  :title %><br>
-    <%= f.label :address %><br>
+    <%= f.label :address %>
     <%= f.text_field  :address %><br>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %><br>
-    <%= f.label :image_url %><br>
-    <%= f.url_field :image_url %><br>
     <%= f.submit "Create Location" %>
  <%end%>
 

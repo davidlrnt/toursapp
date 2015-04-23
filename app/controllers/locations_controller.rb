@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content]
 
   def index
 
@@ -10,6 +10,17 @@ class LocationsController < ApplicationController
 
   def show
     @comment = Comment.new
+  end
+
+  def content
+    @uploader = Tour.new.image
+    @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/amazon"
+  end
+
+  def amazon
+    @location = Location.find(params[:id])
+    @location.images.create(image_url: params["key"])
+    redirect_to (:back)
   end
 
   def create

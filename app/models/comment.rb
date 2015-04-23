@@ -3,6 +3,6 @@ class Comment < ActiveRecord::Base
   belongs_to :participant, class_name: "User"
   belongs_to :location
   belongs_to :tour
-
+  has_many :images
   validates  :content, presence: true
 end

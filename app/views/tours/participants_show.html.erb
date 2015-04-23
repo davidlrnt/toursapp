@@ -1,4 +1,6 @@
 <div class="user_progress">
+<img src="http://student-resources.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+
   <h2>Your Progress</h2>
   <%= number_to_percentage((@progress*100), precision: 0) %>
 <ul>
