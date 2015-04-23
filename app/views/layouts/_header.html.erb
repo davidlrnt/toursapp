@@ -2,7 +2,7 @@
   <%= link_to "TOURSHOME", root_path %>
   <%= form_for :search, url: searches_path  do |f| %>
     <%= f.label :city %>
-    <%= f.text_field :city, placeholder: "New York" %>
+    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
     <%= f.label :category %>
     <%= f.collection_select :category, Category.all, :name, :name %>
     <%= f.label :tags %>
@@ -25,3 +25,15 @@
   <% end %>
   </div>
 </div>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script>
+$( "#autocomplete-city" ).autocomplete({
+  source: <%= raw City.pluck(:name) %>
+});
+</script>
