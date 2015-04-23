@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
+    current_user.get_badge("review")
     binding.pry
     respond_to do |format|
       if @review.save

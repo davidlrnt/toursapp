@@ -13,7 +13,9 @@ class ToursController < ApplicationController
     city = set_city
     @tour = Tour.new(tour_params)
     @tour.cities << city
+		@tour.tags << set_tags
     current_user.tours << @tour
+		current_user.get_badge("guide")
     respond_to do |format|
       if @tour.save
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }

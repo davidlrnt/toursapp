@@ -2,7 +2,7 @@ class BadgesController < ApplicationController
 	before_action :set_user, only: [:index]
 
 	def index
-		binding.pry
+		@user.get_badge("participant")
 	end
 
 private

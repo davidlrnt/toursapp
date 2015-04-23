@@ -65,6 +65,30 @@ class User < ActiveRecord::Base
     end
   end
 
+  def get_badge(badge_type)
+    if badge_type == "guide"
+      if self.tours.count > 5
+        counter = nil
+      else
+        counter = self.tours.count
+      end
+    elsif badge_type == "review"
+      if Review.where(participant_id: self.id).count > 5
+        counter = nil
+      else
+        counter = Review.where(participant_id: self.id).count
+      end
+    elsif badge_type == "participant"
+      if self.participant_tours.where(completed: true).count > 5
+        counter = nil
+      else
+        counter = self.participant_tours.where(completed: true).count
+      end
+    end
+    @badge = Badge.find_badge(badge_type, counter)
+    self.badges << @badge if !@badge.nil?
+  end
+
   def self.new_with_session(params, session)
    super.tap do |user|
      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
