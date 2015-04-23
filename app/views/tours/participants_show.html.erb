@@ -2,7 +2,7 @@
   <h2>Your Progress</h2>
   <%= number_to_percentage((@progress*100), precision: 0) %>
 <ul>
-<% @x =0 %>
+<% @x = 0 %>
 <% @tour.locations.each do |location| %>
 <% if current_user.checked_in_locations.include?(location) %>
 <% @x += 1 %>
@@ -43,11 +43,11 @@
 </ul>
 </div>
 
-<%= form_tag('/quit') %>
+<%= form_tag('/quit') do %>
 <%= hidden_field_tag(:user_id, current_user.id) %>
 <%= hidden_field_tag(:id, @tour.id) %>
 <%= submit_tag"Quit" %>
-
+<% end %>
 
 <%= link_to "GET DIRECTIONS", "#{@tour.id}/directions" %>
 
@@ -83,16 +83,22 @@
 <ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
-  <li><%= location.title %></li>
+  <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
   <li><%= location.address %></li>
-
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
 
-
  <% @tour.comments.each do |comment| %>
- <%= comment.content %>
+   <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %><br>
+ <% end %>
+ <br>
+ <%= form_for [@tour, @comment] do |f| %>
+   <%= f.label "Leave a comment for this tour: " %>
+   <%= f.text_field :content %>
+   <%= f.submit "Post" %>
  <% end %>
 
  <%= link_to 'Back', tours_path %>

@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users
   resources :tours do
-    resources :locations do
-      resources :comments
-    end
+    resources :locations
     resources :comments
     resources :reviews
     resources :tags
+  end
+
+  resources :locations do
+    resources :comments
   end
 
   resources :cities
@@ -52,6 +54,7 @@ Rails.application.routes.draw do
   get "/tours/:id/directions", to: 'tours#get_directions'
   post "/tours/:id/locations/:id/checkin", to: 'locations#checkin'
   post "/tours/:id/locations/:id/checkinstatic", to: 'locations#checkin_static'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
