@@ -91,9 +91,8 @@
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
-
  <% @tour.comments.each do |comment| %>
-   <%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+   <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
    <%= comment.content %>
    <%= comment.created_at.to_date %><br>
  <% end %>

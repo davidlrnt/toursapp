@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   has_many :participant_locations, foreign_key: "participant_id"
   has_many :checked_in_locations, through: :participant_locations, source: :location, foreign_key: "participant_id"
 
+  has_many :badge_users
+  has_many :badges, through: :badge_users
+
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true
@@ -71,6 +74,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def get_badge(badge_type)
+    counter = set_count(badge_type)
+    if counter <= 5 && counter > 0
+      @badge = Badge.find_badge(badge_type, counter)
+      self.badges << @badge if !self.badges.include?(@badge)
+    end
+  end
+
+
   def self.new_with_session(params, session)
    super.tap do |user|
      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -81,6 +93,16 @@ class User < ActiveRecord::Base
 
   def set_average
     update(average_score: guideratings.sum(:rating).to_f/guideratings.all.count.to_f)
+  end
+
+  def set_count(badge_type)
+    if badge_type == "guide"
+      return counter = self.tours.count
+    elsif badge_type == "review"
+      return counter = Review.where(participant_id: self.id).count
+    elsif badge_type == "participant"
+      return counter = self.participant_tours.where(completed: true).count
+    end
   end
 
 end

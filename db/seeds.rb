@@ -23,6 +23,11 @@ end
 require 'csv'
 require 'pp'
 
+badges = JSON.parse(File.read("db/seeds/badges.json"))
+  badges.each do |badge|
+    badge = Badge.create(name: badge[0], requirement: badge[1], badge_type: badge[2], description: badge[3] )
+  end
+
 users = JSON.parse(File.read("db/seeds/users.json"))
   users.each do |user|
     user = User.create(email: user[0], name: user[1], gender: user[2], dob: user[3], password: user[4], password_confirmation: user[4])

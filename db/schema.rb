@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "badge_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.integer  "requirement"
+    t.string   "name"
+    t.string   "description"
+    t.string   "badge_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -236,6 +252,13 @@ ActiveRecord::Schema.define(version: 20150423204646) do
 
   add_index "reviews", ["participant_id"], name: "index_reviews_on_participant_id"
   add_index "reviews", ["tour_id"], name: "index_reviews_on_tour_id"
+
+  create_table "tag_suggestions", force: :cascade do |t|
+    t.string   "term"
+    t.integer  "popularity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tag_tours", force: :cascade do |t|
     t.integer  "tag_id"

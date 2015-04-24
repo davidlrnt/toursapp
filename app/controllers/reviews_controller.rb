@@ -2,9 +2,9 @@ class ReviewsController < ApplicationController
   before_action :set_tour, only: [:create, :edit]
   after_action :set_guiderating, :set_tourrating, only: [:create, :edit]
 
-
   def create
     @review = Review.create(review_params)
+    current_user.get_badge("review")
     respond_to do |format|
       if @review.save
         format.html { redirect_to @tour, notice: 'Review was successfully created.' }
@@ -16,14 +16,13 @@ class ReviewsController < ApplicationController
     end
   end
 
-
 private
   def review_params
     params.require(:review).permit(:rating, :content, :tour_id, :participant_id)
   end
 
   def set_tour
-    @tour = Tour.find_by(params[:tour_id])
+    @tour = Tour.find_by(id: params[:tour_id])
   end
 
   def set_guiderating

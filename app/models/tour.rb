@@ -30,7 +30,10 @@ class Tour < ActiveRecord::Base
 
   def quit(user)
     self.participants.delete(user)
-
+    user.checked_in_locations.each do |location|
+      user.checked_in_locations.delete(location) if location.tours.where(id: self.id).include?(self)
+    end
+    user.trips.delete(self)
   end
 
   def progress(user)
@@ -58,4 +61,16 @@ class Tour < ActiveRecord::Base
   def set_average
     update(average_score: reviews.sum(:rating).to_f/reviews.count.to_f)
   end
+
+  def tag_name
+    tags.try(:name)
+  end
+
+  def tag_name=(name)
+    self.tags << Tag.find_or_create_by_name(name) if name.present?
+  end
+
+
+
+
 end
