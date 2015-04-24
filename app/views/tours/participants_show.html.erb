@@ -5,6 +5,7 @@
   <h2>Your Progress</h2>
   <%= number_to_percentage((@progress*100), precision: 0) %>
 <ul>
+<%= link_to "Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
 <% @x = 0 %>
 <% @tour.locations.each do |location| %>
 <% if current_user.checked_in_locations.include?(location) %>
