@@ -30,7 +30,7 @@
   <h1> Cities </h1>
     <%= f.fields_for(:cities, City.new) do |t| %>
     <%= t.label :name %><br>
-    <%= t.text_field :name, id: 'autocomplete-city' %><br>
+    <%= t.text_field :name, id: 'autocompletecity' %><br>
     <% end %>
   </div>
   <div class="actions">
@@ -48,7 +48,7 @@
 $( "#autocomplete" ).autocomplete({
   source: <%= raw Tag.pluck(:name) %>
 });
-$( "#autocomplete-city" ).autocomplete({
+$( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });
 </script>
