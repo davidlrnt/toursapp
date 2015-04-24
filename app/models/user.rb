@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
 
   has_many :guideratings, foreign_key: "guide_id"
 
-  has_many :images
+  has_many :images, foreign_key: "guide_id"
+  has_many :images, foreign_key: "participant_id"
+
 
   has_many :audios, foreign_key: "guide_id"
   has_many :audios, foreign_key: "participant_id"

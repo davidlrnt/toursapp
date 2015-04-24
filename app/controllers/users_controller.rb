@@ -1,16 +1,24 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user!, except: [:show]
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :amazon]
 
   def edit
     binding.pry
-    @image = Image.new
+  end
+
+  def amazon
+    binding.pry
+    @user.images.create(image_url: params["key"])
+    redirect_to @user
   end
 
   def show
     if @user.id == params["id"].to_i
-       @tours = @user.tours
-       @trips = @user.trips
+      @uploader = User.new.image
+      @uploader.success_action_redirect = "http://localhost:3000/users/#{@user.id}/amazon"
+      @tours = @user.tours
+      @trips = @user.trips
       render 'personal_show'
     else
       @user = User.find(params["id"])

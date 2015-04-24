@@ -12,4 +12,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	    end
   	end
 
+
+    def edit
+      binding.pry
+    end
 end
