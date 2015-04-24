@@ -11,6 +11,11 @@ class RegistrationsController < Devise::RegistrationsController
      end
   end
 
+  def edit
+    @uploader = User.new.image
+    @uploader.success_action_redirect = "http://localhost:3000/users/#{@user.id}/amazon"
+  end
+
   def create
     @user = User.new(create_params)
     if @user.save

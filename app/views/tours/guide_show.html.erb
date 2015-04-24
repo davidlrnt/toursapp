@@ -33,7 +33,7 @@
     <% @tour.locations.each do |location| %>
     <%= link_to "#{location.title}", tour_location_path(@tour,location) %>
     <%= location.address %><br>
-    <%= link_to "test", "/tours/#{@tour.id}/locations/#{location.id}/content/?tour_id=#{@tour.id}" %>
+    <%= link_to "Upload Content", "/tours/#{@tour.id}/locations/#{location.id}/content/?tour_id=#{@tour.id}" %>
     <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
     <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %><br>
     <% end %>
