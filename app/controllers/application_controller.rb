@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :mailbox, :conversation
 
+  def edit
+    binding.pry
+  end
+
 private
 
   def mailbox

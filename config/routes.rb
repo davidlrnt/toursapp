@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users/:id/amazon', to: 'users#amazon'
 
   get '/tours/:id/amazon', to: 'tours#amazon'
 
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :badges
   end
-  
+
   resources :tours do
     resources :locations
     resources :comments
@@ -37,7 +38,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :cities
 
-  resources :users, :only => [:index, :edit, :personal_show]
+  # resources :users, :only => [:index, :edit, :personal_show]
   resources :searches
 
 
