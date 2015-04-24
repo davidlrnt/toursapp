@@ -91,7 +91,7 @@ private
   end
 
   def set_tags
-    tags = params.require(:tour).permit(:tags_attributes => [:id, :name])["tags_attributes"]["0"]["name"].split(", ")
+    tags = params.require(:tour).permit(:tags_attributes => [:id, :name])["tags_attributes"]["0"]["name"].split(",")
     returntags = []
     tags.each do |tag|
       returntags << Tag.find_or_create_by(name: tag)

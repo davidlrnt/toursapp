@@ -21,10 +21,9 @@
   <%= f.fields_for(:tags, Tag.new) do |tag_form| %>
     <p>Add a new tag:</p><br>
     <%= tag_form.label :name %>
-    <%= tag_form.text_field :name, id: 'autocomplete' %>
+    <%= tag_form.text_field :name, id: 'singleFieldTags' %>
   <% end %>
   </div>
-
 
     <div class="field">
   <h1> Cities </h1>
@@ -39,10 +38,18 @@
 <% end %>
 
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+<%= stylesheet_link_tag 'jquery.tagit' %>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <%= javascript_include_tag 'tag-it.js' %>
 
 <script>
 $( "#autocomplete" ).autocomplete({
@@ -52,3 +59,18 @@ $( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });
 </script>
+
+<script>
+        $(function(){
+            var sampleTags = <%= raw Tag.pluck(:name) %>;
+            // Single field
+            //-------------------------------
+            $('#singleFieldTags').tagit({
+                availableTags: sampleTags,
+                // This will make Tag-it submit a single form value, as a comma-delimited field.
+                singleField: true,
+                allowSpaces: true,
+                singleFieldNode: $('#mySingleField')
+            });
+        });
+    </script>
