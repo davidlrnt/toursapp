@@ -2,5 +2,6 @@
 <h4>List of All Tours</h4><br>
 <% @city.tours.each do |tour| %>
 	<ul><%= link_to tour.title, tour_path(tour)  %><br>
-	<%= tour.description %><br><br></ul>
+	<%= tour.description %><br>
+	Last updated: <%= ((Time.now.to_time - tour.updated_at.to_time)/1.hour).round  %> hours ago <br><br></ul>
 <% end %>
