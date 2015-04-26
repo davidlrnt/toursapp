@@ -1,13 +1,13 @@
 <div class="navbar">
   <%= link_to "TOURSHOME", root_path %>
   <%= form_for :search, url: searches_path  do |f| %>
-    <%= f.label :city %>
-    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
-    <%= f.label :category %>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
+    <%= f.label :category %>
     <%= f.collection_select :category, Category.all, :name, :name %>
-    <%= f.label :tags %>
-    <%= f.text_field :tags, placeholder: "Music" %>
-    <%= f.submit "Find" %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, placeholder: "Music", id: "autocomplete" %>
+    <%= f.submit "Find" %>
   <% end %>
 
   <div class="inner">

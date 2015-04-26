@@ -46,7 +46,7 @@
     <%= f.text_field  :title %><br>
     <%= f.label :address %>
     <%= f.text_field  :address %><br>
-    <%= f.submit "Create Location" %>
+    <%= f.submit "Add Location" %>
  <%end%>
 
  <% @tour.comments.each do |comment| %>
@@ -55,12 +55,16 @@
    <%= comment.created_at.to_date %><br>
  <% end %>
  <br>
- <%= form_for [@tour, @comment] do |f| %>
-   <%= f.label "Leave a comment for this tour: " %>
-   <%= f.text_field :content %>
-   <%= f.submit "Post" %>
- <% end %>
-<%= submit_tag 'Publish' %><br>
-
+  <% if @tour.published %>
+    <%= form_for [@tour, @comment] do |f| %>
+       <%= f.label "Leave a comment for this tour: " %>
+       <%= f.text_field :content %>
+       <%= f.submit "Post" %>
+     <% end %>
+  <% else %>
+    <%= form_tag("/publish") %>
+    <%= hidden_field_tag :id, @tour.id %>
+    <%= submit_tag 'Publish this tour' %><br>
+  <% end %>
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>

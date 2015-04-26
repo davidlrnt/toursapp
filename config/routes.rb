@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   get "/tours/:id/directions", to: 'tours#get_directions'
   post "/tours/:id/locations/:id/checkin", to: 'locations#checkin'
   post "/tours/:id/locations/:id/checkinstatic", to: 'locations#checkin_static'
-
+  post "publish", to: 'tours#publish'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

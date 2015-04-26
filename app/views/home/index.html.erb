@@ -1,3 +1,7 @@
+
+<%= video_tag "video1.mp4", width: "50%" , height: "50%", :controls => true, autoplay: true, loop: true %>
+<!-- <div id="overlay">New Jersey</div> -->
+
 <% City.all.each do |city| %>
   <%= link_to city.name, city_path(city) %><br>
 <% end %>

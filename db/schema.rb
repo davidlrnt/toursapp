@@ -282,8 +282,9 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.string   "title"
     t.string   "description"
     t.float    "average_score"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.boolean  "published",     default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "image"
     t.string   "imrl"
   end

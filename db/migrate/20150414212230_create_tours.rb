@@ -6,6 +6,7 @@ class CreateTours < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.float :average_score
+      t.boolean :published, default: false
 
       t.timestamps null: false
     end
