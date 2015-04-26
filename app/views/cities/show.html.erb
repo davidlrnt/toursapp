@@ -1,6 +1,6 @@
 <h3><%= @city.name %></h3><br>
 <h4>List of All Published Tours</h4><br>
-<% @city.tours.where(published: true).each do |tour| %>
+<% @tours.each do |tour| %>
 	<ul><%= link_to tour.title, tour_path(tour)  %><br>
 	<%= tour.description %><br>
 	Last updated: <%= ((Time.now.to_time - tour.updated_at.to_time)/1.hour).round  %> hours ago <br><br></ul>
