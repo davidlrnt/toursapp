@@ -55,16 +55,19 @@
    <%= comment.created_at.to_date %><br>
  <% end %>
  <br>
-  <% if @tour.published %>
+  <% if @tour.published && !@tour.locations.empty? %>
     <%= form_for [@tour, @comment] do |f| %>
        <%= f.label "Leave a comment for this tour: " %>
        <%= f.text_field :content %>
        <%= f.submit "Post" %>
      <% end %>
-  <% else %>
+  <% elsif !@tour.published && !@tour.locations.empty? %>
     <%= form_tag("/publish") %>
     <%= hidden_field_tag :id, @tour.id %>
     <%= submit_tag 'Publish this tour' %><br>
+  <% else %>
+    Create a location to publish the tour
   <% end %>
+  <br>
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>
