@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'fe77170165d73166d4bd74831fa6b84dce9d895eae54d4abc99a73e222247209540e743f04ffc596ed23929d69542f096d1a0bbe419561a8beabeaf8499eff6a'
+  # config.secret_key = '621e650cb1c9a27e296f2960f190bf8a9b1f9086dca1db0e8f11fdb5d82bf5858696a144802f770ff0e01a5193b80371e84f83d97e158bb25f2eb5a70308c467'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -205,11 +205,11 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  # config.default_scope = :user
+  config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
@@ -234,7 +234,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, ENV["facebook_key"], ENV["facebook_secret"]
+  config.omniauth :facebook, ENV["facebook_key"], ENV["facebook_secret"], provider_ignores_state: true
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

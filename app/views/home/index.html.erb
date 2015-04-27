@@ -1,3 +1,32 @@
+<%# video_tag @video, id: "video", width: "100%", height: "100%", :controls => false, muted: true, autoplay: true, loop: true %>
+<br>
 
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<!-- <div id="overlay"> -->
+  <%= form_for :search, url: searches_path  do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
+    <%= f.label :category %>
+    <%= f.collection_select :category, Category.all, :name, :name %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tag" %>
+    <%= f.submit "Find" %>
+  <% end %>
+<!-- </div> -->
 
+<br>
+<% City.all.each do |city| %>
+  <%= link_to city.name, city_path(city) %><br>
+<% end %>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+  $( "#autocomplete-city" ).autocomplete({
+    source: <%= raw City.pluck(:name) %>
+  });
+  $( "#autocomplete-tag" ).autocomplete({
+    source: <%= raw Tag.pluck(:name) %>
+  });
+</script>

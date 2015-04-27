@@ -1,0 +1,189 @@
+<div class="user_progress">
+<% if @tour.images.first %>
+<img src="http://flatirontours.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+<% end %>
+  <h2>Your Progress</h2>
+  <%= number_to_percentage((@progress*100), precision: 0) %>
+<ul>
+<%= link_to "Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
+<% @x = 0 %>
+<% @tour.locations.each do |location| %>
+<% if current_user.checked_in_locations.include?(location) %>
+<% @x += 1 %>
+<h3>YOU'VE BEEN TO <%= location.title %></h3>
+<% else %>
+<%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %>
+  <%= hidden_field_tag :tour_id , @tour.id %>
+  <%= label_tag(:address, location.address)%><br>
+  <%= link_to location.title, [@tour , location] %>
+  <!-- "#{@tour.id}/location/#{location.id}" -->
+  <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
+<% end %>
+<br>
+<% end %>
+<% end %>
+<% if @progress == 1.0 %>
+<% if !@user.trips.find(@tour.id).reviews.where(participant_id: @user.id).empty? %>
+<h3>Your Review:</h3>
+<%= @user.trips.find(@tour.id).reviews.where(participant_id: @user.id).first.rating %>/5<br>
+<%= @user.trips.find(@tour.id).reviews.where(participant_id: @user.id).first.content %>
+<% else %>
+<% @review = Review.new %>
+<%= form_for [@tour, @review] do |f| %>
+  <div class="field">
+    <%= f.select :rating, options_for_select(0..5), { prompt: "Rating" } %>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %><br>
+    <%= f.hidden_field :tour_id, :value => @tour.id  %>
+    <%= f.hidden_field :participant_id, :value => @user.id  %>
+  </div>
+    <div class="field">
+  <div class="actions">
+    <%= f.submit "Submit Review"%>
+  </div>
+<% end %>
+<% end %>
+<% end %>
+</ul>
+</div>
+
+<%= form_tag('/quit') do %>
+<%= hidden_field_tag(:user_id, current_user.id) %>
+<%= hidden_field_tag(:id, @tour.id) %>
+<%= submit_tag"Quit" %>
+<% end %>
+
+<%= link_to "GET DIRECTIONS", "#{@tour.id}/directions" %>
+
+
+<p id="notice"><%= notice %></p>
+<h1>Tour Guide:</h1>
+<%= link_to @tour.guide.name, @tour.guide %>
+<h3>Title:</h3>
+<%= @tour.title %>
+<h3>Tour Score:</h3>
+<%= @tour.average_score %>
+<h3>Description:</h3>
+<%= @tour.description %>
+<h3>Tags:</h3>
+<ul>
+  <% @tour.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+  <% end %>
+</ul>
+<br>
+<% if @tour.cities.count > 1 %>
+<h3>Cities:</h3>
+<% else %>
+<h3>City:</h3>
+<% end %>
+<ul>
+  <% @tour.cities.each do |city| %>
+  <li><%= city.accent %></li>
+  <% end %>
+</ul>
+
+<h3>Locations:</h3>
+<ul>
+<% @locationsarr = [] %>
+  <% @tour.locations.each do |location| %>
+  <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
+  <li><%= location.address %></li>
+  <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
+  <% end %>
+</ul>
+ <% @tour.comments.each do |comment| %>
+   <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %><br>
+ <% end %>
+ <br>
+ <%= form_for [@tour, @comment] do |f| %>
+   <%= f.label "Leave a comment for this tour: " %>
+   <%= f.text_field :content %>
+   <%= f.submit "Post" %>
+ <% end %>
+
+ <%= link_to 'Back', tours_path %>
+
+
+   <div id="map" style="opacity: 0.9;"></div>
+
+
+<script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
+
+  <script>
+    // Define your locations: HTML content for the info window, latitude, longitude
+    var locations = <%= raw @locationsarr.to_json %>;
+    var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';
+
+    var icons = [
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'green-dot.png',
+      iconURLPrefix + 'blue-dot.png',
+      iconURLPrefix + 'orange-dot.png',
+      iconURLPrefix + 'purple-dot.png',
+      iconURLPrefix + 'pink-dot.png',
+      iconURLPrefix + 'yellow-dot.png'
+    ]
+    var iconsLength = icons.length;
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(40.7412,-73.9973),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+    var oms = new OverlappingMarkerSpiderfier(map);
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 160
+    });
+
+    var markers = new Array();
+
+    var iconCounter = 0;
+
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+      oms.addMarker(marker);
+
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+        iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {
+        bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+  </script>

@@ -1,13 +1,27 @@
-<div class="navbar">
-  <div class="inner">
-    <% if user_signed_in? %>
-    <p>Welcome <%= current_user.email %></p>
-      <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
+<nav>
+<%= link_to "TOURSHOME", root_path %>
+  <%= form_for :search, url: searches_path  do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
+    <%= f.label :category %>
+    <%= f.collection_select :category, Category.all, :name, :name %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tags" %>
+    <%= f.submit "Find" %>
   <% end %>
-  </div>
-</div>
+</nav>
 
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script>
+$( "#autocomplete-city" ).autocomplete({
+  source: <%= raw City.pluck(:name) %>
+});
+$( "#autocomplete-tags").autocomplete({
+  source: <%= raw Tag.pluck(:name) %>
+});
+</script>

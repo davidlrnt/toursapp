@@ -1,0 +1,29 @@
+<% if @user.images.first %>
+<img src="http://student-resources.s3.amazonaws.com/<%= @user.images.first.image_url %>">
+  <% else %>
+  ADD IMAGE
+  <%= direct_upload_form_for @uploader do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>
+<% end %>
+
+  <div class="user">
+    <div class="form">
+      <h3>Tours I've Created</h3>
+      <% @tours.each do |guide| %>
+        <li><%= link_to guide.title, tour_path(guide.id)  %><br>
+        <% end %>
+        <h3>Tours I'm On</h3>
+        <% @trips.each do |participant| %>
+          <li><%= participant.title %>
+          <li><%= participant.description %>
+          <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
+        <% end %>
+        <h3>My Friends</h3>
+        <li>Friend 1
+        <li>Friend 2
+          <h3>Badges: </h3>
+          <%= link_to "#{@user.badges.count} Badge(s)", user_badges_path(@user) %>
+      </div>
+  </div>

@@ -7,8 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :gender
       t.date   :dob
+      t.float :average_score, default: 0.0
       t.string :location
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

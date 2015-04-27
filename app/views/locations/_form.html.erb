@@ -1,0 +1,14 @@
+<%= form_for [@tour, @location] do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %><br>
+    <%= f.label :image_url %>
+    <%= f.url_field :image_url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

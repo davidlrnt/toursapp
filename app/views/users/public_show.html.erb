@@ -1,0 +1,20 @@
+  <div class="user">
+    <div class="form">
+       <h3><%= @user.name %> </h3>
+       <h3>Guide Score</h3>
+       <h3><%= @user.average_score %> </h3>
+      <h3>Tours Created</h3>
+      <% @tours.each do |guide| %>
+        <li><%= link_to guide.title, tour_path(guide.id)  %><br>
+        <% end %>
+        <h3>Tours <%= @user.name %> On</h3>
+        <% @trips.each do |participant| %>
+          <li><%= participant.title %>
+          <li><%= participant.description %>
+          <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
+        <% end %>
+        <h3>Friends</h3>
+        <li>Friend 1
+        <li>Friend 2
+      </div>
+  </div>

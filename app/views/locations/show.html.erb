@@ -1,0 +1,84 @@
+<% if @location.image_url %>
+	<img src=<%= @location.image_url %> width="350" height="400"/><br>
+<% end %>
+<% if !@location.videos.empty? %>
+  <% @location.videos.each do |video| %>
+  <%= video_tag("http://student-resources.s3.amazonaws.com/#{video.video_url}", controls: true, autobuffer: true) %>
+  <% end %>
+<% end %>
+<% if !@location.audios.empty? %>
+  <% @location.audios.each do |audio| %>
+  <%= audio_tag("http://student-resources.s3.amazonaws.com/#{audio.audio_url}", controls: true, autobuffer: true) %>
+  <% end %>
+<% end %>
+
+
+<%= @location.title %><br>
+<%= @location.description %><br>
+<%= @location.address if @location.address %><br>
+
+
+<% if current_user.checked_in_locations.include?(@location) %>
+<p>You've been here</p>
+<% else %>
+<button id="check" onclick="getLocation()">Check In!</button>
+<p id="checkp"></p>
+<% end %>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(ajaxPosition);
+
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+function ajaxPosition(position) {
+ $.post("<%= @location.id %>/checkin",
+    {
+      position,
+      tour_id : <%= @tour.id %>,
+      dataType : 'json',
+    },
+    function(data, status){
+      if (data == "ok") {
+        $("#check").hide();
+        $("#checkp").text("You've been here!")
+      } else {
+        alert("You are not in the right location")
+      }
+
+    });
+}
+</script>
+
+
+
+<% if !@location.comments.nil? %>
+	<% @location.comments.each do |comment| %>
+		<%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
+		<%= comment.content %>
+		<%= comment.created_at.to_date %><br>
+	<% end %>
+<% end %>
+
+<% if user_signed_in? %>
+	<%= form_for [@location, @comment] do |f| %>
+	  <%= f.label "Leave a comment for this tour: " %>
+	  <%= f.text_field :content %>
+	  <%= f.submit "Post" %>
+	<% end %>
+<% end %>
+
+<%= link_to "Back", @tour %>

@@ -19,18 +19,24 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
 @import "bootstrap";
-/* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  background-color: #FFFFFF;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+
+*{
+  font-family: Helvetica, sans-serif;
+  font-weight: thin;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+#map
+{
+    position: absolute;
+    z-index: -1;
+    float: left;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    opacity: 0.5;
 }

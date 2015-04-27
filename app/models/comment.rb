@@ -1,6 +1,8 @@
 class Comment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :guide, class_name: "User"
+  belongs_to :participant, class_name: "User"
   belongs_to :location
-  
-  validates :name, :content, presence: true
+  belongs_to :tour
+  has_many :images
+  validates  :content, presence: true
 end

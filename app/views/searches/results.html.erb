@@ -1,0 +1,10 @@
+<% @tours.each do |tour| %>
+<h1><%= tour.title %></h1>
+<h1><%= tour.description %></h1>
+<h1><%= tour.tags.first.name %></h1>
+<h1><%= tour.cities.first.name %></h1>
+<h1><%= tour.average_score %></h1>
+
+<%= link_to 'See Tour', tour_path(tour) %>
+<br><br>
+<% end %>
