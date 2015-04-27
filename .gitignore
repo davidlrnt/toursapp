@@ -19,3 +19,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+
+# Ignore application secrets
+/config/secrets.yml

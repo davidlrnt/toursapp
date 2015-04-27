@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content]
+  protect_from_forgery :except => [:checkin]
+
 
   def index
 
@@ -80,7 +82,6 @@ class LocationsController < ApplicationController
   end
 
   def checkin
-    binding.pry
     if current_user.checkin(@location, params["position"]["coords"]) == "wrong location"
       respond_to do |format|
           format.json { render json: "error".to_json }
@@ -98,7 +99,6 @@ private
   end
 
   def set_location
-    binding.pry
     @location = Location.find(params[:id])
     @tour = Tour.find(params[:tour_id])
   end

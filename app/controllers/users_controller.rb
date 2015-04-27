@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user.id == params["id"].to_i
+    if @user && @user.id == params["id"].to_i
       @uploader = User.new.image
       @uploader.success_action_redirect = "http://localhost:3000/users/#{@user.id}/amazon"
       @tours = @user.tours
