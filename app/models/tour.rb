@@ -70,7 +70,9 @@ class Tour < ActiveRecord::Base
     self.tags << Tag.find_or_create_by_name(name) if name.present?
   end
 
-
+  def has_city_name
+    binding.pry
+  end
 
 
 end
