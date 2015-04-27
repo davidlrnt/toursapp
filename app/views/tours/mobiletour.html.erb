@@ -8,12 +8,12 @@
 
 <% if !@nextlocations[0].videos.empty? %>
   <% @nextlocations[0].videos.each do |video| %>
-  <%= video_tag("http://student-resources.s3.amazonaws.com/#{video.video_url}", controls: true, autobuffer: true) %>
+  <%= video_tag("http://flatirontours.s3.amazonaws.com/#{video.video_url}", controls: true, autobuffer: true) %>
   <% end %>
 <% end %>
 <% if !@nextlocations[0].audios.empty? %>
   <% @nextlocations[0].audios.each do |audio| %>
-  <%= audio_tag("http://student-resources.s3.amazonaws.com/#{audio.audio_url}", controls: true, autobuffer: true) %>
+  <%= audio_tag("http://flatirontours.s3.amazonaws.com/#{audio.audio_url}", controls: true, autobuffer: true) %>
   <% end %>
 <% end %>
 

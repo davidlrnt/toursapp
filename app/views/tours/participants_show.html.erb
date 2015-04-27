@@ -1,6 +1,6 @@
 <div class="user_progress">
 <% if @tour.images.first %>
-<img src="http://student-resources.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+<img src="http://flatirontours.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
 <% end %>
   <h2>Your Progress</h2>
   <%= number_to_percentage((@progress*100), precision: 0) %>

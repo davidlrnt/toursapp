@@ -1,0 +1,8 @@
+<% Badge.all.each do |badge| %>
+	<%if @user.badges.include?(badge) %>
+		You achieved : <%= badge.name %>
+	<% else %>
+		Way to go : <%= badge.name %><br>
+		<li><%= badge.requirement %></li>
+	<% end %>
+<% end %>

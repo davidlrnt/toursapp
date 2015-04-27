@@ -1,30 +1,26 @@
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "TOURSHOME", root_path, class: "navbar-brand" %>
-    </div>
-
-<div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav pull-right">
-        <% if user_signed_in? %>
-          <li class="active"><%= link_to "Hello, #{current_user.name}", current_user %></li>
-          <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-          <li><%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %></li>
-          <li><%= link_to 'New Tour', new_tour_path %></li>
-          <li><%= link_to "Badges", user_badges_path(current_user) %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Register', new_user_registration_path %></li>
-          <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-        <% end %>
-      </ul>
-    </div>
-	</div>
+<nav>
+  <div class="userSettings">
+  <% if user_signed_in? %>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+    <%= link_to 'Profile', current_user %>
+    <%= link_to "Inbox", mailbox_inbox_path %>
+    <%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %>
+    <%= link_to 'New Tour', new_tour_path %>
+    <%= link_to "Badges", user_badges_path(current_user) %></li>
+  <% else %>
+    <p>You are not signed in.</p>
+    <%= link_to 'Log In', new_user_session_path %>
+    <%= link_to 'Register', new_user_registration_path %>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  <% end %>
+</div>
+>>>>>>> b0f611341c1eb2cb072d0397a20d11de6222adba
 </nav>
+<script>
+$( "#autocomplete" ).autocomplete({
+  source: <%= raw Tag.pluck(:name) %>
+});
+$( "#autocompletecity" ).autocomplete({
+  source: <%= raw City.pluck(:name) %>
+});
+</script>
