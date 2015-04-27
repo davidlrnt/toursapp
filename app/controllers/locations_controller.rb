@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content]
+  protect_from_forgery :except => [:checkin]
+
 
   def index
 
