@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423204646) do
+ActiveRecord::Schema.define(version: 20150424165833) do
 
   create_table "audios", force: :cascade do |t|
     t.string   "audio_url"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.string   "content"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "image"
   end
 
   add_index "comments", ["location_id"], name: "index_comments_on_location_id"
@@ -248,6 +249,8 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.integer  "rating"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "image"
+    t.string   "imrl"
   end
 
   add_index "reviews", ["participant_id"], name: "index_reviews_on_participant_id"
