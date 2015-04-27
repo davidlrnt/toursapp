@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit, :amazon, :publish]
+  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit, :amazon, :publish, :mobiletour]
 
   def new
     @tour = Tour.new
@@ -12,6 +12,12 @@ class ToursController < ApplicationController
   def amazon
     @tour.images.create(image_url: params["key"])
     redirect_to @tour
+  end
+
+  def mobiletour
+    @nextlocations = @tour.locations.select do |location|
+      !current_user.checked_in_locations.include?(location)
+    end
   end
 
   def create
