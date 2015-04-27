@@ -1,8 +1,11 @@
+<% @user.badges.each do |badge| %>
+You achieved : <%= badge.name %> for <%= badge.description %><br>
+<% end %>
+<br><br>
+
 <% Badge.all.each do |badge| %>
-	<%if @user.badges.include?(badge) %>
-		You achieved : <%= badge.name %><br><br>
-	<% else %>
-		 to be <%= badge.name %><br>
-		require:<%= badge.description %><br>
+	<%if !@user.badges.include?(badge) %>
+		to be <%= badge.name %><br>
+		require:<%= badge.description %><br><br>
 	<% end %>
 <% end %>

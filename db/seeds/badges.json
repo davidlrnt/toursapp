@@ -1,19 +1,19 @@
 [
-	["Pioneer", 1, "guide", "Create a tour"],
-	["Wanderer", 2, "guide", "Create 5 tours"],
-	["Road Warrior", 3, "guide", "Create 10 tours"],
-	["Marco Polo", 4, "guide", "Create 20 tours"],
-	["Mr. Colombus", 5, "guide", "Create 30 tours"],
+	["Pioneer", 1, "guide", "creating a tour"],
+	["Wanderer", 2, "guide", "creating 5 tours"],
+	["Road Warrior", 3, "guide", "creating 10 tours"],
+	["Marco Polo", 4, "guide", "creating 20 tours"],
+	["Mr. Colombus", 5, "guide", "creating 30 tours"],
 
-	["Follower", 1, "participant", "Finished a tour"],
-	["Scout", 2, "participant", "Finished 5 tours"],
-	["Adventurer", 3, "participant", "Finished 10 tours"],
-	["Expeditioner", 4, "participant", "Finished 20 tours"],
-	["Nomad", 5, "participant", "Finished 30 tours"],
+	["Follower", 1, "participant", "completed a tour"],
+	["Scout", 2, "participant", "completed 5 tours"],
+	["Adventurer", 3, "participant", "completed 10 tours"],
+	["Expeditioner", 4, "participant", "completed 20 tours"],
+	["Nomad", 5, "participant", "completed 30 tours"],
 
-	["Opinionated", 1, "review", "Give a review"],
-	["Reviewer", 2, "review", "Give 5 reviews"],
-	["Critique", 3, "review", "Give 10 reviews"],
-	["Ignorant", 4, "review", "Give 20 reviews"],
-	["Bitch", 5, "review", "Give 30 reviews"]
+	["Opinionated", 1, "review", "giving a review"],
+	["Reviewer", 2, "review", "giving 5 reviews"],
+	["Critique", 3, "review", "giving 10 reviews"],
+	["Ignorant", 4, "review", "giving 20 reviews"],
+	["Bitch", 5, "review", "giving 30 reviews"]
 ]
