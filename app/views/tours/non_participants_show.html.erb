@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% if @tour.images.first %>
-<img src="http://student-resources.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+<img src="http://flatirontours.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
 <% end %>
 <h1>Tour Guide:</h1>
 <%= link_to @tour.guide.name, @tour.guide %>

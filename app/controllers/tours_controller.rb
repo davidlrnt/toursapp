@@ -22,6 +22,14 @@ class ToursController < ApplicationController
 
   def create
     city = set_city
+    binding.pry
+    if params["tour"]["cities_attributes"]["0"]["name"].empty?
+      flash[:alert] = "You have to give a city."
+      redirect_to(:back)
+    elsif city.nil?
+      flash[:alert] = "This city isn't currently available."
+      redirect_to(:back)
+    else
     @tour = Tour.new(tour_params)
     @tour.cities << city
 		@tour.tags << set_tags
@@ -37,6 +45,7 @@ class ToursController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @tour.errors, status: :unprocessable_entity }
       end
+    end
     end
   end
 
