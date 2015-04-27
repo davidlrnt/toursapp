@@ -1,6 +1,3 @@
-
-show all badges here
-
 <% Badge.all.each do |badge| %>
 	<%if @user.badges.include?(badge) %>
 		You achieved : <%= badge.name %>

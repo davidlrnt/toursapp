@@ -1,7 +1,6 @@
 <% if @location.image_url %>
 	<img src=<%= @location.image_url %> width="350" height="400"/><br>
 <% end %>
-<% binding.pry %>
 <% if !@location.videos.empty? %>
   <% @location.videos.each do |video| %>
   <%= video_tag("http://student-resources.s3.amazonaws.com/#{video.video_url}", controls: true, autobuffer: true) %>

@@ -11,12 +11,6 @@
 <body>
   <%= render 'layouts/header' %>
   <%= render 'layouts/nav' %>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
 
   <% flash.each do |key, value| %>
     <div class="text-center <%= flash_class(key) %>">
