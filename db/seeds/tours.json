@@ -1,6 +1,6 @@
 
 // [
-//   [1,"Title 1","Description 1", "Tag1", "New York"],
+//   [2,"Title 1","Description 1", "Tag1", "New York"],
 //   [1,"Title 2","Description 2", "Tag2", "New York"],
 //   [1,"Title 3","Description 3", "Tag3", "New York"],
 //   [1,"Title 3","Description 4", "Tag4", "New York"],
@@ -75,7 +75,7 @@
     "category_id": 6,
     "title": "MAMA MIA!",
     "description": "Get a pie here in Queens, some of the best pizzerias are here! Look no more.",
-    "guide_id": 1,
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
     "tags": ["Pizza", "Italian", "Pizzerias"]
@@ -84,25 +84,25 @@
     "category_id": 6,
     "title": "Did somebody say coffee? Is it that time already?",
     "description": "It's late in the afternoon and you have deadlines, you're in Queens and you need to get a cup of Joe. Well, you're in luck!",
-    "guide_id": 1,
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
     "tags": ["Coffee", "Coffee Shops"]
   },
   {
-    "category_id": 1,
+    "category_id": 2,
     "title": "Museums, galleries, and more!",
     "description": "Check out the PS1 in Queens, the Museum of the Moving Image, and more!",
-    "guide_id": 1,
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
     "tags": ["Paintings", "Museums"]
   },
   {
-    "category_id": 1,
+    "category_id": 2,
     "title": "Bars in Queens",
     "description": "What about bars in Queens? Yes, we have bars in Queens.",
-    "guide_id": 1,
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
     "tags": ["Bars", "Alcohol"]
