@@ -22,7 +22,6 @@ class ToursController < ApplicationController
 
   def create
     city = set_city
-    binding.pry
     if params["tour"]["cities_attributes"]["0"]["name"].empty?
       flash[:alert] = "You have to give a city."
       redirect_to(:back)
@@ -34,7 +33,7 @@ class ToursController < ApplicationController
     @tour.cities << city
 		@tour.tags << set_tags
     current_user.tours << @tour
-		current_user.get_badge("guide")
+		current_user.get_badge
     respond_to do |format|
       if @tour.save
         @uploader = Tour.new.image
