@@ -21,10 +21,9 @@
 <%= @location.address if @location.address %><br>
 
 <% if user_signed_in?  %>
-<% binding.pry %>
   <% if current_user.checked_in_locations.include?(@location) %>
   <p>You've been here</p>
-  <% else %>
+  <% elsif current_user.places.include?(@location) %>
   <button id="check" onclick="getLocation()">Check In!</button>
   <p id="checkp"></p>
   <% end %>

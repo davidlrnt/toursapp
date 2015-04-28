@@ -31,8 +31,9 @@ class Tour < ActiveRecord::Base
 
   def quit(user)
     self.participants.delete(user)
-    user.checked_in_locations.each do |location|
-      user.checked_in_locations.delete(location) if location.tours.where(id: self.id).include?(self)
+    self.locations.each do |location|
+      user.places.delete(location)
+      user.checked_in_locations.delete(location)
     end
     user.trips.delete(self)
   end
