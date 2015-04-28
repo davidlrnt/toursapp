@@ -61,10 +61,10 @@ comments.each do |comment|
   Comment.create!(participant_id: comment["participant_id"], location_id: comment["location_id"], tour_id: comment["tour_id"], content: comment["content"])
 end
 
-# reviews = JSON.parse(File.read("db/seeds/reviews.json"))
-# reviews.each do |review|
-#   Review.create!(participant_id: review[participant_id], tour_id: review["tour_id"], content: review["content"], rating: review["rating"])
-# end
+reviews = JSON.parse(File.read("db/seeds/reviews.json"))
+reviews.each do |review|
+  Review.create!(participant_id: review[participant_id], tour_id: review["tour_id"], content: review["content"], rating: review["rating"])
+end
 
 locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|
