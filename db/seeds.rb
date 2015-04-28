@@ -30,7 +30,7 @@ badges = JSON.parse(File.read("db/seeds/badges.json"))
 
 users = JSON.parse(File.read("db/seeds/users.json"))
   users.each do |user|
-    user = User.create(email: user[0], name: user[1], gender: user[2], dob: user[3], password: user[4], password_confirmation: user[4])
+    user = User.create(user)
   end
 
 File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|
@@ -48,15 +48,17 @@ end
 
 tours = JSON.parse(File.read("db/seeds/tours.json"))
   tours.each do |tour|
-  c = City.find_by(name: tour[4].downcase)
-  t = c.tours.create!(category_id: tour[0] ,title: tour[1] , description: tour[2], guide_id: User.first.id )
-
-  t.tags.create!(name: tour[3])
+  c = City.find_by(name: tour["city"].downcase)
+  t = c.tours.create!(category_id: tour["category_id"] ,title: tour["title"] , description: tour["description"], guide_id: tour["guide_id"], published: tour["published"] )
+  tour["tags"].each do |tag|
+  t.tags.create!(name: tag)
+  end
 end
 
 locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|
-    tour = Tour.find_by(location[0])
-    tour.locations.create(title: location[1], lat: location[2], lng: location[3], step: location[4] )
-  # Location.create!(category_id: tour[0] ,title: tour[1] , description: tour[2])
+    tour = Tour.find_by_id(location["tour_id"])
+    l = tour.locations.create(title: location["title"], address: location["address"], description: location["description"] )
+    l.set_coordinates
+    # binding.pry
 end

@@ -2,7 +2,7 @@ class BadgesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_user, only: [:index]
 	def index
-		@user.get_badge("participant")
+		@user.get_badge
 	end
 
 private
