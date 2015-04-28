@@ -1,6 +1,10 @@
-<%= @nextlocations[0].title %>
+<h3><%= @nextlocations[0].title %></h3><br>
 
-
+<% if !@nextlocations[0].images.empty? %>
+  <% @nextlocations[0].images.each do |image| %>
+  <%= image_tag(image.image_url, height: '320') %>
+  <% end %>
+<% end %>
 
 <% if @nextlocations[0].image_url %>
   <img src=<%= @nextlocations[0].image_url %> width="350" height="400"/><br>
@@ -17,9 +21,8 @@
   <% end %>
 <% end %>
 
-
-<%= @nextlocations[0].title %><br>
-<%= @nextlocations[0].description %><br>
+<br>
+<p><%= @nextlocations[0].description %></p><br>
 <%= @nextlocations[0].address if @nextlocations[0].address %><br>
 
 
