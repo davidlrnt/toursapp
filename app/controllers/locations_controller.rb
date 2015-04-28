@@ -11,10 +11,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
-    @tour = Tour.find(params[:id])
-    @uploader = Comment.new.image
-    @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/comment"
+   
   end
 
 

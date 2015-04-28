@@ -62,8 +62,21 @@ function ajaxPosition(position) {
         alert("You are not in the right location")
       }
 
+
+// $('#submitcomment').click(function(){
+//   content = document.getElementById('content');
+//   $.post(<%=raw "/locations/#{@location.id}/comments"%>,
+//     {
+//       content: content.value,
+//       dataType : 'json'
+//     },
+//     function ok(data){
+//       alert(data);
+//     })
+
     });
 }
+
 </script>
 
 
@@ -71,36 +84,52 @@ function ajaxPosition(position) {
 <% if !@location.comments.nil? %>
 	<% @location.comments.each do |comment| %>
 		<%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
-		<%= comment.content %>
+		  <%= comment.content %>
+      <% if !comment.images.empty? %>
+     <% comment.images.each do |image| %>
+     <%= image_tag("http://flatirontours.s3.amazonaws.com/#{image.image_url}") %>
+  <% end %>
+
 		<%= comment.created_at.to_date %><br>
 	<% end %>
 <% end %>
+<% end %>
+
 
 <% if user_signed_in? %>
-	<%= form_for [@location, @comment] do |f| %>
-	  <%= f.label "Leave a comment for this tour: " %>
-    <%= f.text_field :content %>
-    <%= f.submit "Post" %>
-    <% end %>
-    <%= direct_upload_form_for(@uploader, :html => {:method => :post, :id => 'upload_form', :multipart => true}) do |f| %>
-          <%= f.file_field(:image, :id => "imagefile") %>
-      <%= f.submit(:id => "submitimage") %>
-    <% end %>
+
+
+    <textarea rows="4" cols="50" id="content">
+    </textarea>
+    <button id="submitcomment">
+    Post</button>
+
+    <div id="imageupload"></div>
+    <%# direct_upload_form_for(@uploader, :html => {:method => :post, :id => 'upload_form', :multipart => true}) do |f| %>
+      <%# f.file_field(:image, :id => "imagefile") %>
+      <%# f.submit(:id => "submitimage") %>
+    <%# end %>
 <% end %>
 <%= link_to "Back", @tour %>
-
 <script>
-$('#submitimage').click(function(){
-  ifile = document.getElementById('imagefile');
-    console.log(ifile.files[0]);
-  alert($("#imagefile").value); 
- $(this).closest('form').ajaxSubmit({
-   beforeSubmit: function(a,f,o) {
-      o.dataType = 'json';
-        },
-          complete: function(XMLHttpRequest, textStatus) {
-                          },
-                            });
-                            });
+$('#submitcomment').click(function(){
+  content = document.getElementById('content').value;
+  alert(content);
+  $.post(<%=raw "/locations/#{@location.id}/comments".to_json %>,
+    {
+      content: content,
+      tour_id: <%= raw @tour.id.to_json %>,
+      location_id: <%= raw @location.id.to_json %>
+    },
+    function (data){
+      if (data.status == "ok") {
+        alert("works");
+        // $("#imageupload").html('<img src="http://aun-tv.com/wp-content/uploads/2014/08/kimjungunUniform.jpg">'); 
+        $('#imageupload').load(<%= raw "/tours/#{@tour.id}/locations/#{@location.id}/comments/".to_json %> + data.comment_id + "/imageupload?tour_id=" + <%= raw @tour.id.to_s.to_json %> + "&" + "location_id=" + <%= raw @location.id.to_s.to_json %>);
+        // window.location.replace(<%= raw "/tours/#{@tour.id}/locations/#{@location.id}/comments/".to_json %> + data.comment_id + "/imageupload?tour_id=" + <%= raw @tour.id.to_s.to_json %> + "&" + "location_id=" + <%= raw @location.id.to_s.to_json %>);
+      } else {
+        alert("Invalid Comment")
+      }
+    });
+});
 </script>
-
