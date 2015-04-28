@@ -25,7 +25,7 @@ class LocationsController < ApplicationController
 
   def image_amazon
     @location = Location.find(params[:id])
-    @location.images.create(image_url: params["key"])
+    @location.images.create(image_url: "http://flatirontours.s3.amazonaws.com/#{params["key"]}")
     redirect_to (:back)
   end
 
