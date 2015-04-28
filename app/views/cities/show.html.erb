@@ -6,5 +6,13 @@
 <% end %>
 	<ul><%= link_to tour.title, tour_path(tour)  %><br>
 	<%= tour.description %><br>
-	Last updated: <%= ((Time.now.to_time - tour.updated_at.to_time)/1.hour).round  %> hours ago <br><br></ul>
+	<% duration = (Time.now.to_time - tour.updated_at.to_time) %>
+	<% if (duration/1.hour).floor == 0 %>
+		Last updated: <%= ((duration)/60).floor  %> minutes ago
+	<% elsif  (duration/1.hour).floor == 1 %>
+		Last updated: 1 hour ago
+	<% else %>
+		Last updated: <%= ((duration)/1.hour).floor  %> hour ago
+	<% end %>
+	<br><br></ul>
 <% end %>
