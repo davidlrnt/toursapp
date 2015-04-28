@@ -1,21 +1,4 @@
 
-// [
-//   [1,"Title 1","Description 1", "Tag1", "New York"],
-//   [1,"Title 2","Description 2", "Tag2", "New York"],
-//   [1,"Title 3","Description 3", "Tag3", "New York"],
-//   [1,"Title 3","Description 4", "Tag4", "New York"],
-//   [1,"Title 5","Description 5", "Tag5", "New York"],
-//   [1,"Title 6","Description 6", "Tag6", "New York"],
-//   [1,"Title 7","Description 7", "Tag7", "New York"],
-//   [1,"Title 8","Description 8", "Tag8", "New York"],
-//   [1,"Title 9","Description 9", "Tag9", "New York"],
-//   [1,"Title 10","Description 10", "Tag10", "New York"],
-//   [1,"Title 11","Description 11", "Tag11", "New York"],
-//   [1,"Title 12","Description 12", "Tag12", "New York"]
-// ]
-// "Art","Food","Music","Shopping","Parks","Outdoors","Night Life","History","Architecture"]
-
-// category_id: tour[0] ,title: tour[1] , description: tour[2], guide_id: User.first.id
 [
   {
     "category_id": 6,
@@ -24,7 +7,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Art", "Gallery", "Walking"]
+    "tags": ["Art", "Gallery", "Walking"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/001.jpg"
   },
   {
     "category_id": 6,
@@ -33,7 +17,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Tourist", "Skyline", "I(L)NY"]
+    "tags": ["Tourist", "Skyline", "I(L)NY"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/002.jpg"
   },
   {
     "category_id": 1,
@@ -42,7 +27,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Paintings", "gallery"]
+    "tags": ["Paintings", "gallery"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/003.jpg"
   },
   {
     "category_id": 1,
@@ -51,7 +37,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Books", "Literature"]
+    "tags": ["Books", "Literature"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/004.jpg"
   },
   {
     "category_id": 3,
@@ -60,15 +47,153 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Vinyl", "Records"]
+    "tags": ["Vinyl", "Records"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/005.jpg"
   },
   {
     "category_id": 8,
-    "title": "NY Maffia Tour",
-    "description": "Discover the places where some of the Maffia cappos used to hang-out",
-    "guide_id": 1,
+    "title": "NY Mafia Tour",
+    "description": "Discover the places where some of the Mafia cappos used to hang-out",
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["El Padrino", "Maffia", "Italia"]
+    "tags": ["El Padrino", "Maffia", "Italia"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/006.jpg"
+  },
+  {
+    "category_id": 6,
+    "title": "MAMA MIA!",
+    "description": "Get a pie here in Queens, some of the best pizzerias are here! Look no more.",
+    "guide_id": 2,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Pizza", "Italian", "Pizzerias"]
+  },
+  {
+    "category_id": 6,
+    "title": "Did somebody say coffee? Is it that time already?",
+    "description": "It's late in the afternoon and you have deadlines, you're in Queens and you need to get a cup of Joe. Well, you're in luck!",
+    "guide_id": 2,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Coffee", "Coffee Shops"]
+  },
+  {
+    "category_id": 1,
+    "title": "Museums, galleries, and more!",
+    "description": "Check out the PS1 in Queens, the Museum of the Moving Image, and more!",
+    "guide_id": 2,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Paintings", "Museums"]
+  },
+  {
+    "category_id": 1,
+    "title": "Bars in Queens",
+    "description": "What about bars in Queens? Yes, we have bars in Queens.",
+    "guide_id": 2,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Bars", "Alcohol"]
+  },
+  {
+    "category_id": 3,
+    "title": "Ra-Ra-Ra Ramen",
+    "description": "Slurp on a bowl of ramen, get instantly teleported to a Japanese ramen stand in Queens!",
+    "guide_id": 2,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Ramen", "Japanese"]
+  },
+  {
+    "category_id": 7,
+    "title": "Hustle in Brooklyn",
+    "description": "Sightseeing Around Brooklyn",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["City", "Design", "Building"]
+  },
+  {
+    "category_id": 1,
+    "title": "Brooklyn's Finest Art",
+    "description": "Art Adventure in Brooklyn",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Art", "Gallery", "Paintings"]
+  },
+  {
+    "category_id": 2,
+    "title": "Foodgasm in Brooklyn",
+    "description": "It's All About The Food",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Favorite", "Delicious", "American"]
+  },
+  {
+    "category_id": 4,
+    "title": "Shop Of My Life",
+    "description": "Never Gets Enough",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Branded", "Style", "Money"]
+  },
+	{
+		"category_id": 5,
+		"title": "Trail Me into Brooklyn",
+		"description": "I Feel Dirty But It's Okay",
+		"guide_id": 4,
+		"city": "New York",
+		"published" : true,
+		"tags": ["Wildlife", "Animal", "Park Perks"]
+	},
+    {
+    "category_id": 8,
+    "title": "New York City's Famous movie sights",
+    "description": "Walk around and see famous scenes in movies and shows like Friends, Seinfeld, Men in Black, and Godzilla",
+    "guide_id": 3,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Seinfeld, Movies, Friends, Men in Black, Godzilla"]
+  },
+    {
+    "category_id": 2,
+    "title": "Take a tour of Korea Town",
+    "description": " Have a little taste of Korea in NYC",
+    "guide_id": 3,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Korean BBQ, Night Club, Bar, Supermarket"]
+  },
+    {
+    "category_id": 7,
+    "title": "Best Cocktail Bars in NYC",
+    "description": "Take tour of NYC's most famous experimental cocktail bars",
+    "guide_id": 3,
+    "city": "New York",
+    "published" : true,
+    "tags": ["LES, West Village, Night life, Bars, Cocktail"]
+  },
+    {
+    "category_id": 5,
+    "title": "Abandoned subway stations",
+    "description": "Take tour of New York's forgotten subway stations",
+    "guide_id": 3,
+    "city": "New York",
+    "published" : true,
+    "tags": ["subways staions, closed"]
+  },
+    {
+    "category_id": 2,
+    "title": "3 Star Michelin Restaurants",
+    "description": "Eat food prepared by best chefs in the world.",
+    "guide_id": 3,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Michelin, Restaurant", "New York"]
   }
+
 ]

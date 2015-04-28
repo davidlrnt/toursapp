@@ -42,8 +42,8 @@
 
   <%= javascript_include_tag 'tag-it.js' %>
 
-<script>
 
+<script>
 $( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });

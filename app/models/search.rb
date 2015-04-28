@@ -10,7 +10,7 @@ class Search
 
   def get_tours
     category = Category.find_by(name: @category)
-    @tours = Tour.where(category: category)
+    @tours = Tour.where(category: category, published: true)
     @results = []
     @tours.each do |tour|
       tour.cities.each do |city|

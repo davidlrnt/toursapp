@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
-    current_user.get_badge("review")
+    # current_user.get_badge
     respond_to do |format|
       if @review.save
         format.html { redirect_to @tour, notice: 'Review was successfully created.' }
