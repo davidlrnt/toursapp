@@ -99,7 +99,7 @@ class User < ActiveRecord::Base
   end
 
   def set_average
-    update(average_score: guideratings.sum(:rating).to_f/guideratings.all.count.to_f)
+    update(average_score: (guideratings.sum(:rating).to_f/guideratings.all.count.to_f).round(2) )
   end
 
   def set_count(badge_type)
