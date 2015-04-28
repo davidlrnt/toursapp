@@ -61,7 +61,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/006.jpg"
   },
   {
-    "category_id": 2,
+    "category_id": 6,
     "title": "MAMA MIA!",
     "description": "Get a pie here in Queens, some of the best pizzerias are here! Look no more.",
     "guide_id": 2,
@@ -71,7 +71,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/007.jpg"
   },
   {
-    "category_id": 2,
+    "category_id": 6,
     "title": "Did somebody say coffee? Is it that time already?",
     "description": "It's late in the afternoon and you have deadlines, you're in Queens and you need to get a cup of Joe. Well, you're in luck!",
     "guide_id": 2,
@@ -91,7 +91,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/009.jpg"
   },
   {
-    "category_id": 7,
+    "category_id": 1,
     "title": "Bars in Queens",
     "description": "What about bars in Queens? Yes, we have bars in Queens.",
     "guide_id": 2,
@@ -101,7 +101,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/010.jpg"
   },
   {
-    "category_id": 2,
+    "category_id": 3,
     "title": "Ra-Ra-Ra Ramen",
     "description": "Slurp on a bowl of ramen, get instantly teleported to a Japanese ramen stand in Queens!",
     "guide_id": 2,
@@ -111,7 +111,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/011.jpg"
   },
   {
-    "category_id": 9,
+    "category_id": 7,
     "title": "Hustle in Brooklyn",
     "description": "Sightseeing Around Brooklyn",
     "guide_id": 4,

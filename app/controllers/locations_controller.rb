@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content, :comment]
   protect_from_forgery :except => [:checkin]
 
 
@@ -12,7 +12,11 @@ class LocationsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @tour = Tour.find(params[:id])
+    @uploader = Comment.new.image
+    @uploader.success_action_redirect = "http://localhost:3000/tours/#{@tour.id}/locations/#{@location.id}/comment"
   end
+
 
   def content
     @uploader = Location.new.image

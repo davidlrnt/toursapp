@@ -574,129 +574,128 @@
  },
  {
     "tour_id": 17,
-    "title": "Jerry Seinfeld house address", 
-    "address": "129 West 81st Street, New York, NY, 10024", 
+    "title": "Jerry Seinfeld house address",
+    "address": "129 West 81st Street, New York, NY, 10024",
     "description": "The official street address of the house Jerry Seinfeld used was 129 W. 81st Street, but in reality it looks nothing like the picture they used",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/084.jpg"
   },
   {
     "tour_id": 17,
-    "title": "Flatiron Building", 
-    "address": "175 5th Ave., New York, NY, 10010", 
+    "title": "Flatiron Building",
+    "address": "175 5th Ave., New York, NY, 10010",
     "description": "You’ll recognize from Godzilla and the scene in The Other Guys when Samuel L. Jackson and Dwayne “The Rock” Johnson leap from the top.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/085.jpg"
   },
   {
     "tour_id": 17,
-    "title": "Friends House", 
-    "address": "90 Bedford Street, New York, NY, 10014", 
+    "title": "Friends House",
+    "address": "90 Bedford Street, New York, NY, 10014",
     "description": "This building serves as the exterior for the apartment on Friends, although no scenes featuring cast members were filmed in New York.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/086.jpg"
   },
   {
     "tour_id": 18,
-    "title": "Miss Korea", 
-    "address": "10 W. 32nd St. New York, NY 10001", 
+    "title": "Miss Korea",
+    "address": "10 W. 32nd St. New York, NY 10001",
     "description": "The owner of this restaurant named it for folks who truly miss Korea. Kim said that college students from as far north as Albany and Binghamton drive to the city to eat in K-Town when they are homesick.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/087.jpg"
   },
   {
     "tour_id": 18,
-    "title": "NY Kom Tang", 
-    "address": "32 W 32nd st., New York, NY 10001", 
+    "title": "NY Kom Tang",
+    "address": "32 W 32nd st., New York, NY 10001",
     "description": "This is the inside of NY Komtang House, Kim's father's restaurant. It was featured in an episode of Sex and The City and serves traditional Korean fare.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/088.jpg"
   },
   {
     "tour_id": 18,
-    "title": "K Town Bar", 
-    "address": "34 W. 32nd St., New York, NY 10001", 
+    "title": "K Town Bar",
+    "address": "34 W. 32nd St., New York, NY 10001",
     "description": "This bar is for college students who don't have a lot of money to spend." ,
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/089.jpg"
   },
   {
     "tour_id": 18,
-    "title": "H-Mart", 
-    "address": "25 W. 32nd St., New York, NY 10001", 
+    "title": "H-Mart",
+    "address": "25 W. 32nd St., New York, NY 10001",
     "description": "H-Mart is a Korean grocery store. The small, crowded space is filled with goodies imported from Korea.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/090.jpg"
   },
   {
-    "tour_id": 19, 
-    "title": "Booker & Dax", 
-    "address": "207 2nd Ave., New York, NY 10003", 
+    "tour_id": 19,
+    "title": "Booker & Dax",
+    "address": "207 2nd Ave., New York, NY 10003",
     "description": "Dave Arnold and David Chang collaborated on this cocktail science lab -- home to clarifiers, centrifuges, flaming pokers, and other cocktail wizardry that you'll realize isn't just for show as soon as you settle down with a few of them",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/091.png"
   },
   {
-    "tour_id": 19, 
-    "title": "The Wayland", 
-    "address": "700 E 9th St., New York, NY 10009", 
+    "tour_id": 19,
+    "title": "The Wayland",
+    "address": "700 E 9th St., New York, NY 10009",
     "description": "From a duo that's spent many years bartending, cooking, and consulting in the restaurant biz comes The Wayland, a live-music cocktail bar in the heart of Alphabet City. Connected to the bar is a kitchen that specializes in small plates, including cheese selections, oysters, and BLTs with pulled pork. The cocktails reflect a DIY approach, with hours of prep work just to produce homemade radish, spiced apple, and key lime-flavored bitters.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/092.jpg"
   },
   {
-    "tour_id": 19, 
+    "tour_id": 19,
     "title": "Armor Y Amargo",
-    "address": "443 E. 6th St., New York, NY 10009", 
+    "address": "443 E. 6th St., New York, NY 10009",
     "description": "With room for just a couple seats, this bitters-centric outpost can be both enjoyable and educational if you're not yet versed in the ways of bitters, amaros, and the like. (Editor's note: you're not yet versed in the ways of bitters, amaros, and the like.)",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/093.jpeg"
   },
   {
-    "tour_id": 19, 
-    "title": "Little Branch", 
+    "tour_id": 19,
+    "title": "Little Branch",
     "address": "20 7th Ave. S, New York, NY 10014",
     "description": "This spot's got pretty much everything you could possibly want from a cocktail bar: superbly made drinks created by a team from the Milk & Honey family, an intimate setting complete with a piano, and it's underground. Come on, you love that.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/094.jpg"
   },
   {
     "tour_id": 20,
-    "title": "City Hall Loop", 
-    "address": "City Hall, New York, NY 10007", 
+    "title": "City Hall Loop",
+    "address": "City Hall, New York, NY 10007",
     "description": "South of Brooklyn Bridge – City Hall on a curved balloon loop. Closed due to low ridership, short platform length and the proximity of the busier Brooklyn Bridge – City Hall station.{6} Listed on the National Register of Historic Places.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/095.jpg"
   },
   {
     "tour_id": 20,
-    "title": "Court Street", 
+    "title": "Court Street",
     "address":"Clinton St & Montague St, New York, NY 11201",
     "description": "West of Hoyt–Schermerhorn Streets. Closed due to low ridership and proximity to other Downtown Brooklyn stations. Site now houses the New York Transit Museum.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/096.jpg"
   },
   {
     "tour_id": 20,
-    "title": "Jerome Anderson Station", 
-    "address": "1020 Jerome Ave., Bronx, NY 10452", 
+    "title": "Jerome Anderson Station",
+    "address": "1020 Jerome Ave., Bronx, NY 10452",
     "description":"North of the 155th Street station, the elevated line crossed the Harlem River and went into a tunnel similarly to how the 125th Street subway station comes out of the tunnel onto a high viaduct. This was done in both places to keep the grade of the tracks relatively level. Closed with the discontinuation of the Polo Grounds Shuttle.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/097.jpg"
   },
   {
-    "tour_id": 21, 
+    "tour_id": 21,
     "title": "Eleven Madison Park",
-    "address": "11 Madison Ave., New York, NY 10010", 
+    "address": "11 Madison Ave., New York, NY 10010",
     "description": "Since arriving at Eleven Madison Park seven years ago, the talented Swiss chef has earned many awards (a James Beard, for one), accumulated countless stars (from Michelin, among others), and won rave reviews",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/098.jpg"
   },
   {
-    "tour_id": 21, 
-    "title": "Jean Georges", 
-    "address": "1 Central Park West, New York, NY 10023", 
+    "tour_id": 21,
+    "title": "Jean Georges",
+    "address": "1 Central Park West, New York, NY 10023",
     "description": "Nothing you encounter will fail to awe, from the simplest dish of sea scallops with caper-raisin emulsion to the unexpected combo of sweetbreads en cocotte with ginger and licorice.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/099.jpg"
   },
   {
-    "tour_id": 21, 
-    "title": "Masa", 
+    "tour_id": 21,
+    "title": "Masa",
     "address": "10 Columbus Circle, New York, NY 10019",
     "description":  "Masa Takayama, the illustrious sushi god from L.A., came to New York with a uniquely Japanese, if slightly insane proposition: that a meal of the highest quality is worth almost any price.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/100.jpg"
   },
   {
-    "tour_id": 21, 
-    "title": "Per Se", 
-    "address": "10 Columbus Circle, New York, NY 10019", 
+    "tour_id": 21,
+    "title": "Per Se",
+    "address": "10 Columbus Circle, New York, NY 10019",
     "description": "The French Laundry is widely touted as the best restaurant in America, and Per Se seems to have been conceived, rather self-consciously, as its august big-city sibling.",
-    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"}
-
-
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"
+  }
 ]
