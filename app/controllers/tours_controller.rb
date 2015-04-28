@@ -33,7 +33,7 @@ class ToursController < ApplicationController
     @tour.cities << city
 		@tour.tags << set_tags
     current_user.tours << @tour
-		current_user.get_badge
+		# current_user.get_badge
     respond_to do |format|
       if @tour.save
         @uploader = Tour.new.image

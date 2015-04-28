@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       @uploader.success_action_redirect = "http://localhost:3000/users/#{@user.id}/amazon"
       @tours = @user.tours
       @trips = @user.trips
+      @user.get_badge
       render 'personal_show'
     end
   end
