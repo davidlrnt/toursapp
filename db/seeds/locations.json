@@ -395,7 +395,7 @@
    "title": "Mu Ramen",
    "address": "12-09 Jackson Ave, Long Island City, NY 11101",
    "description": "Triumph in a bowl with Spectacular service. The chef is truly a seasoned veteran at this game called ramen.",
-   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/057.jpg"
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/056.jpg"
  },
  {
    "tour_id": 12,
@@ -697,6 +697,5 @@
     "address": "10 Columbus Circle, New York, NY 10019", 
     "description": "The French Laundry is widely touted as the best restaurant in America, and Per Se seems to have been conceived, rather self-consciously, as its august big-city sibling.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"}
-
 
 ]
