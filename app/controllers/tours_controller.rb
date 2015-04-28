@@ -22,7 +22,6 @@ class ToursController < ApplicationController
 
   def create
     city = set_city
-    binding.pry
     if params["tour"]["cities_attributes"]["0"]["name"].empty?
       flash[:alert] = "You have to give a city."
       redirect_to(:back)

@@ -18,8 +18,17 @@ class Location < ActiveRecord::Base
   has_many :audios
   has_many :videos
 
+  # before_create :set_coordinates
+
   def get_coordinates
     zipcode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?'
     api_response = HTTParty.get(zipcode_uri, :query => {:address => self.address})["results"][0]["geometry"]["location"]
+  end
+
+  def set_coordinates
+    sleep(0.2)
+    zipcode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?'
+    api_response = HTTParty.get(zipcode_uri, :query => {:address => address})["results"][0]["geometry"]["location"]
+    update(api_response)
   end
 end
