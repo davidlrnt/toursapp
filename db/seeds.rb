@@ -63,7 +63,7 @@ end
 
 reviews = JSON.parse(File.read("db/seeds/reviews.json"))
 reviews.each do |review|
-  Review.create!(participant_id: review[participant_id], tour_id: review["tour_id"], content: review["content"], rating: review["rating"])
+  Review.create!(participant_id: review["participant_id"], tour_id: review["tour_id"], content: review["content"], rating: review["rating"])
 end
 
 locations = JSON.parse(File.read("db/seeds/locations.json"))
