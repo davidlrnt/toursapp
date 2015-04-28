@@ -55,6 +55,11 @@ tours = JSON.parse(File.read("db/seeds/tours.json"))
   end
 end
 
+comments = JSON.parse(File.read("db/seeds/comments.json"))
+comments.each do |comment|
+  Comment.create!(participant_id: comment["participant_id"], location_id: comment["location_id"], tour_id: comment["tour_id"], content: comment["content"])
+end
+
 locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|
     tour = Tour.find_by_id(location["tour_id"])
