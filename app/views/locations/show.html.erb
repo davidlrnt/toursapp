@@ -20,12 +20,14 @@
 <p><%= @location.description %></p><br>
 <%= @location.address if @location.address %><br>
 
-
-<% if current_user.checked_in_locations.include?(@location) %>
-<p>You've been here</p>
-<% else %>
-<button id="check" onclick="getLocation()">Check In!</button>
-<p id="checkp"></p>
+<% if user_signed_in?  %>
+<% binding.pry %>
+  <% if current_user.checked_in_locations.include?(@location) %>
+  <p>You've been here</p>
+  <% else %>
+  <button id="check" onclick="getLocation()">Check In!</button>
+  <p id="checkp"></p>
+  <% end %>
 <% end %>
 <p id="demo"></p>
 

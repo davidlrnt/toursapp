@@ -80,6 +80,7 @@ class ToursController < ApplicationController
 	def participate
 		user = User.find_by(id: params[:user_id])
 		@tour.participate(user)
+		binding.pry
 		redirect_to @tour
 	end
 

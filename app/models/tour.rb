@@ -26,6 +26,7 @@ class Tour < ActiveRecord::Base
 
   def participate(user)
     self.participants << user
+    self.locations.each {|location| user.places << location}
   end
 
   def quit(user)
