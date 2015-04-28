@@ -1,6 +1,6 @@
 
 // [
-//   [2,"Title 1","Description 1", "Tag1", "New York"],
+//   [1,"Title 1","Description 1", "Tag1", "New York"],
 //   [1,"Title 2","Description 2", "Tag2", "New York"],
 //   [1,"Title 3","Description 3", "Tag3", "New York"],
 //   [1,"Title 3","Description 4", "Tag4", "New York"],
@@ -66,7 +66,7 @@
     "category_id": 8,
     "title": "NY Maffia Tour",
     "description": "Discover the places where some of the Maffia cappos used to hang-out",
-    "guide_id": 1,
+    "guide_id": 2,
     "city": "New York",
     "published" : true,
     "tags": ["El Padrino", "Maffia", "Italia"]
@@ -90,7 +90,7 @@
     "tags": ["Coffee", "Coffee Shops"]
   },
   {
-    "category_id": 2,
+    "category_id": 1,
     "title": "Museums, galleries, and more!",
     "description": "Check out the PS1 in Queens, the Museum of the Moving Image, and more!",
     "guide_id": 2,
@@ -99,7 +99,7 @@
     "tags": ["Paintings", "Museums"]
   },
   {
-    "category_id": 2,
+    "category_id": 1,
     "title": "Bars in Queens",
     "description": "What about bars in Queens? Yes, we have bars in Queens.",
     "guide_id": 2,
@@ -115,5 +115,51 @@
     "city": "New York",
     "published" : true,
     "tags": ["Ramen", "Japanese"]
-  }
+  },
+  {
+    "category_id": 7,
+    "title": "Hustle in Brooklyn",
+    "description": "Sightseeing Around Brooklyn",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["City", "Design", "Building"]
+  },
+  {
+    "category_id": 1,
+    "title": "Brooklyn's Finest Art",
+    "description": "Art Adventure in Brooklyn",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Art", "Gallery", "Paintings"]
+  },
+  {
+    "category_id": 2,
+    "title": "Foodgasm in Brooklyn",
+    "description": "It's All About The Food",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Favorite", "Delicious", "American"]
+  },
+  {
+    "category_id": 4,
+    "title": "Shop Of My Life",
+    "description": "Never Gets Enough",
+    "guide_id": 4,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Branded", "Style", "Money"]
+  },
+	{
+		"category_id": 5,
+		"title": "Trail Me into Brooklyn",
+		"description": "I Feel Dirty But It's Okay",
+		"guide_id": 4,
+		"city": "New York",
+		"published" : true,
+		"tags": ["Wildlife", "Animal", "Park Perks"]
+	}
+
 ]
