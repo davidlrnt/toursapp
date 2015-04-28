@@ -1,15 +1,74 @@
 
+// [
+//   [1,"Title 1","Description 1", "Tag1", "New York"],
+//   [1,"Title 2","Description 2", "Tag2", "New York"],
+//   [1,"Title 3","Description 3", "Tag3", "New York"],
+//   [1,"Title 3","Description 4", "Tag4", "New York"],
+//   [1,"Title 5","Description 5", "Tag5", "New York"],
+//   [1,"Title 6","Description 6", "Tag6", "New York"],
+//   [1,"Title 7","Description 7", "Tag7", "New York"],
+//   [1,"Title 8","Description 8", "Tag8", "New York"],
+//   [1,"Title 9","Description 9", "Tag9", "New York"],
+//   [1,"Title 10","Description 10", "Tag10", "New York"],
+//   [1,"Title 11","Description 11", "Tag11", "New York"],
+//   [1,"Title 12","Description 12", "Tag12", "New York"]
+// ]
+// "Art","Food","Music","Shopping","Parks","Outdoors","Night Life","History","Architecture"]
+
+// category_id: tour[0] ,title: tour[1] , description: tour[2], guide_id: User.first.id
 [
-  [1,"Title 1","Description 1", "Tag1", "New York"],
-  [1,"Title 2","Description 2", "Tag2", "New York"],
-  [1,"Title 3","Description 3", "Tag3", "New York"],
-  [1,"Title 3","Description 4", "Tag4", "New York"],
-  [1,"Title 5","Description 5", "Tag5", "New York"],
-  [1,"Title 6","Description 6", "Tag6", "New York"],
-  [1,"Title 7","Description 7", "Tag7", "New York"],
-  [1,"Title 8","Description 8", "Tag8", "New York"],
-  [1,"Title 9","Description 9", "Tag9", "New York"],
-  [1,"Title 10","Description 10", "Tag10", "New York"],
-  [1,"Title 11","Description 11", "Tag11", "New York"],
-  [1,"Title 12","Description 12", "Tag12", "New York"]
+  {
+    "category_id": 6,
+    "title": "Upper East Side Tour",
+    "description": "Discover the Upper East Side",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Art", "Gallery", "Walking"]
+  },
+  {
+    "category_id": 6,
+    "title": "Manhattan classic touristy spots",
+    "description": "The 'tourist' must see places in Manhattan",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Tourist", "Skyline", "I(L)NY"]
+  },
+  {
+    "category_id": 1,
+    "title": "Art galleries in Manhattan",
+    "description": "Cool art galleries in the city",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Paintings", "gallery"]
+  },
+  {
+    "category_id": 1,
+    "title": "Bookstores in Manhattan",
+    "description": "Missing the days before e-readers? Visit some of the most famous book stores in the city",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Books", "Literature"]
+  },
+  {
+    "category_id": 3,
+    "title": "Vinyl Freaks Tour",
+    "description": "Dust, piles of records and more dust! Discover the best record stores in the city",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["Vinyl", "Records"]
+  },
+  {
+    "category_id": 8,
+    "title": "NY Maffia Tour",
+    "description": "Discover the places where some of the Maffia cappos used to hang-out",
+    "guide_id": 1,
+    "city": "New York",
+    "published" : true,
+    "tags": ["El Padrino", "Maffia", "Italia"]
+  }
 ]

@@ -1,13 +1,251 @@
 [
-  [1,"Central park",40.782865,-73.965355,5],
-  [1,"Bryant park",40.753596,-73.983233,4],
-  [1,"Empire state building",40.74844,-73.985664,1],
-  [1,"Sunset park",40.645297,-74.0133405,6],
-  [1,"Gramercy park",40.7357564,-73.9836622,2],
-  [1,"Riverside park",40.8014939,-73.97231,3],
-  [2,"Toby's Estate Coffee",40.717977,-73.959226,1],
-  [2,"Paris Baguette",40.747301,-73.986336,4],
-  [2,"Cafe bene",40.760745,-73.984908,2],
-  [2,"Blue Bottle Coffee",40.7171964,-73.9597088,3],
-  [2,"Think Coffee",40.7254314,-73.9924747,5]
+  {
+    "tour_id": 1,
+    "title": "Frick Collection",
+    "address": "1 E. 70th St., Fifth Ave., New York City, NY 10021",
+    "description": "The Frick Collection is an art museum located in the Henry Clay Frick House on the Upper East Side in Manhattan, New York City at 1 East 70th Street, at the northeast corner with Fifth Avenue. It houses the collection of industrialist Henry Clay Frick (1849–1919)."
+  },
+  {
+    "tour_id": 1,
+    "title": "The Jewish Museum",
+    "address": "1109 Fifth Avenue, New York City, NY 10128",
+    "description": "The Jewish Museum is an art museum and repository of cultural artifacts, housed at 1109 Fifth Avenue, in the former Felix M. Warburg House, along the Museum Mile in the Upper East Side of Manhattan, New York City. The leading Jewish museum in the United States, it contains the largest collection of art and Jewish culture excluding Israeli museums, with 26,000 objects. While its collection was established in 1904 at the Jewish Theological Seminary of America, the museum did not open to the public until 1947. It focuses both on artifacts of Jewish history and on modern and contemporary art. Its permanent exhibition, Culture and Continuity: The Jewish Journey, is supplemented by both rotating and special exhibitions."
+  },
+  {
+    "tour_id": 1,
+    "title": "Society of Illustrators",
+    "address": "128 East 63rd Street, New York City, NY10021",
+    "description": "The Museum of American Illustration was established in 1981. Today the permanent collection includes nearly 1800 works by such artists as Norman Rockwell, Howard Pyle, N.C. Wyeth, James Montgomery Flagg, Bob Peak and Bernie Fuchs. 2001 was the Society's centennial year, a 12-month celebration begun with the U.S. Postal issue, Great American Illustrators. That year was punctuated with the 9/11 Memorial Exhibition, Prevailing Human Spirit."
+  },
+  {
+    "tour_id": 1,
+    "title": "Carl Schurz Park",
+    "address": "Carl Schurz Park, East 86th Street & East End Ave, New York, NY 10028",
+    "description": "Carl Schurz Park is a 14.9 acres (6.0 ha) public park in the Yorkville neighborhood of Manhattan, New York City, named for German-born Secretary of the Interior Carl Schurz in 1910, at the edge of what was then a solidly German-American community of Yorkville."
+  },
+  {
+    "tour_id": 1,
+    "title": "Cooper Hewitt Smithsonian Design Museum",
+    "address": "2 E 91st Street, New York City, NY 10128",
+    "description": "Cooper–Hewitt, Smithsonian Design Museum is a design museum located in the Upper East Side's Museum Mile in Manhattan, New York City. It is one of nineteen museums that fall under the wing of the Smithsonian Institution and is one of two Smithsonian museums located in New York City, the other being the George Gustav Heye Center in Bowling Green. It is the only museum in the United States devoted to historical and contemporary design. Its collections and exhibitions explore approximately 240 years of design aesthetic and creativity."
+  },
+  {
+    "tour_id": 2,
+    "title": "Central park",
+    "address": "Central Park, New York City, NY 10022",
+    "description": "Central Park is an urban park in the central part of the borough of Manhattan, New York City. It was initially opened in 1857, on 778 acres (315 ha) of city-owned land, later expanding to its current size of 843 acres (341 ha)."
+  },
+  {
+    "tour_id": 2,
+    "title": "The Metropolitan Museum of Art",
+    "address": "1000 5th Ave, New York City, NY 10028-0198",
+    "description": "The Metropolitan Museum of Art (colloquially The Met), located in New York City, is the largest art museum in the United States and one of the ten largest in the world.[7] Its permanent collection contains more than two million works, divided among seventeen curatorial departments.[8] The main building, located on the eastern edge of Central Park along Manhattan's Museum Mile, is by area one of the world's largest art galleries. There is also a much smaller second location at The Cloisters in Upper Manhattan that features medieval art."
+  },
+  {
+    "tour_id": 2,
+    "title": "Top of the Rock Observation Deck",
+    "address": "30 Rockefeller Center, New York City, NY",
+    "description": "The observation deck atop the skyscraper, dubbed 'Top of the Rock', reopened to the public on November 1, 2005, after undergoing a $75 million renovation. It had been closed since 1986 to accommodate the renovation of the Rainbow Room. The deck, which is built to resemble the deck of an ocean liner, offers sightseers a bird's eye view of the city, competing with the 86th floor observatory of the Empire State Building.[16] It is often considered the best panoramic city view,[17] if only because it offers a view of the aforementioned Empire State Building, which cannot be seen from its own observation deck.[18] The timed entry system and larger observation deck also results in shorter waiting times compared to the Empire State."
+  },
+  {
+    "tour_id": 2,
+    "title": "Grand Central Terminal",
+    "address": "42nd Street and Park Avenue, New York City,NY 10017",
+    "description": "Grand Central Terminal (GCT) is a commuter (and former intercity) railroad terminal at 42nd Street and Park Avenue in Midtown Manhattan in New York City, United States.[N 1] Built by and named for the New York Central Railroad in the heyday of American long-distance passenger rail travel, it covers 48 acres (19 ha) and has 44 platforms, more than any other railroad station in the world.[5] Its platforms, all below ground, serve 41 tracks on the upper level and 26 on the lower, though the total number of tracks along platforms and in rail yards exceeds 100."
+  },
+  {
+    "tour_id": 3,
+    "title": "David Zwirner Gallery",
+    "address": "525 W 19th St New York, NY 10011",
+    "description": "David Zwirner Gallery is a contemporary art gallery in New York City and London owned by David Zwirner that is active both the primary and secondary markets. The gallery opened in 1993 on the ground floor of 43 Greene Street in SoHo"
+  },
+  {
+    "tour_id": 3,
+    "title": "Jonathan LeVine Gallery",
+    "address": "529 W 20th St New York, NY 10011",
+    "description": "Gallery known for exhibiting street art, graffiti & paintings inspired by comic books."
+  },
+  {
+    "tour_id": 3,
+    "title": "The Pace Gallery",
+    "address": "534 W 25th St New York, NY 10001",
+    "description": "The Pace Gallery is a contemporary and modern art gallery founded by Arne Glimcher in Boston 1960 as The Pace Gallery."
+  },
+  {
+    "tour_id": 3,
+    "title": "Opera Gallery",
+    "address": "115 Spring St New York, NY 10012",
+    "description": "Opera Gallery is a network of 11 contemporary art galleries worldwide that were first opened in 1994 by Gilles Dyan."
+  },
+  {
+    "tour_id": 3,
+    "title": "Triton Gallery",
+    "address": "195 10th Ave New York, NY 10011",
+    "description": "Triton Gallery has the largest collection of theatrical posters in the world, including current Broadway shows, national tours and foreign productions."
+  },
+  {
+    "tour_id": 3,
+    "title": "Philip Williams Posters",
+    "address": "122 Chambers St New York, NY 10007",
+    "description": "Narrow retail gallery densely packed with 1000s of vintage posters & prints from around the world."
+  },
+  {
+    "tour_id": 4,
+    "title": "Strand Bookstore",
+    "address": "828 Broadway New York, NY 10003",
+    "description": "Sartorial selvage PBR distillery cold-pressed next level Shoreditch, sriracha you probably haven't heard of them taxidermy Echo Park meditation asymmetrical. Cold-pressed ethical pop-up blog."
+  },
+  {
+    "tour_id": 4,
+    "title": "McNally Jackson",
+    "address": "52 Prince St, New York, NY 10012",
+    "description": "Marfa PBR B whatever wayfarers, meggings bicycle rights forage organic Helvetica."
+  },
+  {
+    "tour_id": 4,
+    "title": "Three Lives & Company",
+    "address": "154 W 10th St New York, NY 10014",
+    "description": "Umami drinking vinegar sriracha, Etsy vinyl street art artisan Neutra skateboard selvage you probably haven't heard of them crucifix chia selfies 8-bit."
+  },
+  {
+    "tour_id": 4,
+    "title": "bookbook",
+    "address": "266 Bleecker St New York, NY 10014",
+    "description": "Ethical cronut street art put a bird on it, meditation VHS Bushwick before they sold out crucifix."
+  },
+  {
+    "tour_id": 4,
+    "title": "Book Culture",
+    "address": "450 Columbus Ave New York, NY 10024",
+    "description": " Artisan lumbersexual cornhole, whatever bitters Williamsburg Banksy letterpress scenester tousled gastropub paleo Truffaut American Apparel."
+  },
+  {
+    "tour_id": 4,
+    "title": "Kinokuniya Bookstores",
+    "address": "1073 Ave of the Americas New York, NY 10018",
+    "description": "Art party fap distillery banjo craft beer, DIY skateboard disrupt banh mi 8-bit blog church-key salvia."
+  },
+  {
+    "tour_id": 5,
+    "title": "Westsider Records",
+    "address": "233 W 72nd St New York, NY 10023",
+    "description": "Sartorial selvage PBR distillery cold-pressed next level Shoreditch, sriracha you probably haven't heard of them taxidermy Echo Park meditation asymmetrical. Cold-pressed ethical pop-up blog."
+  },
+  {
+    "tour_id": 5,
+    "title": "Good Records NYC",
+    "address": "218 E 5th St New York, NY 10003",
+    "description": "Marfa PBR&B whatever wayfarers, meggings bicycle rights forage organic Helvetica. "
+  },
+  {
+    "tour_id": 5,
+    "title": "Record Mart",
+    "address": "7 Times Sq New York, NY 10036",
+    "description": "Umami drinking vinegar sriracha, Etsy vinyl street art artisan Neutra skateboard selvage you probably haven't heard of them crucifix chia selfies 8-bit."
+  },
+  {
+    "tour_id": 5,
+    "title": "Generation Records",
+    "address": "210 Thompson St New York, NY 10012",
+    "description": "Ethical cronut street art put a bird on it, meditation VHS Bushwick before they sold out crucifix. "
+  },
+  {
+    "tour_id": 5,
+    "title": "Academy Records & CDs",
+    "address": "12 W 18th St New York, NY 10011",
+    "description": " Artisan lumbersexual cornhole, whatever bitters Williamsburg Banksy letterpress scenester tousled gastropub paleo Truffaut American Apparel."
+  },
+  {
+    "tour_id": 5,
+    "title": "Bleecker Street Records",
+    "address": "188 W 4th St New York, NY 10014",
+    "description": "Art party fap distillery banjo craft beer, DIY skateboard disrupt banh mi 8-bit blog church-key salvia."
+  },
+  {
+    "tour_id": 6,
+    "title": "Sparks Steakhouse",
+    "address": "210 E 46th Street New York, NY",
+    "description": "Known for its fine steaks and chops, Sparks is also known for the sensational rubout of Godfather Paul Castellano. He was gunned down in front of the renowned restaurant in a bloody coup that saw the ascendancy of John Gotti as the boss of the Gambino crime family. The afternoon shooting occurred on December 16, 1985. The restaurant remains a popular eatery, and has a unique place in New York Mafia history."
+  },
+  {
+    "tour_id": 6,
+    "title": "Rao’s Restaurant",
+    "address": "455 E. 114 Street New York, NY",
+    "description": "Rao’s sits on the corner of 114th and Pleasant Avenue, but it wasn’t a very pleasant experience when Louie “Lump Lump” Barone turned and shot wiseguy Albert Circelli at the bar on December 22, 2003. Barone got angry when Circelli complained about a patron’s singing and then cursed out Barone who told him to shut up. Circelli died trying to run out the door."
+  },
+  {
+    "tour_id": 6,
+    "title": "Park Central Hotel",
+    "address": "870 Seventh Avenue New York, NY",
+    "description": "On October 25, 1957, the then-Park Sheraton Hotel was the location of one of the most brazen rubouts in mob history. Mafia boss Albert Anastasia was gunned down in the corner barbershop as he sat in the chair for a shave and a haircut. The barbershop is now a Starbucks."
+  },
+  {
+    "tour_id": 6,
+    "title": "Triangle Social Club",
+    "address": "208 Sullivan Street New York, NY",
+    "description": "The stronghold for Vincent “The Chin” Gigante, former boss of the Genovese Crime Family. He grew up in the neighborhood – his mother lived down the block – and conducted mob business out of this unassuming location. But unlike well–dressed counterpart John Gotti, who worked just a neighborhood over, Gigante could be seen walking along the street in bathrobe and slippers. This earned him the name “The Oddfather.” He died in prison in 2005. The Triangle Social Club club is now the Sullivan Street Tea and Spice Company."
+  },
+  {
+    "tour_id": 6,
+    "title": "Lucali’s Restaurant",
+    "address": "575 Henry Street  Brooklyn",
+    "description": "Known for its thin-crust pizza and visits from celebrities like Jay-Z and Beyonce, Lucali’s is also known for owner Mark Iacono’s recent knock-about with wiseguy Benny Geritano. Both stabbed each other in June during a fight and ended up in separate hospitals. Some say it was over a girlfriend, but neither guy was talking, so the charges were dropped. Geritano had recently been released from prison. Lucali’s was closed briefly, but reopened again, on a block in the cozy Carroll Gardens section known for its 'social clubs.'"
+  },
+  {
+    "tour_id": 6,
+    "title": "Ravenite Social Club (Now Closed)",
+    "address": "247 Mulberry Street New York",
+    "description": "John Gotti presided over the powerful Gambino crime family in this modest ground-floor walk-up in the trendy Nolita section of Manhattan. He held meetings, and threatened to kill (and did kill) those who wouldn’t attend. The FBI learned his secret meeting place upstairs and wired it up, recording conversations that led to his conviction."
+  },
+  {
+    "tour_id": 6,
+    "title": "Columbus Circle",
+    "address": "59 St Columbus Circle New York",
+    "description": "Mob boss Joe Colombo was gunned down during a Unity Day rally June 28, 1978, as part of a violent struggle for control of the Profaci-Colombo crime family. Although hundreds of people witnessed the shooting, no one was ever caught. Some say “Crazy” Joe Gallo was behind the shooting. A year later, Gallo was murdered in Umberto’s Clam House on Mulberry Street in Little Italy."
+  }
+
+
+
+
+
+
+
+
 ]
+
+
+
+// Maffia tour
+
+// 1. Sparks Steakhouse - 210 E 46th Street - Known for its fine steaks and chops, Sparks is also known for the sensational rubout of Godfather Paul Castellano. He was gunned down in front of the renowned restaurant in a bloody coup that saw the ascendancy of John Gotti as the boss of the Gambino crime family. The afternoon shooting occurred on December 16, 1985. The restaurant remains a popular eatery, and has a unique place in New York Mafia history. - http://cbsnewyork.files.wordpress.com/2010/12/sparks.jpg?w=420
+
+// 2.Rao’s Restaurant - 455 E. 114 Street
+// Rao’s sits on the corner of 114th and Pleasant Avenue, but it wasn’t a very pleasant experience when Louie “Lump Lump” Barone turned and shot wiseguy Albert Circelli at the bar on December 22, 2003. Barone got angry when Circelli complained about a patron’s singing and then cursed out Barone who told him to shut up. Circelli died trying to run out the door.
+// http://cbsnewyork.files.wordpress.com/2011/11/1466919.jpg?w=300&h=203
+// 3.Park Central Hotel - 870 Seventh Avenue
+// On October 25, 1957, the then-Park Sheraton Hotel was the location of one of the most brazen rubouts in mob history. Mafia boss Albert Anastasia was gunned down in the corner barbershop as he sat in the chair for a shave and a haircut. The barbershop is now a Starbucks.
+// http://cbsnewyork.files.wordpress.com/2011/11/park-central-hotel.jpg?w=300&h=180
+
+// 4. Triangle Social Club
+// 208 Sullivan Street
+// The stronghold for Vincent “The Chin” Gigante, former boss of the Genovese Crime Family. He grew up in the neighborhood – his mother lived down the block – and conducted mob business out of this unassuming location. But unlike well–dressed counterpart John Gotti, who worked just a neighborhood over, Gigante could be seen walking along the street in bathrobe and slippers. This earned him the name “The Oddfather.” He died in prison in 2005. The Triangle Social Club club is now the Sullivan Street Tea and Spice Company.
+// http://cbsnewyork.files.wordpress.com/2011/11/52023808.jpg?w=300&h=250
+
+// 5.Lucali’s Restaurant
+// ￼575 Henry Street Brooklyn
+// Known for its thin-crust pizza and visits from celebrities like Jay-Z and Beyonce, Lucali’s is also known for owner Mark Iacono’s recent knock-about with wiseguy Benny Geritano. Both stabbed each other in June during a fight and ended up in separate hospitals. Some say it was over a girlfriend, but neither guy was talking, so the charges were dropped. Geritano had recently been released from prison. Lucali’s was closed briefly, but reopened again, on a block in the cozy Carroll Gardens section known for its “social clubs.”
+// http://cbsnewyork.files.wordpress.com/2011/01/pizza-generic.jpg?w=300&h=225
+
+// 6.Ravenite Social Club (Now Closed)
+// ￼
+// 247 Mulberry Street New York
+// John Gotti presided over the powerful Gambino crime family in this modest ground-floor walk-up in the trendy Nolita section of Manhattan. He held meetings, and threatened to kill (and did kill) those who wouldn’t attend. The FBI learned his secret meeting place upstairs and wired it up, recording conversations that led to his conviction.
+// http://cbsnewyork.files.wordpress.com/2011/11/57483323.jpg?w=300&h=207
+
+
+
+// 7Columbus Circle
+// ￼59th Street and Broadway
+// Mob boss Joe Colombo was gunned down during a Unity Day rally June 28, 1978, as part of a violent struggle for control of the Profaci-Colombo crime family. Although hundreds of people witnessed the shooting, no one was ever caught. Some say “Crazy” Joe Gallo was behind the shooting. A year later, Gallo was murdered in Umberto’s Clam House on Mulberry Street in Little Italy.
+
+// http://cbsnewyork.files.wordpress.com/2011/01/columbus-circle.jpg?w=300&h=200
