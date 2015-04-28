@@ -165,7 +165,7 @@
     "category_id": 8,
     "title": "New York City's Famous movie sights",
     "description": "Walk around and see famous scenes in movies and shows like Friends, Seinfeld, Men in Black, and Godzilla",
-    "guide_id": 1,
+    "guide_id": 3,
     "city": "New York",
     "published" : true,
     "tags": ["Seinfeld, Movies, Friends, Men in Black, Godzilla"]
@@ -174,7 +174,7 @@
     "category_id": 2,
     "title": "Take a tour of Korea Town",
     "description": " Have a little taste of Korea in NYC",
-    "guide_id": 1,
+    "guide_id": 3,
     "city": "New York",
     "published" : true,
     "tags": ["Korean BBQ, Night Club, Bar, Supermarket"]
@@ -183,7 +183,7 @@
     "category_id": 7,
     "title": "Best Cocktail Bars in NYC",
     "description": "Take tour of NYC's most famous experimental cocktail bars",
-    "guide_id": 1,
+    "guide_id": 3,
     "city": "New York",
     "published" : true,
     "tags": ["LES, West Village, Night life, Bars, Cocktail"]
@@ -192,7 +192,7 @@
     "category_id": 5,
     "title": "Abandoned subway stations",
     "description": "Take tour of New York's forgotten subway stations",
-    "guide_id": 1,
+    "guide_id": 3,
     "city": "New York",
     "published" : true,
     "tags": ["subways staions, closed"]
@@ -201,7 +201,7 @@
     "category_id": 2,
     "title": "3 Star Michelin Restaurants",
     "description": "Eat food prepared by best chefs in the world.",
-    "guide_id": 1,
+    "guide_id": 3,
     "city": "New York",
     "published" : true,
     "tags": ["Michelin, Restaurant", "New York"]
