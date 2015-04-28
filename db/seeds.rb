@@ -60,5 +60,4 @@ locations = JSON.parse(File.read("db/seeds/locations.json"))
     tour = Tour.find_by_id(location["tour_id"])
     l = tour.locations.create(title: location["title"], address: location["address"], description: location["description"] )
     l.set_coordinates
-    # binding.pry
 end
