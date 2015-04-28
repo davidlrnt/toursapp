@@ -50,6 +50,7 @@ tours = JSON.parse(File.read("db/seeds/tours.json"))
   tours.each do |tour|
   c = City.find_by(name: tour["city"].downcase)
   t = c.tours.create!(category_id: tour["category_id"] ,title: tour["title"] , description: tour["description"], guide_id: tour["guide_id"], published: tour["published"] )
+  t.images.create(image_url: tour["image"])
   tour["tags"].each do |tag|
   t.tags.create!(name: tag)
   end

@@ -38,8 +38,12 @@
 <ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
+  <% if current_user %>
     <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-    <%= location.address %><br>
+  <% else %>
+  <li><%= location.title %></li>
+  <% end %>
+    <%= location.address %><br><br>
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>

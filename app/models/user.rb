@@ -81,8 +81,10 @@ class User < ActiveRecord::Base
     badges_keys.each do |badge|
       counter = set_count(badge)
       if counter <= 5 && counter > 0
-        @badge = Badge.find_badge(badge, counter)
-        self.badges << @badge if !self.badges.include?(@badge)
+        @badges = Badge.find_badge(badge)
+        @badges.each do |badge|
+          self.badges << badge if badge.requirement <= counter && !self.badges.include?(badge)
+        end
       end
     end
   end
