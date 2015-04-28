@@ -1,13 +1,160 @@
-[
-  [1,"Central park",40.782865,-73.965355,5],
-  [1,"Bryant park",40.753596,-73.983233,4],
-  [1,"Empire state building",40.74844,-73.985664,1],
-  [1,"Sunset park",40.645297,-74.0133405,6],
-  [1,"Gramercy park",40.7357564,-73.9836622,2],
-  [1,"Riverside park",40.8014939,-73.97231,3],
-  [2,"Toby's Estate Coffee",40.717977,-73.959226,1],
-  [2,"Paris Baguette",40.747301,-73.986336,4],
-  [2,"Cafe bene",40.760745,-73.984908,2],
-  [2,"Blue Bottle Coffee",40.7171964,-73.9597088,3],
-  [2,"Think Coffee",40.7254314,-73.9924747,5]
-]
+{
+   "tour_id": 7,
+   "title": "Bruno's",
+   "address": "15822 Cross Bay Blvd., Howard Beach, NY 11414",
+   "description": "Definitely one of the finest brick oven pizzas my family has had. You can always count on a friendly atmosphere and an accommodating staff.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/035.jpg"
+ },
+ {
+   "tour_id": 7,
+   "title": "Il Falco",
+   "address": "21-50 44th Dr, Long Island City, NY 11101",
+   "description": "Service, attention, light hearted not stuffy. Private feeling, no intrusion. Expensive but absolutely top notch food. Great attention to detail. Fresh seafood. Special occasions, special person, they will be impressed by the intimacy, wait staff and food quality.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/036.jpg"
+ },
+ {
+   "tour_id": 7,
+   "title": "New Park Pizzeria",
+   "address": "15671 Crossbay Blvd, Howard Beach, NY 11414-2746",
+   "description": "Everyone raves about the quality of the Pizza here, I never saw it. We order 12 pies every few months for our coworkers and the ones who insist we go here are the ones who complain about the quality not being the same, I oppress ally wouldn't go there on my own dime.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/037.jpg"
+ },
+ {
+   "tour_id": 7,
+   "title": "Don Peppe's",
+   "address": "135-58 Lefferts Boulevard, Ozone Park, NY 11420",
+   "description": "Family style service - big portions, great food! Available seating. Many choices to choose from - describe what the plates are and how many each serve. Had a yummy time.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/038.jpg"
+ },
+ {
+   "tour_id": 7,
+   "title": "Parkside Restaurant",
+   "address": "107-01 Corona Ave, Flushing, NY 11368",
+   "description": "The food was wonderful, but you better come hungry because you are going to get a lot of it. Service was good. We sat upstairs which was less noisy than near the bar. Either way you cannot lose.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/039.jpg"
+ },
+
+ {
+   "tour_id": 8,
+   "title": "Teaspoon Bake Shop",
+   "address": "36-41 Bell Boulevard, Bayside, NY",
+   "description": "The pull apart muffing was delicious I'm still thinking about it 48 hours later.The coffee came out perfect and I loved the ambiance of the cafe.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/040.jpg"
+ },
+
+  {
+   "tour_id": 8,
+   "title": "New York City Bagel & Coffee House",
+   "address": "29-08 23rd Ave, Long Island City, NY 11105",
+   "description": "Very laid-back atmosphere in a well decorated environment. Big variety of bagels and even bigger variety of cream-cheeses. Sandwiches and/or other sweets for any taste are not missing.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/041.jpg"
+ },
+  {
+   "tour_id": 8,
+   "title": "Odradeks Coffee",
+   "address": "82-60 Austin St, Kew Gardens, NY 11415",
+   "description": "Great coffee and amazing service. The staff was very friendly and welcoming. They were having a comedy show when I went in. Got some great coffee and really good laughs. I recommend it and will definitely visit again.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/042.jpg"
+ },
+  {
+   "tour_id": 8,
+   "title": "COFFEED",
+   "address": "37-18 Northern Blvd, Long Island City, NY 11101
+    Astoria, Sunnyside, Long Island City",
+   "description": "he regular drink menu is good, but I feel that the cold brew is the real winner here.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/043.jpg"
+ },
+ {
+   "tour_id": 8,
+   "title": "Astoria Coffee",
+   "address": "3004 30th St, Astoria, NY 11102",
+   "description": "Stopped in for two cappuccinos and grabbed a chocolate croissant to go. The two gentlemen were very friendly and welcoming. The place has a nice vibe.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/044.jpg"
+ },
+
+ {
+   "tour_id": 9,
+   "title": "Museum of the Moving Image",
+   "address": "3601 35th Ave, Astoria, NY 11106",
+   "description": "I truly love this place. It's great to see our history of cinematography and how it changed. Old days we were using big and bulky cameras and now we have portable and small ones.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/045.jpg"
+ },
+ {
+   "tour_id": 9,
+   "title": "MoMA PS1",
+   "address": "22-25 Jackson Ave, Long Island City, NY 11101",
+   "description": "Amazing place. It is by donations, however, the suggested is 10 dollars per person. The exhibits are some of the best around, and I go to Museums often. It is my favorite museum in Queens.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/046.jpg"
+ },
+ {
+   "tour_id": 9,
+   "title": "Sams Art & Framing",
+   "address": "14318 45th Ave, Flushing, NY 11355",
+   "description": "I've gotten 5 pieces framed by Sam. He's very good at his craft, and a very kind dude. Reasonably priced, I'm rolling with Sam for life.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/047.jpg"
+ },
+ {
+   "tour_id": 9,
+   "title": "The Living Museum",
+   "address": "80-45 Winchester Boulevard, Queens Village, NY 11427",
+   "description": "Wow! this is an amazing experience that will really have you looking at mental illness and art in a new way.  The Creedmore Psychiatric Hospital plays host to a museum of the works of the patients of the hospital and the things they do are amazing.  This is not just finger-paintings of clowns crying...this is serious art and some of it really makes you think that maybe all of us who have the ability to eat dinner without sticking the fork in our forehead need to just step away from the paintbrushes and go back to our day jobs...we we don't got 'it",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/048.png"
+ },
+
+  {
+   "tour_id": 10,
+   "title": "Beast Next Door",
+   "address": "42-51 27th St, Long Island City, NY 11101",
+   "description": "Beast Next Door is a beautiful space filled with lovingly reclaimed furniture and architectural details.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/049.jpg"
+ },
+  {
+   "tour_id": 10,
+   "title": "Station House",
+   "address": "106-11 71st Ave, Forest Hills, NY 11375",
+   "description": "There's is nothing I don't love about this place. They have an excellent beer selections, but most importantly their food is to die for.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/050.jpg"
+ },
+  {
+   "tour_id": 10,
+   "title": "The Monk",
+   "address": "68-67 Fresh Pond Rd, Ridgewood, NY 11385",
+   "description": "They have a wide selection of draughts and bottles, and they're not just Belgium crafts.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/051.jpg"
+ },
+  {
+   "tour_id": 10,
+   "title": "Dutch Kills",
+   "address": "27-24 Jackson Ave, Long Island City, NY 11101",
+   "description": "I think what I love the most are the small touches like cool, refreshing cucumber water and the metal straws.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/052.jpg"
+ },
+
+  {
+   "tour_id": 11,
+   "title": "Hashi Ramen & Izakaya",
+   "address": "92-12 Northern Blvd, Flushing, NY 11358",
+   "description": "The staff is very friendly and the Appetizers (Takoyaki and Cha Su) were good.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/053.jpg"
+ },
+   {
+   "tour_id": 11,
+   "title": "HinoMaru",
+   "address": "33-18 Ditmars Blvd, Astoria, NY 11105",
+   "description": "One of the most authentic Japanese cuisine restaurants in Queens probably in all of Astoria!",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/054.jpg"
+ },
+   {
+   "tour_id": 11,
+   "title": "Tamashii Ramen",
+   "address": "2905 Broadway, Astoria, NY 11106",
+   "description": "Perfect place for this cold weather.  Was in the area and decided to drop in for some ramen.  I've ordered through here from Seamless before (on time delivery, the ramen & broth come in separate containers) and had delicious ramen.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/055.jpg"
+ },
+   {
+   "tour_id": 11,
+   "title": "Mu Ramen",
+   "address": "12-09 Jackson Ave, Long Island City, NY 11101",
+   "des`cription": "Triumph in a bowl with Spectacular service. The chef is truly a seasoned veteran at this game called ramen.",
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/057.jpg"
+ }
