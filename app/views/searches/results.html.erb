@@ -1,4 +1,9 @@
 <% @tours.each do |tour| %>
+<% if !tour.images.empty? %>
+  <%= image_tag(tour.images[0].image_url, height: '100') %>
+<% end %>
+
+
 <h1><%= tour.title %></h1>
 <h1><%= tour.description %></h1>
 <h1><%= tour.tags.first.name %></h1>
@@ -7,4 +12,11 @@
 
 <%= link_to 'See Tour', tour_path(tour) %>
 <br><br>
+<% end %>
+
+
+<% if !@nextlocations[0].images.empty? %>
+  <% @nextlocations[0].images.each do |image| %>
+  <%= image_tag(image.image_url, height: '320') %>
+  <% end %>
 <% end %>

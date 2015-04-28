@@ -7,7 +7,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Art", "Gallery", "Walking"]
+    "tags": ["Art", "Gallery", "Walking"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/001.jpg"
   },
   {
     "category_id": 6,
@@ -16,7 +17,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Tourist", "Skyline", "I(L)NY"]
+    "tags": ["Tourist", "Skyline", "I(L)NY"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/002.jpg"
   },
   {
     "category_id": 1,
@@ -25,7 +27,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Paintings", "gallery"]
+    "tags": ["Paintings", "gallery"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/003.jpg"
   },
   {
     "category_id": 1,
@@ -34,7 +37,8 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Books", "Literature"]
+    "tags": ["Books", "Literature"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/004.jpg"
   },
   {
     "category_id": 3,
@@ -43,16 +47,18 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Vinyl", "Records"]
+    "tags": ["Vinyl", "Records"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/005.jpg"
   },
   {
     "category_id": 8,
-    "title": "NY Maffia Tour",
-    "description": "Discover the places where some of the Maffia cappos used to hang-out",
+    "title": "NY Mafia Tour",
+    "description": "Discover the places where some of the Mafia cappos used to hang-out",
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["El Padrino", "Maffia", "Italia"]
+    "tags": ["El Padrino", "Maffia", "Italia"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/006.jpg"
   },
   {
     "category_id": 6,
@@ -61,7 +67,8 @@
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["Pizza", "Italian", "Pizzerias"]
+    "tags": ["Pizza", "Italian", "Pizzerias"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/007.jpg"
   },
   {
     "category_id": 6,
@@ -70,7 +77,8 @@
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["Coffee", "Coffee Shops"]
+    "tags": ["Coffee", "Coffee Shops"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/008.jpeg"
   },
   {
     "category_id": 1,
@@ -79,7 +87,8 @@
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["Paintings", "Museums"]
+    "tags": ["Paintings", "Museums"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/009.jpg"
   },
   {
     "category_id": 1,
@@ -88,7 +97,8 @@
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["Bars", "Alcohol"]
+    "tags": ["Bars", "Alcohol"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/010.jpg"
   },
   {
     "category_id": 3,
@@ -97,7 +107,8 @@
     "guide_id": 2,
     "city": "New York",
     "published" : true,
-    "tags": ["Ramen", "Japanese"]
+    "tags": ["Ramen", "Japanese"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/011.jpg"
   },
   {
     "category_id": 7,
@@ -106,7 +117,8 @@
     "guide_id": 4,
     "city": "New York",
     "published" : true,
-    "tags": ["City", "Design", "Building"]
+    "tags": ["City", "Design", "Building"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/012.jpeg"
   },
   {
     "category_id": 1,
@@ -115,7 +127,8 @@
     "guide_id": 4,
     "city": "New York",
     "published" : true,
-    "tags": ["Art", "Gallery", "Paintings"]
+    "tags": ["Art", "Gallery", "Paintings"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/013.jpg"
   },
   {
     "category_id": 2,
@@ -124,7 +137,8 @@
     "guide_id": 4,
     "city": "New York",
     "published" : true,
-    "tags": ["Favorite", "Delicious", "American"]
+    "tags": ["Favorite", "Delicious", "American"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/014.jpg"
   },
   {
     "category_id": 4,
@@ -133,7 +147,8 @@
     "guide_id": 4,
     "city": "New York",
     "published" : true,
-    "tags": ["Branded", "Style", "Money"]
+    "tags": ["Branded", "Style", "Money"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/015.jpg"
   },
 	{
 		"category_id": 5,
@@ -142,7 +157,8 @@
 		"guide_id": 4,
 		"city": "New York",
 		"published" : true,
-		"tags": ["Wildlife", "Animal", "Park Perks"]
+		"tags": ["Wildlife", "Animal", "Park Perks"],
+        "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/016.jpg"
 	},
     {
     "category_id": 8,
@@ -151,7 +167,8 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Seinfeld, Movies, Friends, Men in Black, Godzilla"]
+    "tags": ["Seinfeld, Movies, Friends, Men in Black, Godzilla"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/017.jpg"
   },
     {
     "category_id": 2,
@@ -160,7 +177,8 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Korean BBQ, Night Club, Bar, Supermarket"]
+    "tags": ["Korean BBQ, Night Club, Bar, Supermarket"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/018.jpg"
   },
     {
     "category_id": 7,
@@ -169,7 +187,8 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["LES, West Village, Night life, Bars, Cocktail"]
+    "tags": ["LES, West Village, Night life, Bars, Cocktail"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/019.jpg"
   },
     {
     "category_id": 5,
@@ -178,7 +197,8 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["subways staions, closed"]
+    "tags": ["subways staions, closed"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/020.jpg"
   },
     {
     "category_id": 2,
@@ -187,7 +207,8 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Michelin, Restaurant", "New York"]
+    "tags": ["Michelin, Restaurant", "New York"],
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/021.jpg"
   }
 
 ]

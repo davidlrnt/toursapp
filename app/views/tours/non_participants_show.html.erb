@@ -38,17 +38,20 @@
 <ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
+  <% if current_user %>
     <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-    <%= location.address %><br>
+  <% else %>
+  <li><%= location.title %></li>
+  <% end %>
+    <%= location.address %><br><br>
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
-
- <% @tour.comments.each do |comment| %>
+ <% @tour.reviews.each do |review| %>
    <li>
-     <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
-   <%= comment.content %>
-   <%= comment.created_at.to_date %>
+     <%= link_to "#{review.participant.name}", "/users/#{review.participant.id}" %> wrote:
+   <%= review.content %>
+   <%= review.created_at.to_date %>
    </li>
  <% end %>
 <br>

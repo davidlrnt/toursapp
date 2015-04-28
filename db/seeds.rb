@@ -50,6 +50,7 @@ tours = JSON.parse(File.read("db/seeds/tours.json"))
   tours.each do |tour|
   c = City.find_by(name: tour["city"].downcase)
   t = c.tours.create!(category_id: tour["category_id"] ,title: tour["title"] , description: tour["description"], guide_id: tour["guide_id"], published: tour["published"] )
+  t.images.create(image_url: tour["image"])
   tour["tags"].each do |tag|
   t.tags.create!(name: tag)
   end
@@ -59,6 +60,11 @@ comments = JSON.parse(File.read("db/seeds/comments.json"))
 comments.each do |comment|
   Comment.create!(participant_id: comment["participant_id"], location_id: comment["location_id"], tour_id: comment["tour_id"], content: comment["content"])
 end
+
+# reviews = JSON.parse(File.read("db/seeds/reviews.json"))
+# reviews.each do |review|
+#   Review.create!(participant_id: review[participant_id], tour_id: review["tour_id"], content: review["content"], rating: review["rating"])
+# end
 
 locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|

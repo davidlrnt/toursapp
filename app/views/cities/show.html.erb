@@ -1,6 +1,9 @@
 <h3><%= @city.name %></h3><br>
 <h4>List of All Published Tours</h4><br>
 <% @tours.each do |tour| %>
+<% if !tour.images.empty? %>
+  <%= image_tag(tour.images[0].image_url, height: '100') %>
+<% end %>
 	<ul><%= link_to tour.title, tour_path(tour)  %><br>
 	<%= tour.description %><br>
 	<% duration = (Time.now.to_time - tour.updated_at.to_time) %>
