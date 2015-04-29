@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
     t.string   "name"
     t.string   "description"
     t.string   "badge_type"
+    t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

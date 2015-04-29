@@ -1,5 +1,6 @@
 <% @user.badges.each do |badge| %>
-You achieved : <%= badge.name %> for <%= badge.description %><br>
+<h3>You achieved : <%= badge.name %> for <%= badge.description %></h3>
+<%= image_tag("#{badge.image_url}", size: "300x300") %><br>
 <% end %>
 <br><br>
 

@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 
     has_many :active_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
     has_many :passive_friends, -> { where(friendships: { approved: true}) }, :through => :passive_friendships, :source => :user
-    has_many :pending_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
+    has_many :pending_friends, -> { where(friendships: { approved: false}) }, :through => :friendships, :source => :friend
     has_many :requested_friendships, -> { where(friendships: { approved: false}) }, :through => :passive_friendships, :source => :user
 
 
@@ -97,7 +97,7 @@ class User < ActiveRecord::Base
     badges_keys = ["guide", "review", "participant"]
     badges_keys.each do |badge|
       counter = set_count(badge)
-      if counter <= 5 && counter > 0
+      if counter > 0
         @badges = Badge.find_badge(badge)
         @badges.each do |badge|
           self.badges << badge if badge.requirement <= counter && !self.badges.include?(badge)
