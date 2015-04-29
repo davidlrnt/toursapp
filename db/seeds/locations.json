@@ -3,17 +3,15 @@
     "tour_id": 1,
     "title": "Frick Collection",
     "address": "1 E. 70th St., Fifth Ave., New York City, NY 10021",
-    "lat":"40.7744954",
-    "lng":"-73.9651306",
     "description": "The Frick Collection is an art museum located in the Henry Clay Frick House on the Upper East Side in Manhattan, New York City at 1 East 70th Street, at the northeast corner with Fifth Avenue. It houses the collection of industrialist Henry Clay Frick (1849–1919).",
-    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/001.jpg"
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/001.jpg",
+    "lat": " ",
+    "lng": " "
   },
   {
     "tour_id": 1,
     "title": "The Jewish Museum",
     "address": "1109 Fifth Avenue, New York City, NY 10128",
-    "lat":"40.7854597",
-    "lng":"-73.9571318",
     "description": "The Jewish Museum is an art museum and repository of cultural artifacts, housed at 1109 Fifth Avenue, in the former Felix M. Warburg House, along the Museum Mile in the Upper East Side of Manhattan, New York City. The leading Jewish museum in the United States, it contains the largest collection of art and Jewish culture excluding Israeli museums, with 26,000 objects. While its collection was established in 1904 at the Jewish Theological Seminary of America, the museum did not open to the public until 1947. It focuses both on artifacts of Jewish history and on modern and contemporary art. Its permanent exhibition, Culture and Continuity: The Jewish Journey, is supplemented by both rotating and special exhibitions.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/002.jpg"
 
@@ -22,8 +20,6 @@
     "tour_id": 1,
     "title": "Society of Illustrators",
     "address": "128 East 63rd Street, New York City, NY10021",
-    "lat":"40.7647778",
-    "lng":"-73.9668646",
     "description": "The Museum of American Illustration was established in 1981. Today the permanent collection includes nearly 1800 works by such artists as Norman Rockwell, Howard Pyle, N.C. Wyeth, James Montgomery Flagg, Bob Peak and Bernie Fuchs. 2001 was the Society's centennial year, a 12-month celebration begun with the U.S. Postal issue, Great American Illustrators. That year was punctuated with the 9/11 Memorial Exhibition, Prevailing Human Spirit.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/003.jpg"
   },
@@ -31,8 +27,6 @@
     "tour_id": 1,
     "title": "Carl Schurz Park",
     "address": "Carl Schurz Park, East 86th Street & East End Ave, New York, NY 10028",
-    "lat":"40.7751302",
-    "lng":"-73.9436973",
     "description": "Carl Schurz Park is a 14.9 acres (6.0 ha) public park in the Yorkville neighborhood of Manhattan, New York City, named for German-born Secretary of the Interior Carl Schurz in 1910, at the edge of what was then a solidly German-American community of Yorkville.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/004.jpg"
   },
@@ -40,8 +34,6 @@
     "tour_id": 1,
     "title": "Cooper Hewitt Smithsonian Design Museum",
     "address": "2 E 91st Street, New York City, NY 10128",
-    "lat":"40.7844391",
-    "lng":"-73.9578551",
     "description": "Cooper–Hewitt, Smithsonian Design Museum is a design museum located in the Upper East Side's Museum Mile in Manhattan, New York City. It is one of nineteen museums that fall under the wing of the Smithsonian Institution and is one of two Smithsonian museums located in New York City, the other being the George Gustav Heye Center in Bowling Green. It is the only museum in the United States devoted to historical and contemporary design. Its collections and exhibitions explore approximately 240 years of design aesthetic and creativity.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/005.jpg"
   },
@@ -49,8 +41,6 @@
     "tour_id": 2,
     "title": "Central park",
     "address": "Central Park, New York City, NY 10022",
-    "lat":"40.7593941",
-    "lng":"-73.9697795",
     "description": "Central Park is an urban park in the central part of the borough of Manhattan, New York City. It was initially opened in 1857, on 778 acres (315 ha) of city-owned land, later expanding to its current size of 843 acres (341 ha).",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/006.jpg"
   },
@@ -58,8 +48,6 @@
     "tour_id": 2,
     "title": "The Metropolitan Museum of Art",
     "address": "1000 5th Ave, New York City, NY 10028-0198",
-    "lat":"40.7791655",
-    "lng":"-73.9629278",
     "description": "The Metropolitan Museum of Art (colloquially The Met), located in New York City, is the largest art museum in the United States and one of the ten largest in the world.[7] Its permanent collection contains more than two million works, divided among seventeen curatorial departments.[8] The main building, located on the eastern edge of Central Park along Manhattan's Museum Mile, is by area one of the world's largest art galleries. There is also a much smaller second location at The Cloisters in Upper Manhattan that features medieval art.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/007.jpg"
   },
@@ -67,8 +55,6 @@
     "tour_id": 2,
     "title": "Top of the Rock Observation Deck",
     "address": "30 Rockefeller Center, New York City, NY",
-    "lat":"40.7589426",
-    "lng":"-73.9793564",
     "description": "The observation deck atop the skyscraper, dubbed 'Top of the Rock', reopened to the public on November 1, 2005, after undergoing a $75 million renovation. It had been closed since 1986 to accommodate the renovation of the Rainbow Room. The deck, which is built to resemble the deck of an ocean liner, offers sightseers a bird's eye view of the city, competing with the 86th floor observatory of the Empire State Building.[16] It is often considered the best panoramic city view,[17] if only because it offers a view of the aforementioned Empire State Building, which cannot be seen from its own observation deck.[18] The timed entry system and larger observation deck also results in shorter waiting times compared to the Empire State.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/008.jpg"
   },
@@ -76,8 +62,6 @@
     "tour_id": 2,
     "title": "Grand Central Terminal",
     "address": "42nd Street and Park Avenue, New York City,NY 10017",
-    "lat":"40.7521624",
-    "lng":"-73.9778018",
     "description": "Grand Central Terminal (GCT) is a commuter (and former intercity) railroad terminal at 42nd Street and Park Avenue in Midtown Manhattan in New York City, United States.[N 1] Built by and named for the New York Central Railroad in the heyday of American long-distance passenger rail travel, it covers 48 acres (19 ha) and has 44 platforms, more than any other railroad station in the world.[5] Its platforms, all below ground, serve 41 tracks on the upper level and 26 on the lower, though the total number of tracks along platforms and in rail yards exceeds 100.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/009.jpg"
   },
@@ -85,8 +69,6 @@
     "tour_id": 3,
     "title": "David Zwirner Gallery",
     "address": "525 W 19th St New York, NY 10011",
-    "lat":"40.7458738",
-    "lng":"-74.0070496",
     "description": "David Zwirner Gallery is a contemporary art gallery in New York City and London owned by David Zwirner that is active both the primary and secondary markets. The gallery opened in 1993 on the ground floor of 43 Greene Street in SoHo",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/010.jpg"
   },
@@ -94,8 +76,6 @@
     "tour_id": 3,
     "title": "Jonathan LeVine Gallery",
     "address": "529 W 20th St New York, NY 10011",
-    "lat":"40.7465958",
-    "lng":"-74.0068831",
     "description": "Gallery known for exhibiting street art, graffiti & paintings inspired by comic books.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/011.jpg"
   },
@@ -103,8 +83,6 @@
     "tour_id": 3,
     "title": "The Pace Gallery",
     "address": "534 W 25th St New York, NY 10001",
-    "lat":"40.749517",
-    "lng":"-74.0050428",
     "description": "The Pace Gallery is a contemporary and modern art gallery founded by Arne Glimcher in Boston 1960 as The Pace Gallery.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/012.jpeg"
   },
@@ -112,16 +90,12 @@
     "tour_id": 3,
     "title": "Opera Gallery",
     "address": "115 Spring St New York, NY 10012",
-    "lat":"40.7238301",
-    "lng":"-73.99994790000001",
     "description": "Opera Gallery is a network of 11 contemporary art galleries worldwide that were first opened in 1994 by Gilles Dyan.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/013.jpg"
   },
   {
     "tour_id": 3,
     "title": "Triton Gallery",
-    "lat":"40.7469328",
-    "lng":"-74.0051221",
     "address": "195 10th Ave New York, NY 10011",
     "description": "Triton Gallery has the largest collection of theatrical posters in the world, including current Broadway shows, national tours and foreign productions.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/014.jpg"
@@ -129,8 +103,6 @@
   {
     "tour_id": 3,
     "title": "Philip Williams Posters",
-    "lat":"40.7151019",
-    "lng":"-74.0087482",
     "address": "122 Chambers St New York, NY 10007",
     "description": "Narrow retail gallery densely packed with 1000s of vintage posters & prints from around the world.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/015.jpeg"
@@ -139,8 +111,6 @@
     "tour_id": 4,
     "title": "Strand Bookstore",
     "address": "828 Broadway New York, NY 10003",
-    "lat":"40.7333273",
-    "lng":"-73.9908827",
     "description": "Sartorial selvage PBR distillery cold-pressed next level Shoreditch, sriracha you probably haven't heard of them taxidermy Echo Park meditation asymmetrical. Cold-pressed ethical pop-up blog.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/016.jpg"
   },
@@ -148,8 +118,6 @@
     "tour_id": 4,
     "title": "McNally Jackson",
     "address": "52 Prince St, New York, NY 10012",
-    "lat":"40.7233716",
-    "lng":"-73.9960773",
     "description": "Marfa PBR B whatever wayfarers, meggings bicycle rights forage organic Helvetica.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/017.jpeg"
   },
@@ -157,16 +125,12 @@
     "tour_id": 4,
     "title": "Three Lives & Company",
     "address": "154 W 10th St New York, NY 10014",
-    "lat":"40.7343778",
-    "lng":"-74.0015033",
     "description": "Umami drinking vinegar sriracha, Etsy vinyl street art artisan Neutra skateboard selvage you probably haven't heard of them crucifix chia selfies 8-bit.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/018.jpg"
   },
   {
     "tour_id": 4,
     "title": "bookbook",
-    "lat":"40.7312535",
-    "lng":"-74.00321459999999",
     "address": "266 Bleecker St New York, NY 10014",
     "description": "Ethical cronut street art put a bird on it, meditation VHS Bushwick before they sold out crucifix.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/019.jpeg"
@@ -175,8 +139,6 @@
     "tour_id": 4,
     "title": "Book Culture",
     "address": "450 Columbus Ave New York, NY 10024",
-    "lat":"40.783776",
-    "lng":"-73.9745324",
     "description": " Artisan lumbersexual cornhole, whatever bitters Williamsburg Banksy letterpress scenester tousled gastropub paleo Truffaut American Apparel.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/020.jpg"
   },
@@ -184,8 +146,6 @@
     "tour_id": 4,
     "title": "Kinokuniya Bookstores",
     "address": "1073 Ave of the Americas New York, NY 10018",
-    "lat":"40.7542172",
-    "lng":"-73.985102",
     "description": "Art party fap distillery banjo craft beer, DIY skateboard disrupt banh mi 8-bit blog church-key salvia.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/021.jpg"
   },
@@ -193,8 +153,6 @@
     "tour_id": 5,
     "title": "Westsider Records",
     "address": "233 W 72nd St New York, NY 10023",
-    "lat":"40.779366",
-    "lng":"-73.982676",
     "description": "Sartorial selvage PBR distillery cold-pressed next level Shoreditch, sriracha you probably haven't heard of them taxidermy Echo Park meditation asymmetrical. Cold-pressed ethical pop-up blog.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/022.jpg"
   },
@@ -202,8 +160,6 @@
     "tour_id": 5,
     "title": "Good Records NYC",
     "address": "218 E 5th St New York, NY 10003",
-    "lat":"40.7271519",
-    "lng":"-73.990422",
     "description": "Marfa PBR&B whatever wayfarers, meggings bicycle rights forage organic Helvetica. ",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/023.jpg"
   },
@@ -211,8 +167,6 @@
     "tour_id": 5,
     "title": "Record Mart",
     "address": "7 Times Sq New York, NY 10036",
-    "lat":"40.7554585",
-    "lng":"-73.98690549999999",
     "description": "Umami drinking vinegar sriracha, Etsy vinyl street art artisan Neutra skateboard selvage you probably haven't heard of them crucifix chia selfies 8-bit.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/024.jpg"
   },
@@ -220,8 +174,6 @@
     "tour_id": 5,
     "title": "Generation Records",
     "address": "210 Thompson St New York, NY 10012",
-    "lat":"40.728743",
-    "lng":"-73.9991553",
     "description": "Ethical cronut street art put a bird on it, meditation VHS Bushwick before they sold out crucifix. ",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/025.jpg"
   },
@@ -229,8 +181,6 @@
     "tour_id": 5,
     "title": "Academy Records & CDs",
     "address": "12 W 18th St New York, NY 10011",
-    "lat":"40.7388719",
-    "lng":"-73.9929549",
     "description": " Artisan lumbersexual cornhole, whatever bitters Williamsburg Banksy letterpress scenester tousled gastropub paleo Truffaut American Apparel.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/026.jpeg"
   },
@@ -238,8 +188,6 @@
     "tour_id": 5,
     "title": "Bleecker Street Records",
     "address": "188 W 4th St New York, NY 10014",
-    "lat":"40.7327058",
-    "lng":"-74.0020706",
     "description": "Art party fap distillery banjo craft beer, DIY skateboard disrupt banh mi 8-bit blog church-key salvia.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/027.jpg"
   },
@@ -247,8 +195,6 @@
     "tour_id": 6,
     "title": "Sparks Steakhouse",
     "address": "210 E 46th Street New York, NY",
-    "lat":"40.7528832",
-    "lng":"-73.9720906",
     "description": "Known for its fine steaks and chops, Sparks is also known for the sensational rubout of Godfather Paul Castellano. He was gunned down in front of the renowned restaurant in a bloody coup that saw the ascendancy of John Gotti as the boss of the Gambino crime family. The afternoon shooting occurred on December 16, 1985. The restaurant remains a popular eatery, and has a unique place in New York Mafia history.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/028.jpeg"
   },
@@ -256,8 +202,6 @@
     "tour_id": 6,
     "title": "Rao’s Restaurant",
     "address": "455 E. 114 Street New York, NY",
-    "lat":"40.7938948",
-    "lng":"-73.93439289999999",
     "description": "Rao’s sits on the corner of 114th and Pleasant Avenue, but it wasn’t a very pleasant experience when Louie “Lump Lump” Barone turned and shot wiseguy Albert Circelli at the bar on December 22, 2003. Barone got angry when Circelli complained about a patron’s singing and then cursed out Barone who told him to shut up. Circelli died trying to run out the door.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/029.jpg"
   },
@@ -265,8 +209,6 @@
     "tour_id": 6,
     "title": "Park Central Hotel",
     "address": "870 Seventh Avenue New York, NY",
-    "lat":"40.76466",
-    "lng":"-73.9809679",
     "description": "On October 25, 1957, the then-Park Sheraton Hotel was the location of one of the most brazen rubouts in mob history. Mafia boss Albert Anastasia was gunned down in the corner barbershop as he sat in the chair for a shave and a haircut. The barbershop is now a Starbucks.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/030.jpg"
   },
@@ -274,8 +216,6 @@
     "tour_id": 6,
     "title": "Triangle Social Club",
     "address": "208 Sullivan Street New York, NY",
-    "lat":"40.7292338",
-    "lng":"-74.00036419999999",
     "description": "The stronghold for Vincent “The Chin” Gigante, former boss of the Genovese Crime Family. He grew up in the neighborhood – his mother lived down the block – and conducted mob business out of this unassuming location. But unlike well–dressed counterpart John Gotti, who worked just a neighborhood over, Gigante could be seen walking along the street in bathrobe and slippers. This earned him the name “The Oddfather.” He died in prison in 2005. The Triangle Social Club club is now the Sullivan Street Tea and Spice Company.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/031.jpg"
   },
@@ -283,8 +223,6 @@
     "tour_id": 6,
     "title": "Lucali’s Restaurant",
     "address": "575 Henry Street  Brooklyn",
-    "lat":"40.6818032",
-    "lng":"-74.00030869999999",
     "description": "Known for its thin-crust pizza and visits from celebrities like Jay-Z and Beyonce, Lucali’s is also known for owner Mark Iacono’s recent knock-about with wiseguy Benny Geritano. Both stabbed each other in June during a fight and ended up in separate hospitals. Some say it was over a girlfriend, but neither guy was talking, so the charges were dropped. Geritano had recently been released from prison. Lucali’s was closed briefly, but reopened again, on a block in the cozy Carroll Gardens section known for its 'social clubs.'",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/032.jpg"
   },
@@ -292,8 +230,6 @@
     "tour_id": 6,
     "title": "Ravenite Social Club (Now Closed)",
     "address": "247 Mulberry Street New York",
-    "lat":"40.723082",
-    "lng":"-73.99609699999999",
     "description": "John Gotti presided over the powerful Gambino crime family in this modest ground-floor walk-up in the trendy Nolita section of Manhattan. He held meetings, and threatened to kill (and did kill) those who wouldn’t attend. The FBI learned his secret meeting place upstairs and wired it up, recording conversations that led to his conviction.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/033.jpg"
   },
@@ -301,16 +237,12 @@
     "tour_id": 6,
     "title": "Columbus Circle",
     "address": "59 St Columbus Circle New York",
-    "lat":"40.768296",
-    "lng":"-73.981736",
     "description": "Mob boss Joe Colombo was gunned down during a Unity Day rally June 28, 1978, as part of a violent struggle for control of the Profaci-Colombo crime family. Although hundreds of people witnessed the shooting, no one was ever caught. Some say “Crazy” Joe Gallo was behind the shooting. A year later, Gallo was murdered in Umberto’s Clam House on Mulberry Street in Little Italy.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/034.jpg"
   },
   {
    "tour_id": 7,
    "title": "Bruno's",
-   "lat":"40.6600815",
-   "lng":"-73.8404544",
    "address": "15822 Cross Bay Blvd., Howard Beach, NY 11414",
    "description": "Definitely one of the finest brick oven pizzas my family has had. You can always count on a friendly atmosphere and an accommodating staff.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/035.jpg"
@@ -319,8 +251,6 @@
    "tour_id": 7,
    "title": "Il Falco",
    "address": "21-50 44th Dr, Long Island City, NY 11101",
-   "lat":"40.7474998",
-   "lng":"-73.9455531",
    "description": "Service, attention, light hearted not stuffy. Private feeling, no intrusion. Expensive but absolutely top notch food. Great attention to detail. Fresh seafood. Special occasions, special person, they will be impressed by the intimacy, wait staff and food quality.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/036.jpg"
  },
@@ -328,8 +258,6 @@
    "tour_id": 7,
    "title": "New Park Pizzeria",
    "address": "15671 Crossbay Blvd, Howard Beach, NY 11414-2746",
-   "lat":"40.6627235",
-   "lng":"-73.840437",
    "description": "Everyone raves about the quality of the Pizza here, I never saw it. We order 12 pies every few months for our coworkers and the ones who insist we go here are the ones who complain about the quality not being the same, I oppress ally wouldn't go there on my own dime.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/037.jpg"
  },
@@ -337,8 +265,6 @@
    "tour_id": 7,
    "title": "Don Peppe's",
    "address": "135-58 Lefferts Boulevard, Ozone Park, NY 11420",
-   "lat":"40.6689548",
-   "lng":"-73.8216767",
    "description": "Family style service - big portions, great food! Available seating. Many choices to choose from - describe what the plates are and how many each serve. Had a yummy time.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/038.jpg"
  },
@@ -346,8 +272,6 @@
    "tour_id": 7,
    "title": "Parkside Restaurant",
    "address": "107-01 Corona Ave, Flushing, NY 11368",
-   "lat":"40.7438665",
-   "lng":"-73.8560572",
    "description": "The food was wonderful, but you better come hungry because you are going to get a lot of it. Service was good. We sat upstairs which was less noisy than near the bar. Either way you cannot lose.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/039.jpg"
  },
@@ -356,8 +280,6 @@
    "tour_id": 8,
    "title": "Teaspoon Bake Shop",
    "address": "36-41 Bell Boulevard, Bayside, NY",
-   "lat":"40.7669121",
-   "lng":"-73.7724374",
    "description": "The pull apart muffing was delicious I'm still thinking about it 48 hours later.The coffee came out perfect and I loved the ambiance of the cafe.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/040.jpg"
  },
@@ -366,8 +288,6 @@
    "tour_id": 8,
    "title": "New York City Bagel & Coffee House",
    "address": "29-08 23rd Ave, Long Island City, NY 11105",
-   "lat":"40.7747573",
-   "lng":"-73.91371939999999",
    "description": "Very laid-back atmosphere in a well decorated environment. Big variety of bagels and even bigger variety of cream-cheeses. Sandwiches and/or other sweets for any taste are not missing.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/041.jpg"
  },
@@ -375,8 +295,6 @@
    "tour_id": 8,
    "title": "Odradeks Coffee",
    "address": "82-60 Austin St, Kew Gardens, NY 11415",
-   "lat":"40.709573",
-   "lng":"-73.830291",
    "description": "Great coffee and amazing service. The staff was very friendly and welcoming. They were having a comedy show when I went in. Got some great coffee and really good laughs. I recommend it and will definitely visit again.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/042.jpg"
  },
@@ -384,8 +302,6 @@
    "tour_id": 8,
    "title": "COFFEED",
    "address": "37-18 Northern Blvd, Long Island City, NY 11101, Astoria, Sunnyside, Long Island City",
-   "lat":"40.7887109",
-   "lng":"-73.7056104",
    "description": "he regular drink menu is good, but I feel that the cold brew is the real winner here.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/043.jpg"
  },
@@ -393,8 +309,6 @@
    "tour_id": 8,
    "title": "Astoria Coffee",
    "address": "3004 30th St, Astoria, NY 11102",
-   "lat":"40.767076",
-   "lng":"-73.9225158",
    "description": "Stopped in for two cappuccinos and grabbed a chocolate croissant to go. The two gentlemen were very friendly and welcoming. The place has a nice vibe.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/044.jpg"
  },
@@ -403,8 +317,6 @@
    "tour_id": 9,
    "title": "Museum of the Moving Image",
    "address": "3601 35th Ave, Astoria, NY 11106",
-   "lat":"40.756296",
-   "lng":"-73.9239438",
    "description": "I truly love this place. It's great to see our history of cinematography and how it changed. Old days we were using big and bulky cameras and now we have portable and small ones.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/045.jpg"
  },
@@ -412,8 +324,6 @@
    "tour_id": 9,
    "title": "MoMA PS1",
    "address": "22-25 Jackson Ave, Long Island City, NY 11101",
-   "lat":"40.745469",
-   "lng":"-73.947108",
    "description": "Amazing place. It is by donations, however, the suggested is 10 dollars per person. The exhibits are some of the best around, and I go to Museums often. It is my favorite museum in Queens.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/046.jpg"
  },
@@ -421,8 +331,6 @@
    "tour_id": 9,
    "title": "Sams Art & Framing",
    "address": "14318 45th Ave, Flushing, NY 11355",
-   "lat":"40.754099",
-   "lng":"-73.81771599999999",
    "description": "I've gotten 5 pieces framed by Sam. He's very good at his craft, and a very kind dude. Reasonably priced, I'm rolling with Sam for life.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/047.jpg"
  },
@@ -430,8 +338,6 @@
    "tour_id": 9,
    "title": "The Living Museum",
    "address": "80-45 Winchester Boulevard, Queens Village, NY 11427",
-   "lat":"40.7372781",
-   "lng":"-73.732404",
    "description": "Wow! this is an amazing experience that will really have you looking at mental illness and art in a new way.  The Creedmore Psychiatric Hospital plays host to a museum of the works of the patients of the hospital and the things they do are amazing.  This is not just finger-paintings of clowns crying...this is serious art and some of it really makes you think that maybe all of us who have the ability to eat dinner without sticking the fork in our forehead need to just step away from the paintbrushes and go back to our day jobs...we we don't got 'it",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/048.png"
  },
@@ -440,8 +346,6 @@
    "tour_id": 10,
    "title": "Beast Next Door",
    "address": "42-51 27th St, Long Island City, NY 11101",
-   "lat":"40.7488389",
-   "lng":"-73.94075",
    "description": "Beast Next Door is a beautiful space filled with lovingly reclaimed furniture and architectural details.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/049.jpg"
  },
@@ -449,8 +353,6 @@
    "tour_id": 10,
    "title": "Station House",
    "address": "106-11 71st Ave, Forest Hills, NY 11375",
-   "lat":"40.72001880000001",
-   "lng":"-73.8450574",
    "description": "There's is nothing I don't love about this place. They have an excellent beer selections, but most importantly their food is to die for.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/050.jpg"
  },
@@ -458,8 +360,6 @@
    "tour_id": 10,
    "title": "The Monk",
    "address": "68-67 Fresh Pond Rd, Ridgewood, NY 11385",
-   "lat":"40.7034779",
-   "lng":"-73.89518699999999",
    "description": "They have a wide selection of draughts and bottles, and they're not just Belgium crafts.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/051.jpg"
  },
@@ -467,8 +367,6 @@
    "tour_id": 10,
    "title": "Dutch Kills",
    "address": "27-24 Jackson Ave, Long Island City, NY 11101",
-   "lat":"40.7475949",
-   "lng":"-73.94016599999999",
    "description": "I think what I love the most are the small touches like cool, refreshing cucumber water and the metal straws.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/052.jpg"
  },
@@ -477,8 +375,6 @@
    "tour_id": 11,
    "title": "Hashi Ramen & Izakaya",
    "address": "92-12 Northern Blvd, Flushing, NY 11358",
-   "lat":"40.7564951",
-   "lng":"-73.87595809999999",
    "description": "The staff is very friendly and the Appetizers (Takoyaki and Cha Su) were good.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/053.jpg"
  },
@@ -486,8 +382,6 @@
    "tour_id": 11,
    "title": "HinoMaru",
    "address": "33-18 Ditmars Blvd, Astoria, NY 11105",
-   "lat":"40.7748021",
-   "lng":"-73.90930589999999",
    "description": "One of the most authentic Japanese cuisine restaurants in Queens probably in all of Astoria!",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/054.jpg"
  },
@@ -495,8 +389,6 @@
    "tour_id": 11,
    "title": "Tamashii Ramen",
    "address": "2905 Broadway, Astoria, NY 11106",
-   "lat":"40.7626022",
-   "lng":"-73.9267521",
    "description": "Perfect place for this cold weather.  Was in the area and decided to drop in for some ramen.  I've ordered through here from Seamless before (on time delivery, the ramen & broth come in separate containers) and had delicious ramen.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/055.jpg"
  },
@@ -504,8 +396,6 @@
    "tour_id": 11,
    "title": "Mu Ramen",
    "address": "12-09 Jackson Ave, Long Island City, NY 11101",
-   "lat":"40.7438232",
-   "lng":"-73.950656",
    "description": "Triumph in a bowl with Spectacular service. The chef is truly a seasoned veteran at this game called ramen.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/056.jpg"
  },
@@ -513,8 +403,6 @@
    "tour_id": 12,
    "title": "Brooklyn Bridge",
    "address": "Brooklyn Bridge, New York, NY",
-   "lat":"40.7060855",
-   "lng":"-73.9968643",
    "description": "Opened in 1883, the Brooklyn Bridge provides passage between Brooklyn and Manhattan for motorists, trains, bicycles and pedestrians. One of the primary symbols of New York City, it is a marvel of design and provides spectacular views of the city's skyline.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/56.jpg"
  },
@@ -522,8 +410,6 @@
    "tour_id": 12,
    "title": "Barclay Center",
    "address": "620 Atlantic Avenue, Brooklyn, NY",
-   "lat":"40.6829896",
-   "lng":"-73.9752615",
    "description": "Place to hang out and have fun watching concerts, basketball match, everything happens here!",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/57.jpg"
  },
@@ -531,8 +417,6 @@
    "tour_id": 12,
    "title": "Brooklyn Heights Promenade",
    "address": "Montague St & Pierrepont Pl, Brooklyn, NY 11201",
-   "lat":"40.6956456",
-   "lng":"-73.99738479999999",
    "description": "Offering magnificent views of the Manhattan skyline and the Brooklyn Bridge, this 1/3-mile-long sliver of green overlooks Brooklyn's busy industrial waterfront.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/58.jpg"
  },
@@ -540,8 +424,6 @@
    "tour_id": 12,
    "title": "Grand Army Plaza",
    "address": "456 Tompkins Avenue, Brooklyn, NY 11216",
-   "lat":"40.6814086",
-   "lng":"-73.9437039",
    "description": "Grand Army Plaza comprises the northern corner and the main entrance of Prospect Park in the borough of Brooklyn, New York City, and consists of concentric oval rings arranged as streets, with the outer ring being the namesake Plaza Street.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/59.jpg"
  },
@@ -549,8 +431,6 @@
    "tour_id": 12,
    "title": "Brooklyn Boulders",
    "address": "575 Degraw Street, Brooklyn, NY 11217",
-   "lat":"40.67972580000001",
-   "lng":"-73.9842265",
    "description": "Brooklyn is a dedicated rock climbing facility and dynamic.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/60.jpg"
  },
@@ -558,8 +438,6 @@
    "tour_id": 13,
    "title": "Brooklyn Academy of Music",
    "address": "30 Lafayette Avenue, Brooklyn, NY 11217",
-   "lat":"40.6864624",
-   "lng":"-73.9777052",
    "description": "Founded in 1859, this performing arts center is the oldest institution of its type still in operation in the United States.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/61.jpg"
  },
@@ -567,8 +445,6 @@
    "tour_id": 13,
    "title": "Galapagos Art Space",
    "address": "16 Main Street, Dumbo, Brooklyn, NY",
-   "lat":"40.7033385",
-   "lng":"-73.9906826",
    "description": "Eddings brooklyn art music cabaret downtown cool hip fun sexy sensual design dance theater trapeze aerial wedding holiday party christmas DUMBO.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/62.jpg"
  },
@@ -576,8 +452,6 @@
    "tour_id": 13,
    "title": "Sideshows by the Seashore",
    "address": "1208 Surf Avenue, Brooklyn, NY 11224",
-   "lat":"40.5753293",
-   "lng":"-73.979783",
    "description": "This sideshow has the usual sword-swallower and bed-of-nails artist, plus other unique players.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/63.jpg"
  },
@@ -585,8 +459,6 @@
    "tour_id": 13,
    "title": "Glasslands Gallery",
    "address": "289 Kent Avenue, Brooklyn, NY 11249",
-   "lat":"40.71505690000001",
-   "lng":"-73.966385",
    "description": "In South Williamsburg since 2006, Glasslands is a converted warehouse, formerly a homegrown community art space turned psychedelic venue partyhaus. Bring your friend, see the bands, try our beer, make out in the photobooth.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/64.jpg"
  },
@@ -594,8 +466,6 @@
    "tour_id": 13,
    "title": "Brooklyn Art Library",
    "address": "103A N 3rd St Brooklyn, NY 11249",
-   "lat":"40.7169646",
-   "lng":"-73.96194249999999",
    "description": "Intimate art space & music venue in a converted Brooklyn warehouse with a balcony & a photo booth.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/65.jpg"
  },
@@ -603,8 +473,6 @@
    "tour_id": 14,
    "title": "Smogasburg",
    "address": "Brooklyn Bridge Park Pier 5, Brooklyn, NY",
-   "lat":"40.6948689",
-   "lng":"-74.0017282",
    "description": "Located at Pier 5 in Brooklyn Bridge Park on Sundays, this location of Smorgasburg is a weekly food festival of over 100 food vendors.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/66.jpg"
  },
@@ -612,8 +480,6 @@
    "tour_id": 14,
    "title": "Brooklyn Brewery",
    "address": "79 North 11th Street, Brooklyn, NY 11211",
-   "lat":"40.721645",
-   "lng":"-73.957258",
    "description": "Commercial brewery, founded in 1987 and located in an 1860s-era former steel foundry, features a Tasting Room, warehouse and a 300-seat facility for community events.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/67.jpg"
  },
@@ -621,8 +487,6 @@
    "tour_id": 14,
    "title": "Chuko",
    "address": "552 Vanderbilt Avenue, Brooklyn, NY 11238",
-   "lat":"40.6801378",
-   "lng":"-73.968259",
    "description": "Izakaya across from Chuko serving sake, beer, whiskey & cocktails to go with Japanese small plates.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/68.jpg"
  },
@@ -630,8 +494,6 @@
    "tour_id": 14,
    "title": "Sycamore",
    "address": "1118 Cortelyou Rd, Brooklyn, NY 11218",
-   "lat":"40.6397169",
-   "lng":"-73.9671558",
    "description": "Izakaya across from Chuko serving sake, beer, whiskey & cocktails to go with Japanese small plates.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/69.jpg"
  },
@@ -639,8 +501,6 @@
    "tour_id": 14,
    "title": "Bergen Hill",
    "address": "387 Court Street, Brooklyn, NY 11231",
-   "lat":"40.6802058",
-   "lng":"-73.9969205",
    "description": "New American seafood, small plates & craft sips in an intimate space with a bar & patio tables.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/70.jpg"
  },
@@ -648,8 +508,6 @@
    "tour_id": 15,
    "title": "Brooklyn Flea",
    "address": "176 Lafayette Avenue, Brooklyn, NY 11238",
-   "lat":"40.6876994",
-   "lng":"-73.9692869",
    "description": "Flea markets every weekend of the year that feature hundreds of top vendors of furniture, vintage clothing, collectibles and antiques. Plus delicious fresh food.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/71.jpg"
  },
@@ -657,8 +515,6 @@
    "tour_id": 15,
    "title": "Jacques Torres Chocolate",
    "address": "66 Water Street, Brooklyn, NY 11201",
-   "lat":"40.7031651",
-   "lng":"-73.991325",
    "description": "Chocolate shop and factory tour.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/72.jpg"
  },
@@ -666,16 +522,12 @@
    "tour_id": 15,
    "title": "Brooklyn Night Bazaar",
    "address": "165 Banker Street, Brooklyn, NY 11222",
-   "lat":"40.7239959",
-   "lng":"-73.9552282",
    "description": "Brooklyn Night Bazaar is a confluence of night market, art fair, food festival and concert that brings together New York's creative independent vendors, musicians, chefs, artists breweries and wineries. Always free to enter.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/73.jpg"
  },
  {
    "tour_id": 15,
    "title": "Mast Brothers",
-   "lat":"40.716735",
-   "lng":"-73.96160499999999",
    "address": "111 North Third Street, Brooklyn, NY 11211",
    "description": "Mast Brothers Chocolate Makers offers a variety of single estate and single origin chocolates as well as our first house blend.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/74.jpg"
@@ -684,8 +536,6 @@
    "tour_id": 15,
    "title": "Brooklyn Denim Co",
    "address": "85 N 3rd street Brooklyn, NY, 11249",
-   "lat":"40.7172774",
-   "lng":"-73.9624474",
    "description": "Brooklyn Denim Co. is committed to providing a large and varied selection of premium denim products and denim related services. Our Williamsburg neighborhood and surrounding area provides us with inspiration, creativity and a great environment in which to ply our trade.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/75.jpg"
  },
@@ -693,8 +543,6 @@
    "tour_id": 16,
    "title": "Brooklyn Bridge Park",
    "address": "334 Fuman Street, Brooklyn, NY 11201",
-   "lat":"40.6941309",
-   "lng":"-73.99929639999999",
    "description": "Brooklyn Bridge Park in Brooklyn has new ‘destination’ playgrounds, including a Water Lab to cool off in summer, Slide Mountain, Swing Valley and the baby friendly Sandbox Village. Jane’s Carousel, in a glass-enclosed pavilion, has restored horses from 1922.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/76.jpg"
  },
@@ -702,8 +550,6 @@
    "tour_id": 16,
    "title": "Coney Island",
    "address": "Coney Island, Brooklyn, NY",
-   "lat":"40.5749261",
-   "lng":"-73.9859414",
    "description": "Home to famous rides like the Cyclone Roller Coaster, the Wonder Wheel and the Parachute Jump, this historic seaside section of Broooklyn is about an hour by train from Manhattan and still boasts a lively boardwalk, beach, and the best hot dogs around.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/77.jpg"
  },
@@ -711,8 +557,6 @@
    "tour_id": 16,
    "title": "Prospect Park",
    "address": "450 Flatbush Avenue, Brooklyn, NY 11225",
-   "lat":"40.6655761",
-   "lng":"-73.96489079999999",
    "description": "Brooklyn's answer to Central Park, Prospect Park contains a zoo, an audubon center and the Brooklyn Museum of Art. Its entrance is marked by the large Memorial Arch and it is a mecca for families and nature lovers who go to play ball, bird watch and listen to outdoor concerts.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/78.jpg"
  },
@@ -720,8 +564,6 @@
    "tour_id": 16,
    "title": "Brooklyn Botanical Garden",
    "address": "1000 Washington Avenue, Brooklyn, NY 11225",
-   "lat":"40.6675708",
-   "lng":"-73.9619036",
    "description": "A hot spot for proposals and weddings, the gardens 52 acres of magnificent flora and fauna provide the perfect romantic background. In late spring, the well-known Cranford Rose Garden features tens of thousands of roses flowing down arches, climbing up lattices and standing in formal beds.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/79.jpg"
  },
@@ -729,8 +571,6 @@
    "tour_id": 16,
    "title": "New York Aquarium",
    "address": "602 Surf Avenue, Brooklyn, NY 11224",
-   "lat":"40.57427",
-   "lng":"-73.97591729999999",
    "description": "Situated on 14 acres by the sea in Coney Island, the Aquarium is home to over 8,000 animals. The Aquarium provides an enjoyable experience for the whole family. See friendly walruses, amazing sharks, playful sea otters and so much more.",
    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/80.jpg"
  },
@@ -738,8 +578,6 @@
     "tour_id": 17,
     "title": "Jerry Seinfeld house address",
     "address": "129 West 81st Street, New York, NY, 10024",
-    "lat":"40.783871",
-    "lng":"-73.97535599999999",
     "description": "The official street address of the house Jerry Seinfeld used was 129 W. 81st Street, but in reality it looks nothing like the picture they used",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/084.jpg"
   },
@@ -747,8 +585,6 @@
     "tour_id": 17,
     "title": "Flatiron Building",
     "address": "175 5th Ave., New York, NY, 10010",
-    "lat":"40.7409928",
-    "lng":"-73.98965869999999",
     "description": "You’ll recognize from Godzilla and the scene in The Other Guys when Samuel L. Jackson and Dwayne “The Rock” Johnson leap from the top.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/085.jpg"
   },
@@ -756,8 +592,6 @@
     "tour_id": 17,
     "title": "Friends House",
     "address": "90 Bedford Street, New York, NY, 10014",
-    "lat":"40.7322175",
-    "lng":"-74.0052123",
     "description": "This building serves as the exterior for the apartment on Friends, although no scenes featuring cast members were filmed in New York.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/086.jpg"
   },
@@ -765,8 +599,6 @@
     "tour_id": 18,
     "title": "Miss Korea",
     "address": "10 W. 32nd St. New York, NY 10001",
-    "lat":"40.7473643",
-    "lng":"-73.9864387",
     "description": "The owner of this restaurant named it for folks who truly miss Korea. Kim said that college students from as far north as Albany and Binghamton drive to the city to eat in K-Town when they are homesick.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/087.jpg"
   },
@@ -774,8 +606,6 @@
     "tour_id": 18,
     "title": "NY Kom Tang",
     "address": "32 W 32nd st., New York, NY 10001",
-    "lat":"40.7476055",
-    "lng":"-73.98725639999999",
     "description": "This is the inside of NY Komtang House, Kim's father's restaurant. It was featured in an episode of Sex and The City and serves traditional Korean fare.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/088.jpg"
   },
@@ -783,8 +613,6 @@
     "tour_id": 18,
     "title": "K Town Bar",
     "address": "34 W. 32nd St., New York, NY 10001",
-    "lat":"40.7477239",
-    "lng":"-73.9872855",
     "description": "This bar is for college students who don't have a lot of money to spend." ,
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/089.jpg"
   },
@@ -792,8 +620,6 @@
     "tour_id": 18,
     "title": "H-Mart",
     "address": "25 W. 32nd St., New York, NY 10001",
-    "lat":"40.7479439",
-    "lng":"-73.98676499999999",
     "description": "H-Mart is a Korean grocery store. The small, crowded space is filled with goodies imported from Korea.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/090.jpg"
   },
@@ -801,8 +627,6 @@
     "tour_id": 19,
     "title": "Booker & Dax",
     "address": "207 2nd Ave., New York, NY 10003",
-    "lat":"40.73169",
-    "lng":"-73.98584600000001",
     "description": "Dave Arnold and David Chang collaborated on this cocktail science lab -- home to clarifiers, centrifuges, flaming pokers, and other cocktail wizardry that you'll realize isn't just for show as soon as you settle down with a few of them",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/091.png"
   },
@@ -810,8 +634,6 @@
     "tour_id": 19,
     "title": "The Wayland",
     "address": "700 E 9th St., New York, NY 10009",
-    "lat":"40.7250221",
-    "lng":"-73.9777786",
     "description": "From a duo that's spent many years bartending, cooking, and consulting in the restaurant biz comes The Wayland, a live-music cocktail bar in the heart of Alphabet City. Connected to the bar is a kitchen that specializes in small plates, including cheese selections, oysters, and BLTs with pulled pork. The cocktails reflect a DIY approach, with hours of prep work just to produce homemade radish, spiced apple, and key lime-flavored bitters.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/092.jpg"
   },
@@ -819,8 +641,6 @@
     "tour_id": 19,
     "title": "Armor Y Amargo",
     "address": "443 E. 6th St., New York, NY 10009",
-    "lat":"40.7257371",
-    "lng":"-73.9842729",
     "description": "With room for just a couple seats, this bitters-centric outpost can be both enjoyable and educational if you're not yet versed in the ways of bitters, amaros, and the like. (Editor's note: you're not yet versed in the ways of bitters, amaros, and the like.)",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/093.jpeg"
   },
@@ -828,8 +648,6 @@
     "tour_id": 19,
     "title": "Little Branch",
     "address": "20 7th Ave. S, New York, NY 10014",
-    "lat":"40.73011160000001",
-    "lng":"-74.0050466",
     "description": "This spot's got pretty much everything you could possibly want from a cocktail bar: superbly made drinks created by a team from the Milk & Honey family, an intimate setting complete with a piano, and it's underground. Come on, you love that.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/094.jpg"
   },
@@ -837,8 +655,6 @@
     "tour_id": 20,
     "title": "City Hall Loop",
     "address": "City Hall, New York, NY 10007",
-    "lat":"40.7127744",
-    "lng":"-74.006059",
     "description": "South of Brooklyn Bridge – City Hall on a curved balloon loop. Closed due to low ridership, short platform length and the proximity of the busier Brooklyn Bridge – City Hall station.{6} Listed on the National Register of Historic Places.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/095.jpg"
   },
@@ -846,8 +662,6 @@
     "tour_id": 20,
     "title": "Court Street",
     "address":"Clinton St & Montague St, New York, NY 11201",
-    "lat":"40.694276",
-    "lng":"-73.992424",
     "description": "West of Hoyt–Schermerhorn Streets. Closed due to low ridership and proximity to other Downtown Brooklyn stations. Site now houses the New York Transit Museum.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/096.jpg"
   },
@@ -855,8 +669,6 @@
     "tour_id": 20,
     "title": "Jerome Anderson Station",
     "address": "1020 Jerome Ave., Bronx, NY 10452",
-    "lat":"40.83196540000001",
-    "lng":"-73.92525710000001",
     "description":"North of the 155th Street station, the elevated line crossed the Harlem River and went into a tunnel similarly to how the 125th Street subway station comes out of the tunnel onto a high viaduct. This was done in both places to keep the grade of the tracks relatively level. Closed with the discontinuation of the Polo Grounds Shuttle.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/097.jpg"
   },
@@ -864,8 +676,6 @@
     "tour_id": 21,
     "title": "Eleven Madison Park",
     "address": "11 Madison Ave., New York, NY 10010",
-    "lat":"40.7415053",
-    "lng":"-73.9866266",
     "description": "Since arriving at Eleven Madison Park seven years ago, the talented Swiss chef has earned many awards (a James Beard, for one), accumulated countless stars (from Michelin, among others), and won rave reviews",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/098.jpg"
   },
@@ -873,8 +683,6 @@
     "tour_id": 21,
     "title": "Jean Georges",
     "address": "1 Central Park West, New York, NY 10023",
-    "lat":"40.7690691",
-    "lng":"-73.9815601",
     "description": "Nothing you encounter will fail to awe, from the simplest dish of sea scallops with caper-raisin emulsion to the unexpected combo of sweetbreads en cocotte with ginger and licorice.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/099.jpg"
   },
@@ -882,8 +690,6 @@
     "tour_id": 21,
     "title": "Masa",
     "address": "10 Columbus Circle, New York, NY 10019",
-    "lat":"40.7684141",
-    "lng":"-73.9827037",
     "description":  "Masa Takayama, the illustrious sushi god from L.A., came to New York with a uniquely Japanese, if slightly insane proposition: that a meal of the highest quality is worth almost any price.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/100.jpg"
   },
@@ -891,8 +697,6 @@
     "tour_id": 21,
     "title": "Per Se",
     "address": "10 Columbus Circle, New York, NY 10019",
-    "lat":"40.7684141",
-    "lng":"-73.9827037",
     "description": "The French Laundry is widely touted as the best restaurant in America, and Per Se seems to have been conceived, rather self-consciously, as its august big-city sibling.",
     "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"
   }

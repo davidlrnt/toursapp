@@ -20,10 +20,33 @@
           <li><%= participant.description %>
           <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
         <% end %>
-        <h3>My Friends</h3>
-        <li>Friend 1
-        <li>Friend 2
           <h3>Badges: </h3>
           <%= link_to "#{@user.badges.count} Badge(s)", user_badges_path(@user) %>
       </div>
+      <h2>Friends</h2>
+
+<ul>
+        <% @user.friends.each do |friend| %>
+        <li>
+          <%= link_to "#{friend.name}", user_path(friend) %> 
+          <% if current_user == @user %>
+            <%= link_to "Remove", friendship_path(:id => friend), :method => :delete %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <% if current_user == @user %>
+        <h4>Friend Requests</h4>
+        <ul>
+            <% @user.requested_friendships.each do |request| %>
+            <li>
+              <%= link_to "#{request.name}", user_path(request)%>
+              <%= link_to "Accept", friendship_path(:id => request), :method => "put" %> 
+              <%= link_to "Decline", friendship_path(:id => request), :method => :delete %>
+            </li>
+          <% end %>
+        </ul>
+    <% end %>
+
   </div>

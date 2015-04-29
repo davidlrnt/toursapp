@@ -99,9 +99,10 @@ ActiveRecord::Schema.define(version: 20150429141554) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.boolean  "confirm",    default: false
+    t.boolean  "approved",   default: false
     t.integer  "friend_id"
     t.integer  "user_id"
+    t.string   "status"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
