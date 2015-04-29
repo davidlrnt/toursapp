@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   
   resources :friendships 
+  post '/friend_request', to: 'friendships#friend_request'  
 
   resources :tours do
     resources :locations

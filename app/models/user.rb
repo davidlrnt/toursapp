@@ -31,10 +31,17 @@ class User < ActiveRecord::Base
   has_many :badge_users
   has_many :badges, through: :badge_users
 
-  has_many :friendships
-  has_many :friends, :through => :friendships
-  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
-  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+    has_many :friendships
+    has_many :passive_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+
+    has_many :active_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
+    has_many :passive_friends, -> { where(friendships: { approved: true}) }, :through => :passive_friendships, :source => :user
+    has_many :pending_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
+    has_many :requested_friendships, -> { where(friendships: { approved: false}) }, :through => :passive_friendships, :source => :user
+
+
+
+
 
   mount_uploader :image, ImageUploader
 
@@ -49,6 +56,11 @@ class User < ActiveRecord::Base
 
 
   acts_as_messageable
+
+
+  def friends
+      active_friends | passive_friends
+  end
 
   def mailboxer_name
    self.name
