@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<% if @tour.images.first %>
-<img src="http://flatirontours.s3.amazonaws.com/<%= @tour.images.first.image_url %>">
+<% if !@tour.images.empty? %>
+  <%= image_tag(@tour.images[0].image_url, height: '500') %>
 <% end %>
 <h1>Tour Guide:</h1>
 <%= link_to @tour.guide.name, @tour.guide %>
@@ -47,12 +47,11 @@
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
-
- <% @tour.comments.each do |comment| %>
+ <% @tour.reviews.each do |review| %>
    <li>
-     <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
-   <%= comment.content %>
-   <%= comment.created_at.to_date %>
+     <%= link_to "#{review.participant.name}", "/users/#{review.participant.id}" %> wrote:
+   <%= review.content %>
+   <%= review.created_at.to_date %>
    </li>
  <% end %>
 <br>
