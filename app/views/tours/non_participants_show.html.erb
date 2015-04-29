@@ -1,7 +1,17 @@
 <div class="tourImage">
+
+  <div class="userTourAvatar">
+  <%= image_tag("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg", size: "125x125")%>
+  <%= link_to @tour.guide.name, @tour.guide %>
+  <button>Message</button>
+  </div>
+
+  <div class="tourMap">
+  </div>
+
   <div class="tourDescription">
-    <h1>Visit Moscow!</h1>
-    <h3>Best everything in Russia's best city.</h3>
+    <h1><%= @tour.title %></h1>
+    <h3><%= @tour.description %></h3>
   </div>
 </div>
 
