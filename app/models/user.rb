@@ -57,10 +57,10 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-
   def friends
-      active_friends | passive_friends
+    active_friends | passive_friends
   end
+
 
   def mailboxer_name
    self.name

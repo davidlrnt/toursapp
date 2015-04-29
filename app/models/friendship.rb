@@ -1,6 +1,6 @@
 class Friendship < ActiveRecord::Base
-	 belongs_to :user
-  	 belongs_to :friend, :class_name => 'User'
+	belongs_to :user
+    belongs_to :friend, :class_name => "User"
 
  def self.request(user, friend)
     unless user == friend or Friendship.exists?(user, friend)

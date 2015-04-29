@@ -41,7 +41,7 @@
         <ul>
             <% @user.requested_friendships.each do |request| %>
             <li>
-              <%= link_to "#{request.name}", user_path(request) %>
+              <%= link_to "#{request.name}", user_path(request)%>
               <%= link_to "Accept", friendship_path(:id => request), :method => "put" %>
               <%= link_to "Decline", friendship_path(:id => request), :method => :delete %>
             </li>

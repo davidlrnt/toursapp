@@ -131,37 +131,30 @@ p{
   margin-top: 1em;
 }
 
-.tourMap{
-  height: 250px;
-  width: 400px;
-  background-color: yellow;
-}
-
-.userTourAvatar, .tourMap{
-    position: absolute;
-    bottom: -2em;
-    display: inline;
-}
-
-.tourMap{
+.map{
+  z-index: 0;
   right: 3em;
+  height: 350px;
+  width: 500px;
+  background-color: yellow;
+  border: 5px solid white;
+  position: absolute;
+  bottom: -12em;
+  display: inline;
+}
+
+.userTourAvatar {
+    position: absolute;
+    bottom: -6em;
+    display: inline;
 }
 
 .userTourAvatar{
   left: 2em ;
 }
-
-
-
-
-#map
-{
-    position: absolute;
-    z-index: -1;
-    float: left;
-    width: 60%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    opacity: 0.5;
+#nav{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
+
