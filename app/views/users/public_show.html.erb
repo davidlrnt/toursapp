@@ -13,6 +13,7 @@
           <li><%= participant.description %>
           <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
         <% end %>
+          <li><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %><br>
         <h3>Friends</h3>
         <li>Friend 1
         <li>Friend 2

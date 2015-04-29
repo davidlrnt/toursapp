@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428153251) do
+ActiveRecord::Schema.define(version: 20150429141554) do
 
   create_table "audios", force: :cascade do |t|
     t.string   "audio_url"
@@ -100,6 +100,14 @@ ActiveRecord::Schema.define(version: 20150428153251) do
     t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.boolean  "confirm",    default: false
+    t.integer  "friend_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "guide_comments", force: :cascade do |t|

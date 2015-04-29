@@ -70,6 +70,6 @@ locations = JSON.parse(File.read("db/seeds/locations.json"))
   locations.each do |location|
     tour = Tour.find_by_id(location["tour_id"])
     l = tour.locations.create(title: location["title"], address: location["address"], description: location["description"] )
-    l.set_coordinates
+    # l.set_coordinates
     l.images.create(image_url: location["image"])
 end
