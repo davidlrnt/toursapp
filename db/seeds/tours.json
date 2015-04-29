@@ -57,7 +57,7 @@
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["El Padrino", "Maffia", "Italia"],
+    "tags": ["El Padrino", "Mafia", "Italy"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/006.jpg"
   },
   {

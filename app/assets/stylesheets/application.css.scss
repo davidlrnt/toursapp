@@ -83,8 +83,16 @@ a{
   position: absolute;
 }
 
+.tourDescription{
+  left: 2em;
+  top: 25%;
+  width: 33%;
+  color: white;
+  position: absolute;
+}
+
 .tourImage{
- background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://insights.ingredientsnetwork.com/wp-content/uploads/2015/03/mytravelingtheword-saint-basils-cathedral-moscow.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://insights.ingredientsnetwork.com/wp-content/uploads/2015/03/mytravelingtheword-saint-basils-cathedral-moscow.jpg');
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
@@ -94,15 +102,6 @@ a{
   position: relative;
   margin-bottom: 5em;
 }
-
-.tourDescription{
-  left: 2em;
-  top: 25%;
-  width: 33%;
-  color: white;
-  position: absolute;
-}
-
 
 ul, li {
   list-style: none;

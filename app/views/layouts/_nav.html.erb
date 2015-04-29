@@ -4,8 +4,7 @@
     <%= f.label :city %>
     <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
     <%= f.label :category %>
-    <%= f.collection_select :category, Category.all, :name, :name %>
-    <%= f.label :tags %>
+    <%= f.collection_select(:category, Category.all, :name, :name, {:prompt => 'Choose a Category...'}) %>
     <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tag" %>
     <%= f.submit "Find" %>
   <% end %>
@@ -19,7 +18,6 @@
     <%= link_to 'New Tour', new_tour_path %>
     <%= link_to "Badges", user_badges_path(current_user) %></li>
   <% else %>
-    <p>You are not signed in.</p>
     <%= link_to 'Log In', new_user_session_path %>
     <%= link_to 'Register', new_user_registration_path %>
     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
@@ -27,9 +25,9 @@
 </div>
 </nav>
 <script>
-$( "#autocomplete" ).autocomplete({
-  source: <%= raw Tag.pluck(:name) %>
-});
+// $( "#autocomplete" ).autocomplete({
+//   source: <%= raw Tag.pluck(:name) %>
+// });
 $( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });
