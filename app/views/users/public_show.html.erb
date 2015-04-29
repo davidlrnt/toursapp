@@ -14,14 +14,8 @@
           <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
         <% end %>
         <li>
-  <% unless current_user == @user %>
+  <% if !current_user.friends.include?(@user) %>
         <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
     <% end %>
-
-
-
-        <h3>Friends</h3>
-        <li>Friend 1
-        <li>Friend 2
       </div>
   </div>
