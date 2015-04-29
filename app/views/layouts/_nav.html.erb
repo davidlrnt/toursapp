@@ -19,7 +19,6 @@
     <%= link_to 'New Tour', new_tour_path %>
     <%= link_to "Badges", user_badges_path(current_user) %></li>
   <% else %>
-    <p>You are not signed in.</p>
     <%= link_to 'Log In', new_user_session_path %>
     <%= link_to 'Register', new_user_registration_path %>
     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
