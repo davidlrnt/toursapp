@@ -1,13 +1,5 @@
 
 [
-	{
-    "name": "Test User",
-    "email": "a@gmail.com",
-    "dob": "02/01/1990",
-    "location": "Google",
-    "password": "password",
-    "gender": "Fluid"
-  },
   {
 		"name": "Maya Glover",
 		"email": "Ut.semper.pretium@mi.com",

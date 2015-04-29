@@ -1,25 +1,60 @@
 <div class="tourImage">
+<% if @tour.images.first %>
+<style>
+.tourImage{
+ background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-bottom: 5em;
+}
+
+.thumb {
+    background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 5px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+</style>
+<% end %>
+
+
 
   <div class="userTourAvatar">
-  <%= image_tag("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg", size: "125x125")%>
+    <div class="thumb" title="Portrait: 400x800"></div>
   <%= link_to @tour.guide.name, @tour.guide %>
   <button>Message</button>
   </div>
 
-  <div class="tourMap">
-  </div>
+<!--   <div class="map">
+  </div> -->
+  <div id="map" class="map"></div>
+
 
   <div class="tourDescription">
     <h1><%= @tour.title %></h1>
     <h3><%= @tour.description %></h3>
   </div>
+
+
+</div>
 </div>
 
 
+
+
 <p id="notice"><%= notice %></p>
-<% if !@tour.images.empty? %>
-  <%= image_tag(@tour.images[0].image_url, height: '500') %>
-<% end %>
+
 <h1>Tour Guide:</h1>
 <%= link_to @tour.guide.name, @tour.guide %>
 
@@ -56,30 +91,25 @@
 <ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
-  <% if current_user %>
     <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-  <% else %>
-  <li><%= location.title %></li>
-  <% end %>
-    <%= location.address %><br><br>
+    <%= location.address %><br>
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
 </ul>
- <% @tour.reviews.each do |review| %>
+
+ <% @tour.comments.each do |comment| %>
    <li>
-     <%= link_to "#{review.participant.name}", "/users/#{review.participant.id}" %> wrote:
-   <%= review.content %>
-   <%= review.created_at.to_date %>
+     <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
+   <%= comment.content %>
+   <%= comment.created_at.to_date %>
    </li>
  <% end %>
 <br>
-  <% if user_signed_in? && @tour.published %>
-    <%= form_tag("/participate") %>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
-    <%= hidden_field_tag(:id, @tour.id) %>
-    <%= submit_tag("Participate") %>
- <% elsif user_signed_in? && !@tour.published %>
-   This tour is not ready yet.
+ <% if user_signed_in? %>
+   <%= form_tag("/participate") %>
+   <%= hidden_field_tag(:user_id, current_user.id) %>
+   <%= hidden_field_tag(:id, @tour.id) %>
+   <%= submit_tag("Participate") %>
  <% else %>
    <%= link_to "Log In", new_user_session_path %>
    or
@@ -88,7 +118,7 @@
  <% end %><br>
  <%= link_to 'Back', tours_path %>
 
- <div id="map" style="opacity: 0.9;">
+ <!-- <div id="map" style="opacity: 0.9;"> -->
 
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
@@ -110,7 +140,7 @@
     var iconsLength = icons.length;
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
+      zoom: 13,
       center: new google.maps.LatLng(40.7412,-73.9973),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
@@ -168,3 +198,5 @@
     }
     autoCenter();
   </script>
+
+
