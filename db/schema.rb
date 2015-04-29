@@ -158,6 +158,9 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.datetime "updated_at",  null: false
     t.text     "description"
     t.string   "image_url"
+    t.string   "image"
+    t.string   "audio"
+    t.string   "video"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -282,6 +285,8 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.boolean  "published",     default: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "image"
+    t.string   "imrl"
   end
 
   add_index "tours", ["category_id"], name: "index_tours_on_category_id"
@@ -316,6 +321,7 @@ ActiveRecord::Schema.define(version: 20150423204646) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
