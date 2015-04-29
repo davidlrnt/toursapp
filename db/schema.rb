@@ -85,10 +85,6 @@ ActiveRecord::Schema.define(version: 20150429141554) do
     t.string   "content"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "image"
-    t.string   "imrl"
-    t.string   "audio"
-    t.string   "video"
   end
 
   add_index "comments", ["location_id"], name: "index_comments_on_location_id"

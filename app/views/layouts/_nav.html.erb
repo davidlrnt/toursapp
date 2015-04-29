@@ -1,4 +1,15 @@
 <nav>
+  <div class="searchBar">
+    <%= form_for :search, url: searches_path  do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
+    <%= f.label :category %>
+    <%= f.collection_select :category, Category.all, :name, :name %>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tag" %>
+    <%= f.submit "Find" %>
+  <% end %>
+  </div>
   <div class="userSettings">
   <% if user_signed_in? %>
     <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>

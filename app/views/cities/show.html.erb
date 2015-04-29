@@ -1,18 +1,23 @@
-<h3><%= @city.name %></h3><br>
-<h4>List of All Published Tours</h4><br>
 <% @tours.each do |tour| %>
 <% if !tour.images.empty? %>
   <%= image_tag(tour.images[0].image_url, height: '100') %>
 <% end %>
-	<ul><%= link_to tour.title, tour_path(tour)  %><br>
-	<%= tour.description %><br>
-	<% duration = (Time.now.to_time - tour.updated_at.to_time) %>
-	<% if (duration/1.hour).floor == 0 %>
-		Last updated: <%= ((duration)/60).floor  %> minutes ago
-	<% elsif  (duration/1.hour).floor == 1 %>
-		Last updated: 1 hour ago
-	<% else %>
-		Last updated: <%= ((duration)/1.hour).floor  %> hour ago
-	<% end %>
-	<br><br></ul>
+<h3><%= link_to tour.title, tour_path(tour)  %><h3>
+<h4><%= tour.description %></h4>
+<% tour.tags.each do |tag|%>
+<li><%= tag.name %></li>
 <% end %>
+<% tour.cities.each do |city|%>
+<%= city.accent %>
+<% end %>
+<% if tour.average_score.nil? %>
+<h4>No Ratings Yet!</h4>
+<% else %>
+<h1><%= tour.average_score %></h1>
+<% end %>
+
+<%= link_to 'See Tour', tour_path(tour) %>
+<br><br>
+<% end %>
+
+

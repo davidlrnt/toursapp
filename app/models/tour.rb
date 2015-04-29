@@ -61,7 +61,7 @@ class Tour < ActiveRecord::Base
   end
 
   def set_average
-    update(average_score: reviews.sum(:rating).to_f/reviews.count.to_f)
+    update(average_score: (reviews.sum(:rating).to_f/reviews.count.to_f).round(2) )
   end
 
   def tag_name
