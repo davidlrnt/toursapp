@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     resources :badges
   end
 
+  
+  resources :friendships 
+
   resources :tours do
     resources :locations
     resources :comments

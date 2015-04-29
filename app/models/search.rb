@@ -2,6 +2,7 @@ class Search
   attr_accessor :city, :category, :tags
 
   def initialize(hash = {"city" => "", "category" => "", "tags" => ""})
+    # binding.pry
     @city = hash["city"]
     @category = hash["category"]
     @tags = hash["tags"]
@@ -10,24 +11,20 @@ class Search
 
   def get_tours
     category = Category.find_by(name: @category)
-    @tours = Tour.where(category: category, published: true)
-    @results = []
-    @tours.each do |tour|
-      tour.cities.each do |city|
-        if @city.downcase == city.name
-          @results << tour
-        end
+    if category.nil? && @tags.empty?
+      @results = Tour.joins(:cities).where(cities: {name: @city.downcase})
+    elsif category.nil?
+      @results = Tour.joins(:tags).where(tags: {name: @tags.downcase})
+    else
+      if !@tags.empty?
+      found_tours = []
+      found_tours <<  Tour.joins(:cities).joins(:tags).where(cities: {name: @city.downcase}).where(category: category, published: true).where(tags: {name: @tags.downcase})
+      found_tours <<  Tour.joins(:cities).where(cities: {name: @city.downcase}).where(category: category, published: true).where("title LIKE :word1", {:word1 => "%#{@tags}%"})
+      found_tours.flatten.uniq
+      else
+      resultscity = Tour.joins(:cities).where(cities: {name: @city.downcase}).where(category: category, published: true)
       end
     end
-    @moreresults =[]
-    @results.each do |tour|
-      tour.tags.each do |tag|
-        if @tags == tag.name
-          @moreresults << tour
-        end
-      end
-    end
-    @moreresults.empty? ? @results : @moreresults
   end
 
 end

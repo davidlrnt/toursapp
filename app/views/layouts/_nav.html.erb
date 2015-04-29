@@ -4,8 +4,7 @@
     <%= f.label :city %>
     <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
     <%= f.label :category %>
-    <%= f.collection_select :category, Category.all, :name, :name %>
-    <%= f.label :tags %>
+    <%= f.collection_select(:category, Category.all, :name, :name, {:prompt => 'Choose a Category...'}) %>
     <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tag" %>
     <%= f.submit "Find" %>
   <% end %>
@@ -26,9 +25,9 @@
 </div>
 </nav>
 <script>
-$( "#autocomplete" ).autocomplete({
-  source: <%= raw Tag.pluck(:name) %>
-});
+// $( "#autocomplete" ).autocomplete({
+//   source: <%= raw Tag.pluck(:name) %>
+// });
 $( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });
