@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get '/tours/:id/locations/:id/image_amazon', to: 'locations#image_amazon'
   get '/tours/:id/locations/:id/audio_amazon', to: 'locations#audio_amazon'
 
-  get '/tours/:id/locations/:id/content', to: 'locations#content'
+  get '/tours/:id/locations/:id/comments/:id/image_amazon', to: 'comments#image_amazon'
+
+  get '/tours/:id/locations/:id/comments/:id/imageupload', to: 'comments#imageupload'
 
   get 'image/new'
 
