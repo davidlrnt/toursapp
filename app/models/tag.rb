@@ -7,6 +7,5 @@ class Tag < ActiveRecord::Base
 
 
   def find_or_initialize_by_name
-    binding.pry
   end
 end

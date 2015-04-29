@@ -507,7 +507,7 @@
    "lat":"40.7438232",
    "lng":"-73.950656",
    "description": "Triumph in a bowl with Spectacular service. The chef is truly a seasoned veteran at this game called ramen.",
-   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/057.jpg"
+   "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/056.jpg"
  },
  {
    "tour_id": 12,
@@ -894,7 +894,6 @@
     "lat":"40.7684141",
     "lng":"-73.9827037",
     "description": "The French Laundry is widely touted as the best restaurant in America, and Per Se seems to have been conceived, rather self-consciously, as its august big-city sibling.",
-    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"}
-
-
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/location/image/101.jpg"
+  }
 ]

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_location_tour, only: [:create]
+  before_action :set_comment, only: [:content]
 
   def new
 
@@ -12,6 +13,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
+      binding.pry
       if !@tour.nil?
         @tour.comments << @comment
       @comment.participant = current_user
@@ -29,6 +31,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def content
+    binding.pry
+    @comment.images.create(image_url: params["key"])
+  end
+
   def show
   end
 
@@ -39,5 +46,9 @@ class CommentsController < ApplicationController
 
   def set_location_tour
     params[:location_id] ? @location = Location.find(params[:location_id]) : @tour = Tour.find(params[:tour_id])
+  end
+
+  def set_comment
+    binding.pry
   end
 end

@@ -167,7 +167,7 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Seinfeld, Movies, Friends, Men in Black, Godzilla"],
+    "tags": ["Seinfeld", "Movies", "Friends", "Men in Black", "Godzilla"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/017.jpg"
   },
     {
@@ -177,7 +177,7 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Korean BBQ, Night Club, Bar, Supermarket"],
+    "tags": ["Korean BBQ", "Night Club", "Bar", "Supermarket"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/018.jpg"
   },
     {
@@ -187,7 +187,7 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["LES, West Village, Night life, Bars, Cocktail"],
+    "tags": ["LES", "West Village", "Night life", "Bars", "Cocktail"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/019.jpg"
   },
     {
@@ -197,7 +197,7 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["subways staions, closed"],
+    "tags": ["subways staions", "closed"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/020.jpg"
   },
     {
@@ -207,7 +207,7 @@
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["Michelin, Restaurant", "New York"],
+    "tags": ["Michelin", "Restaurant", "New York"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/021.jpg"
   }
 
