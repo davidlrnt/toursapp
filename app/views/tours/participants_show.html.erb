@@ -1,10 +1,51 @@
 <div class="tourImage">
-  <div class="tourDescription">
-    <h1>Visit Moscow!</h1>
-    <h3>Best everything in Russia's best city.</h3>
-  </div>
-</div>
+<% if @tour.images.first %>
+<style>
+.tourImage{
+ background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-bottom: 5em;
+}
 
+.thumb {
+    background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    margin: 5px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+</style>
+<% end %>
+
+
+
+  <div class="userTourAvatar">
+    <div class="thumb" title="Portrait: 400x800"></div>
+  <%= link_to @tour.guide.name, @tour.guide %>
+  <button>Message</button>
+  </div>
+  <div id="map" class="map"></div>
+
+
+  <div class="tourDescription">
+    <h1><%= @tour.title %></h1>
+    <h3><%= @tour.description %></h3>
+  </div>
+
+
+</div>
+</div>
 
 <div class="user_progress">
 <% if !@tour.images.empty? %>

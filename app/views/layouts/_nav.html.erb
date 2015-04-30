@@ -1,5 +1,5 @@
-<nav id="nav">
-  <div class="searchBar">
+<nav>
+  <div id="nav" class="searchBar">
     <%= form_for :search, url: searches_path  do |f| %>
     <%= f.label :city %>
     <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>

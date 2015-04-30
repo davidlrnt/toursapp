@@ -14,35 +14,38 @@
 }
 
 .thumb {
+    background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     margin: 5px;
-    border: 3px solid #c99;
+    border: 5px solid white;
+    border-radius: 50%;
     background-position: center center;
     background-size: cover;
-    z-index: 1;
+    background-repeat: no-repeat;
 }
 </style>
 <% end %>
 
-  <div class="thumb" style="background-image: url("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg");" title="Portrait: 400x800"></div>
+
 
   <div class="userTourAvatar">
-  <%= image_tag("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg", size: "64x64")%>
+    <div class="thumb" title="Portrait: 400x800"></div>
   <%= link_to @tour.guide.name, @tour.guide %>
   <button>Message</button>
   </div>
+  <div id="map" class="map"></div>
 
-  <div class="tourMap">
-  </div>
 
   <div class="tourDescription">
     <h1><%= @tour.title %></h1>
     <h3><%= @tour.description %></h3>
   </div>
-</div>
 
+
+</div>
+</div>
 
 <p id="notice"><%= notice %></p>
 <% if @tour.images.first %>
