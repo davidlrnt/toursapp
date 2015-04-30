@@ -193,13 +193,19 @@ ul, li {
   margin: 3em;
 }
 
-.tourSnippet{
+.cityImage{
   display: inline-block;
-  width: 33%;
+  width: 400px;
+  height: 400px;
   padding: .5em,.5em,.5em,.5em;
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 2em;
+  /*position: relative;*/
+  margin: 2%;
+  /*margin-bottom: 2em;*/
+
+}
+
+.citiesList {
+  text-align: center;
 
 }
 

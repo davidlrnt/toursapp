@@ -6,15 +6,34 @@
 </div>
 
 
-
-<% City.all.each do |city| %>
-    <div class= "tourSnippet">
+<div class="citiesList">
+<% City.all.each_with_index do |city, index| %>
       <div class="cityImage">
-         <%= image_tag(city.image, size: "250x250")%>
-          <h3><%= link_to "#{city.name}", city_path(city)%></h3>
+    <%= form_for :search, url: searches_path  do |f| %>
+    <%= f.hidden_field :tags %>
+    <%= f.hidden_field :city, :value => city.name %>
+    <%= f.submit city.accent, :id => "city#{index}" %>
+  <style>
+    <%=  "#city#{index}" %>
+    {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= city.image %>);
+  background-color: black;
+  font-size:35pt;
+  color: white;
+  height: 400px;
+  width: 400px;
+  /*background:url(<%= city.image %>) no-repeat center;*/
+  background-size: 400px 400px;
+  border: 0;
+  cursor: pointer;
+    }
+  </style>
+
+  <% end %>
       </div>
-    </div>
 <% end %>
+
+</div>
 
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">

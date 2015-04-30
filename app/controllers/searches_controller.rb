@@ -7,7 +7,14 @@ class SearchesController < ApplicationController
     end
     @search = Search.new(search_params)
     @tours = @search.get_tours
-    binding.pry
+    render 'results'
+  end
+
+  def show_city
+    # binding.pry
+    @search = Search.new
+    @search.city = params["id"]
+    @tours = @search.get_tours
     render 'results'
   end
 
