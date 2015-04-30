@@ -3,6 +3,7 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.references :country, index: true
       t.string :name
+      t.string :image
       t.string :accent
       t.string :region
       t.float :lat

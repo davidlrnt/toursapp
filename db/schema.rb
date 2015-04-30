@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
     t.string   "name"
     t.string   "description"
     t.string   "badge_type"
+    t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
   create_table "cities", force: :cascade do |t|
     t.integer  "country_id"
     t.string   "name"
+    t.string   "image"
     t.string   "accent"
     t.string   "region"
     t.float    "lat"
