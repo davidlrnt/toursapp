@@ -1,25 +1,27 @@
-<% if @user.images.first %>
 <div class="userProfileAvatar">
 <h2><%= @user.name %></h2>
 <%= link_to "Edit Profile", edit_user_path %><br>
-  <%=image_tag(@user.images.first.image_url, size:"")%>
-  <% else %>
-  <div class="userProfileAvatar">
-  <h2><%= @user.name %></h2>
-  <%= link_to "Edit Profile", edit_user_path %><br>
-  <img src="http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg">
-<% end %>
+<% if @user.images.count > 1 %>
+  <%=image_tag("http://flatirontours.s3.amazonaws.com/#{@user.images.last.image_url}", size:"100x100")%>
+  <% elsif @user.images.empty? %>
+    <img src="http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg">
+    <% else %>
+    <%= image_tag(@user.images.last.image_url, size:"100x100") %>
+    <h2><%= @user.name %></h2>
+    <%= link_to "Edit Profile", edit_user_path %><br>
+  <% end %>
 </div>
 
-
+<% if !@user.badges.empty? %>
 <div class="userBadgesContainer">
     <% @user.badges.each do |badge| %>
       <div class="userBadge">
     <%= image_tag("#{badge.image_url}", size: "300x300") %><br>
-    <h4><%= badge.name %> </h4>  
+    <h4><%= badge.name %> </h4> 
     </div>
 <% end %>
 </div>
+<% end %>
 
 
   <div class="profileListContainer">
@@ -54,14 +56,14 @@
       </div>
     
 
-    <%# if current_user == @user %>
+    <% if current_user == @user %>
        
-            <%# @user.requested_friendships.each do |request| %>
-  
-              <%#= link_to "#{request.name}", user_path(request)%>
-              <%#= link_to "Accept", friendship_path(:id => request), :method => "put" %>
-              <%#= link_to "Decline", friendship_path(:id => request), :method => :delete %>
-  
-          <%# end %>
+            <% @user.requested_friendships.each do |request| %>
+             <li>
+              <%= link_to "#{request.name}", user_path(request) %>
+              <%= link_to "Accept", friendship_path(:id => request), :method => "put" %>
+               <%= link_to "Decline", friendship_path(:id => request), :method => :delete %>
+             </li>
+           <% end %>
         
-    <%# end %>
+    <% end %>
