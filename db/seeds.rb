@@ -37,7 +37,7 @@ File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|
   row = CSV.parse(csv_line.gsub('"', '\''))
   c = Country.find_by(:code => row.first[0].upcase)
   unless c.nil?
-  c.cities.create(name: row.first[1], accent: row.first[2], region: row.first[3], lat: row.first[5], long: row.first[6])
+  c.cities.create(name: row.first[1], accent: row.first[2], region: row.first[3], lat: row.first[5], long: row.first[6], image: row.first[7])
   end
 end
 

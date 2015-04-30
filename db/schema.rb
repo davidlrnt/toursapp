@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
   create_table "cities", force: :cascade do |t|
     t.integer  "country_id"
     t.string   "name"
+    t.string   "image"
     t.string   "accent"
     t.string   "region"
     t.float    "lat"
