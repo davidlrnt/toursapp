@@ -1,12 +1,26 @@
 
 <div id="resultsContainer">
-<% @tours.each do |tour| %>
+<% @tours.each_with_index do |tour, index| %>
 <%= link_to tour_path(tour) do  %>
 <div id="tourResult">
 <% if !tour.images.empty? %>
-<div id="tourImage">
-  <%= image_tag(tour.images[0].image_url, height: '200') %>
-</div>
+<!-- <div id="tourImage"> -->
+  <%# image_tag(tour.images[0].image_url, height: '200') %>
+
+<!-- </div> -->
+
+<div class="thumb<%= index %>"></div>
+<style>
+    .thumb<%= index %> {
+    background: url(<%= tour.images[0].image_url %>);
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center center;
+    margin: 0 auto;
+    }
+    </style>
+
 <% end %>
 <h3 class="tourTitle"><%= tour.title %></h3>
 <div id="tourDescription">
@@ -27,7 +41,7 @@
 <% if tour.average_score.nil? %>
 <h4>No Ratings Yet!</h4>
 <% else %>
-<p id="tourScore">Rating:<%# tour.average_score %></p>
+<p id="tourScore"><%# tour.average_score %></p>
 <div class="rating" data-score=<%= tour.average_score %> ></div>
 <% end %>
 <%# link_to 'See Tour', tour_path(tour) %>

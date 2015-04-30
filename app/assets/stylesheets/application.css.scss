@@ -324,16 +324,16 @@ p{
 }*/
 
 #tourResult {
-  border: 1px solid #DB5120;
+  /*border: 1px solid #DB5120;*/
+  background-color: #DB5120;
   width: 19%;
-  height: 350px;
+  height: 390px;
   display:inline-block;
   /*float: left;*/
   margin: 2%;
   overflow:hidden;
   text-align: center;
   border-radius: 5%;
-
 }
 
 #resultsContainer {
@@ -341,8 +341,9 @@ p{
   width: 100%;
   height: 100%;
   /*text-align: center;*/
-  margin: 6% 3% 0% 4%;
+  margin: 2% 3.5% 0% 3.5%;
   font-size: 0;
+  position: relative;
   /*margin: 6%;*/
 }
 
@@ -350,7 +351,7 @@ p{
   /*width: 100%;*/
   padding: 2% ;
   margin: 0;
-  font-size: 10pt;
+  font-size: 12pt;
   height: 70px;
   overflow: hidden;
   /*border: 2px solid black;*/
@@ -360,6 +361,7 @@ p{
 
 .tourTitle {
   /*border: 2px solid black;*/
+  color: white;
   margin: 5px 0px 5px 0px;
   font-size: 15pt;
   height: 13%;
@@ -371,6 +373,7 @@ p{
   /*border: 2px solid black;*/
   margin: 0;
   color: black;
+  padding: 4px;
 
 }
 
@@ -381,4 +384,5 @@ p{
 }
 .rating {
   /*border: 2px solid black;*/
+  padding: 4px;
 }
