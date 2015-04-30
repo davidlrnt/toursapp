@@ -1,23 +1,58 @@
-  <div class="user">
-    <div class="form">
-       <h3><%= @user.name %> </h3>
-       <h3>Guide Score</h3>
-       <h3><%= @user.average_score %> </h3>
-      <h3>Tours Created</h3>
+<div class="userProfileAvatar">
+<h2><%= @user.name %></h2>
+<%= link_to "Edit Profile", edit_user_path %><br>
+<% if @user.images.count > 1 %>
+  <%=image_tag("http://flatirontours.s3.amazonaws.com/#{@user.images.last.image_url}", size:"100x100")%>
+  <% elsif @user.images.empty? %>
+    <img src="http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg">
+    <% else %>
+    <%= image_tag(@user.images.last.image_url, size:"100x100") %>
+    <h2><%= @user.name %></h2>
+    <%= link_to "Edit Profile", edit_user_path %><br>
+  <% end %>
+</div>
+
+<% if !@user.badges.empty? %>
+<div class="userBadgesContainer">
+    <% @user.badges.each do |badge| %>
+      <div class="userBadge">
+    <%= image_tag("#{badge.image_url}", size: "300x300") %><br>
+    <h4><%= badge.name %> </h4> 
+  </div>
+<% end %>
+<% else %>
+    <h4>This user doesn't currently have any <%= link_to("badges!", user_badges_path(@user)) %></h4>
+</div>
+
+<% end %>
+
+  <div class="profileListContainer">
+  <div class="userToursList">
+      <h3><%= @user.name %> Tours</h3>
       <% @tours.each do |guide| %>
-        <li><%= link_to guide.title, tour_path(guide.id)  %><br>
+        <%= link_to guide.title, tour_path(guide.id)  %><br>
         <% end %>
-        <h3>Tours <%= @user.name %> On</h3>
+        </div>
+
+
+        <div class="userCurrentToursList">
+          <h3>Tours I'm On</h3>
         <% @trips.each do |participant| %>
-          <li><%= participant.title %>
-          <li><%= participant.description %>
-          <li><%= link_to 'Go To Tour', tour_path(participant.id) %><br>
+          <%= participant.title %>
+          <%= participant.description %>
+          <%= link_to 'Go To Tour', tour_path(participant.id) %><br>
         <% end %>
-        <li>
-      <% if user_signed_in? %>
-        <% if !current_user.friends.include?(@user) && !current_user.pending_friends.include?(@user)  %>
-          <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
-        <% end %>
+          </div>
+
+
+      <div class="userFriendsList">
+      <h3>Friends</h3>
+     
+        <% @user.friends.each do |friend| %>
+          <%= link_to "#{friend.name}", user_path(friend) %>
+          <% if current_user == @user %>
+              | <%= link_to "Remove", friendship_path(:id => friend), :method => :delete %>
+          <% end %>
       <% end %>
       </div>
-  </div>
+      </div>
