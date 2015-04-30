@@ -5,9 +5,37 @@
   </div>
 </div>
 
+<% @images = Dir.glob("app/assets/images/cities/*.jpg")%> 
+  <% names = City.all.pluck('name') %>
+<div class="featuredCities">
+  <% names.each do |name| %>
+        <%= name %>
+  <% @images.each do |image| %>
+  <div class="featuredCitiesImage">
+    <%= image_tag "cities/#{image.split('/').last}" %>
+    </div>
+
+    <% end %>
+    <% end %>
+</div>
+<!-- 
+
+<div class="featuredCities">
+  <div class="nycCities"></div>
+  <div class="bkCities"></div>
+  <div class="sfCities"></div>
+  <div class="laCities"></div>
+  <div class="dtCities"></div>
+  <div class="chCities"></div>
+  <div class="auCities"></div>
+  <div class="stCities"></div>
+  <div class="boCities"></div>
+</div>
+ -->
+
 <% Tour.all.each do |tour| %>
     <div class= "tourSnippet">
-    <%= image_tag("http://www.clker.com/cliparts/a/4/2/3/12428064951741648425Silver_circle.svg.hi.png", size: "64x64")%>
+    <%= image_tag("http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg", size: "100x100")%>
     <h3><%= link_to "#{tour.title}", tour_path(tour)%></h3>
     <h4><%= link_to"#{tour.guide.name}", user_path(tour.guide) %></h4>
     <p><%= tour.description %></p>

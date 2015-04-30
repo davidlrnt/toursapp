@@ -20,13 +20,11 @@
   <% end %>
 
   <br><br>
-    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
-<% @x = 0 %>
-<% @tour.locations.each do |location| %>
-<% if current_user.checked_in_locations.include?(location) %>
-<% @x += 1 %>
+
 
   </div>
+  </div>
+</div>
 
 <% if @tour.images.first %>
     <style>
@@ -39,7 +37,7 @@
     }
 
     .thumb {
-        background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
+        background: url("http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg");
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -50,43 +48,57 @@
     </style>
 <% end %>
 
-</div>
-</div>
 
 
-<div class="tourImageFloat">
-  
-  <div class="userTourAvatar">
-    <div class="thumb" title="Portrait: 400x800"></div>
-  <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
 
-  <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
-  <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
-  </div>
+    <div class="tourImageFloat">
+      
+      <div class="userTourAvatar">
+        <div class="thumb" title="Portrait: 400x800"></div>
+      <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
 
-  <div id="map" class="map"></div>
+      <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
+      <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
+      </div>
 
-</div>
+      <div id="map" class="map"></div>
 
-<div class="tourProgressContainer">
+    </div>
 
+
+
+
+
+
+
+
+<div class="grayBoxBG">
 <h3>You're <%= number_to_percentage((@progress*100), precision: 0) %> into the tour</h3>
-  
+<% @x = 0 %>
+<% @tour.locations.each do |location| %>
+  <% if current_user.checked_in_locations.include?(location) %>
+  <% @x += 1 %>
+  <%= location.title %><br>
+<% else %></div>
+<%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %></div>
 
-Last checked in at <%= location.title %><br><br><br>
-<% else %>
-<%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %>
+<div class="tourBodyContainer">
   <%= hidden_field_tag :tour_id , @tour.id %>
   <%= link_to location.title, [@tour , location] %>
-  <%= submit_tag "Check In", class: "btn_search", my_parameter: 1, class: "linkBtnSmall" %>
+  <%= submit_tag "Check In", my_parameter: 1, class: "linkBtnSmall" %>
   <br>
   <%= label_tag(:address, location.address)%><br><br>
   <!-- "#{@tour.id}/location/#{location.id}" -->
  
 <% end %>
-<br>
+
+
 <% end %>
 <% end %>
+
+
+
+
 <% if @progress == 1.0 %>
 <% if !@user.trips.find(@tour.id).reviews.where(participant_id: @user.id).empty? %>
 <h3>Your Review:</h3>
@@ -117,40 +129,21 @@ Last checked in at <%= location.title %><br><br><br>
 <%= submit_tag"Quit", class: "linkBtnGray" %>
 <% end %>
 <br>
-<%= link_to "GET DIRECTIONS", "#{@tour.id}/directions", class: "linkBtn" %>
+<%= link_to "Get Directions", "#{@tour.id}/directions", class: "linkBtn" %>
 </div>
 
 
 
 
-<p id="notice"><%= notice %></p>
 
-<h3>Locations:</h3>
-<ul>
 <% @locationsarr = [] %>
   <% @tour.locations.each do |location| %>
-  <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-  <li><%= location.address %></li>
   <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
   <% end %>
-</ul>
- <% @tour.comments.each do |comment| %>
-   <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
-   <%= comment.content %>
-   <%= comment.created_at.to_date %><br>
- <% end %>
- <br>
- <%= form_for [@tour, @comment] do |f| %>
-   <%= f.label "Leave a comment for this tour: " %>
-   <%= f.text_field :content %>
-   <%= f.submit "Post" %>
- <% end %>
-
- <%= link_to 'Back', tours_path %>
 </div>
 
 
-   <div id="map" style="opacity: 0.9;"></div>
+<!--    <div id="map" style="opacity: 0.9;"></div> -->
 
 
 

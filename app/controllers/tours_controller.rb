@@ -1,6 +1,6 @@
 class ToursController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_tour, only: [:show, :get_directions, :edit, :update, :destroy, :participate, :quit, :amazon, :publish, :mobiletour]
+  before_action :set_tour, only: [:participants_show, :show, :get_directions, :edit, :update, :destroy, :participate, :quit, :amazon, :publish, :mobiletour]
 
   def new
     @tour = Tour.new
@@ -80,7 +80,7 @@ class ToursController < ApplicationController
 	def participate
 		user = User.find_by(id: params[:user_id])
 		@tour.participate(user)
-		redirect_to @tour
+      redirect_to @tour
 	end
 
 	def quit

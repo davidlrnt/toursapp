@@ -1,76 +1,92 @@
 <div class="tourImage">
-<% if @tour.images.first %>
-<style>
-.tourImage{
- background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
-}
-</style>
-<% end %>
-
-  <div class="thumb" style="background-image: url("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg");" title="Portrait: 400x800"></div>
-
-  <div class="userTourAvatar">
-  <%= image_tag("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg", size: "64x64")%>
-  <%= link_to @tour.guide.name, @tour.guide %>
-  <button>Message</button>
-  </div>
-
-  <div class="tourMap">
-  </div>
 
   <div class="tourDescription">
     <h1><%= @tour.title %></h1>
-    <h3><%= @tour.description %></h3>
+    <p><%= @tour.description %></p>
+    <h4>Tour score:</h4> <%= @tour.average_score %>,
+
+    <h4>tags:</h4>
+  <% @tour.tags.each do |tag| %>
+  <%= tag.name %>,
+  <% end %>
+
+  <% if @tour.cities.count > 1 %>
+<h4>cities:</h4>
+<% else %>
+<h4>city:</h4>
+<% end %>
+  <% @tour.cities.each do |city| %>
+  <%= city.accent %>
+  <% end %>
+
+  <br><br>
+
+
+  </div>
   </div>
 </div>
 
+<% if @tour.images.first %>
+<style>
+    .tourImage{
+     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
+      background-color: black;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .thumb {
+        background: url("http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg");
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+<% end %>
+
+      <div class="tourImageFloat">
+      
+      <div class="userTourAvatar">
+        <div class="thumb" title="Portrait: 400x800"></div>
+      <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
+      <p>(That's you!)</p>
+      </div>
+
+      <div id="map" class="map"></div>
+
+    </div>
+
+
 
 <p id="notice"><%= notice %></p>
-<% if @tour.images.first %>
-<img src="http://flatirontours.s3.amazonaws.com/<%= @tour.images.first.image_url %>"
-<% end %><%= @tour.image_url %>
 
-<h3>Tags:</h3>
 
-<ul>
-  <% @tour.tags.each do |tag| %>
-  <li><%= tag.name %></li>
-  <% end %>
-</ul>
-<br>
-<% if @tour.cities.count > 1 %>
-<h3>Cities:</h3>
-<% else %>
-<h3>City:</h3>
-<% end %>
-<ul>
-  <% @tour.cities.uniq.each do |city| %>
-  <li><%= city.accent %></li>
-  <% end %>
-</ul>
-
-<h3>Locations:</h3>
-<div class="location">
-  <ul>
+<div class="tourBodyContainer">
     <% @tour.locations.each do |location| %>
-    <%= link_to "#{location.title}", tour_location_path(@tour,location) %>
-    <%= location.address %><br>
-    <%= link_to "Upload Content", "/tours/#{@tour.id}/locations/#{location.id}/content/?tour_id=#{@tour.id}" %>
-    <%= link_to 'Edit', edit_tour_location_path(@tour,location) %>
-    <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete %><br>
+    <%= link_to "#{location.title}", tour_location_path(@tour,location) %><br>
+    <%= location.address %><br><br>
+    <%= link_to "Upload Content", "/tours/#{@tour.id}/locations/#{location.id}/content/?tour_id=#{@tour.id}", class: "linkBtnSmall" %>
+    <%= link_to 'Edit', edit_tour_location_path(@tour,location), class: "linkBtnSmall" %>
+    <%= link_to 'Delete', tour_location_path(@tour,location), method: :delete, class: "linkBtnSmall" %><br><br><br><br>
     <% end %>
-  </ul>
-</div>
 
+
+<div class="grayBoxBG">
  <%= form_for [@tour, @location] do |f|  %>
  <%= f.hidden_field :tour_id, :value => @tour.id %>
     <%= f.label :title %>
-    <%= f.text_field  :title %><br>
+    <%= f.text_field  :title %><br><br>
     <%= f.label :address %>
-    <%= f.text_field  :address %><br>
-    <%= f.submit "Add Location" %>
+    <%= f.text_field  :address %><br><br><br>
+    <%= f.submit "Add Location", class: "linkBtn" %>
  <%end%>
+ </div>
 
+  
  <% @tour.comments.each do |comment| %>
    <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
    <%= comment.content %>
@@ -79,9 +95,9 @@
  <br>
   <% if @tour.published && !@tour.locations.empty? %>
     <%= form_for [@tour, @comment] do |f| %>
-       <%= f.label "Leave a comment for this tour: " %>
+       <%= f.label "Leave a comment for this tour: " %><br>
        <%= f.text_field :content %>
-       <%= f.submit "Post" %>
+       <%= f.submit "Post", class: "linkBtnSmall" %>
      <% end %>
   <% elsif !@tour.published && !@tour.locations.empty? %>
     <%= form_tag("/publish") %>
@@ -93,3 +109,95 @@
   <br>
 <%= link_to 'Edit', edit_tour_path(@tour) %> |
 <%= link_to 'Back', tours_path %>
+
+</div>
+
+
+<% @locationsarr = [] %>
+  <% @tour.locations.each do |location| %>
+  <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
+  <% end %>
+</div>
+
+
+<!--    <div id="map" style="opacity: 0.9;"></div> -->
+
+
+
+<script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
+
+  <script>
+    // Define your locations: HTML content for the info window, latitude, longitude
+    var locations = <%= raw @locationsarr.to_json %>;
+    var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';
+
+    var icons = [
+      iconURLPrefix + 'red-dot.png',
+      iconURLPrefix + 'green-dot.png',
+      iconURLPrefix + 'blue-dot.png',
+      iconURLPrefix + 'orange-dot.png',
+      iconURLPrefix + 'purple-dot.png',
+      iconURLPrefix + 'pink-dot.png',
+      iconURLPrefix + 'yellow-dot.png'
+    ]
+    var iconsLength = icons.length;
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(40.7412,-73.9973),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+    var oms = new OverlappingMarkerSpiderfier(map);
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 160
+    });
+
+    var markers = new Array();
+
+    var iconCounter = 0;
+
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+      oms.addMarker(marker);
+
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+        iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {
+        bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+  </script>

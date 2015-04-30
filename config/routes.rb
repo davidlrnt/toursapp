@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/users/:id/amazon', to: 'users#amazon'
 
   get '/tours/:id/amazon', to: 'tours#amazon'
