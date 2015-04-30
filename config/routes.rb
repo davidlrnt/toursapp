@@ -31,11 +31,11 @@ Rails.application.routes.draw do
     resources :badges
   end
 
-  
-  resources :friendships 
+
+  resources :friendships
   post '/friend_request', to: 'friendships#friend_request'
 
-  resources :friendable do 
+  resources :friendable do
     member do put 'friend_request' end end
 
   resources :tours do
@@ -49,7 +49,6 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :tags
-  resources :cities
 
   # resources :users, :only => [:index, :edit, :personal_show]
   resources :searches
@@ -59,7 +58,7 @@ Rails.application.routes.draw do
     resources :tours
   end
 
-
+  get "cities/:id", to: 'searches#show_city'
 
   post '/participate', to: 'tours#participate'
   post '/quit', to: 'tours#quit'

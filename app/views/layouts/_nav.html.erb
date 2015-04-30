@@ -10,11 +10,10 @@
   </div>
   <div class="userSettings">
   <% if user_signed_in? %>
-    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-    <%= link_to 'Profile', current_user %>
-    <%= link_to "Inbox", mailbox_inbox_path %>
-    <%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %>
+    <%= link_to '<i class="fa fa-user"></i>'.html_safe, current_user %>
+    <%= link_to '<i class="fa fa-inbox"></i>'.html_safe, mailbox_inbox_path %>
     <%= link_to 'New Tour', new_tour_path %>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
   <% else %>
     <%= link_to 'Log In', new_user_session_path %>
     <%= link_to 'Register', new_user_registration_path %>
