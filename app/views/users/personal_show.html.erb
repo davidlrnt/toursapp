@@ -1,5 +1,6 @@
 <% if @user.images.first %>
-<img src="http://student-resources.s3.amazonaws.com/<%= @user.images.first.image_url %>">
+<div class="userImage"
+<img src="http://flatirontours.s3.amazonaws.com/<%= @user.images.first.image_url %>">
   <% else %>
   ADD IMAGE
   <%= direct_upload_form_for @uploader do |f| %>

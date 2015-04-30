@@ -35,9 +35,16 @@ body {
 
 nav {
   color: white;
-  height: 4em;
+  height: 5.1em;
   background-color: #DB5120;
   padding: 1.4em .8em .8em .8em;
+  width: 100%;
+  z-index: 1;
+}
+
+nav img{
+  float: left;
+  margin-left: .5em;
 }
 
 
@@ -56,12 +63,13 @@ a{
 .searchBar{
   display: inline;
   float: left;
+  padding: .6em 0 0 2em;
 }
 
 .userSettings{
   display: inline;
   float: right;
-
+  padding: .6em 0 0 0;
 }
 
 .eventImage{
