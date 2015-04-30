@@ -1,21 +1,47 @@
+
+<div id="resultsContainer">
 <% @tours.each do |tour| %>
+<%= link_to tour_path(tour) do  %>
+<div id="tourResult">
 <% if !tour.images.empty? %>
-  <%= image_tag(tour.images[0].image_url, height: '100') %>
+<div id="tourImage">
+  <%= image_tag(tour.images[0].image_url, height: '200') %>
+</div>
 <% end %>
-<h3><%= link_to tour.title, tour_path(tour)  %><h3>
-<h4><%= tour.description %></h4>
-<% tour.tags.each do |tag|%>
-<li><%= tag.name %></li>
+<h3 class="tourTitle"><%= tour.title %></h3>
+<div id="tourDescription">
+
+<% if tour.description.size >= 90 %>
+<p><%= tour.description[0...87]+= "..." %></p>
+<% else %>
+<p><%= tour.description %></p>
 <% end %>
+</div>
+
+
+
+
 <% tour.cities.each do |city|%>
-<%= city.accent %>
+<p id="tourCities"><%= city.accent %></p>
 <% end %>
 <% if tour.average_score.nil? %>
 <h4>No Ratings Yet!</h4>
 <% else %>
-<h1><%= tour.average_score %></h1>
+<p id="tourScore">Rating:<%# tour.average_score %></p>
+<div class="rating" data-score=<%= tour.average_score %> ></div>
 <% end %>
+<%# link_to 'See Tour', tour_path(tour) %>
 
-<%= link_to 'See Tour', tour_path(tour) %>
-<br><br>
+</div>
 <% end %>
+<% end %>
+</div>
+
+<script>
+$('.rating').raty({
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});
+</script>

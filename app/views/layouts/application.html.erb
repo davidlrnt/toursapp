@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
   <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="/raty/jquery.raty.js"></script>
+  <link rel="stylesheet" href="/raty/jquery.raty.css">
+
 </head>
 <body>
   <%= render 'layouts/nav' %>
