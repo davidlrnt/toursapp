@@ -31,6 +31,7 @@ badges = JSON.parse(File.read("db/seeds/badges.json"))
 users = JSON.parse(File.read("db/seeds/users.json"))
   users.each do |user|
     u = User.create(user)
+    u.images.create(image_url: user["image"])
   end
 
 File.foreach("db/seeds/cities.csv", :quote_char => "\'") do |csv_line|

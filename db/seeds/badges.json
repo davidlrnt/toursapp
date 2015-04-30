@@ -1,9 +1,9 @@
 [
-	["Pioneer", 1, "guide", "creating a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge2.svg"],
-	["Wanderer", 2, "guide", "creating 2 tours","https://s3.amazonaws.com/flatirontours/uploads/badges/badge1.svg"],
-	["Road Warrior", 3, "guide", "creating 3 tours","https://s3.amazonaws.com/flatirontours/uploads/badges/badge3.svg"],
-	["Marco Polo", 4, "guide", "creating 4 tours","https://s3.amazonaws.com/flatirontours/uploads/badges/badge4.svg"],
-	["Ferdinand Magellan", 5, "guide", "creating 5 tours","https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.svg"],
+	["Pioneer", 1, "guide", "creating a tour", "http://i.imgur.com/L854A9b.png"],
+	["Wanderer", 2, "guide", "creating 2 tours","http://i.imgur.com/2fzsk8q.png"],
+	["Road Warrior", 3, "guide", "creating 3 tours","http://i.imgur.com/Oxp8myw.png"],
+	["Marco Polo", 4, "guide", "creating 4 tours","http://i.imgur.com/3W4IEcH.png"],
+	["Ferdinand Magellan", 5, "guide", "creating 5 tours","http://i.imgur.com/0TqoFXP.png"],
 
 	["Follower", 1, "participant", "completed a tour"],
 	["Scout", 2, "participant", "completed 2 tours"],

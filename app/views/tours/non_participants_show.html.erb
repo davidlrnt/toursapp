@@ -1,48 +1,72 @@
 <div class="tourImage">
-<% if @tour.images.first %>
-<%= binding.pry %>
-<style>
-.tourImage{
- background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  margin-bottom: 5em;
-}
 
-.thumb {
-    background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
-    display: inline-block;
-    width: 220px;
-    height: 220px;
-    margin: 5px;
-    border: 5px solid white;
-    border-radius: 50%;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-</style>
+<div class="tourDescription">
+    <h1><%= @tour.title %></h1>
+    <p><%= @tour.description %></p>
+    <h4>Tour score:</h4> <%= @tour.average_score %>,
+
+    <h4>tags:</h4>
+  <% @tour.tags.each do |tag| %>
+  <%= tag.name %>,
+  <% end %>
+
+  <% if @tour.cities.count > 1 %>
+<h4>cities:</h4>
+<% else %>
+<h4>city:</h4>
+<% end %>
+  <% @tour.cities.each do |city| %>
+  <%= city.accent %>
+  <% end %>
+
+  </div>
+  </div>
+</div>
+
+
+
+<% if @tour.images.first %>
+<style>
+    .tourImage{
+     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
+      background-color: black;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      display: inline-block;
+    }
+
+    .thumb {
+        background: url("http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg");
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
 <% end %>
 
 
 
-  <div class="userTourAvatar">
-    <div class="thumb" title="Portrait: 400x800"></div>
-  <%= link_to @tour.guide.name, @tour.guide %>
-  <button>Message</button>
-  </div>
-  <div id="map" class="map"></div>
+
+<div class="tourImageFloat">
+      
+      <div class="userTourAvatar">
+        <div class="thumb" title="Portrait: 400x800"></div>
+      <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
+
+      <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
+      <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
+      </div>
+
+      <div id="map" class="map"></div>
+
+    </div>
 
 
-  <div class="tourDescription">
-    <h1><%= @tour.title %></h1>
-    <h3><%= @tour.description %></h3>
-  </div>
+  
 
 
 </div>
@@ -51,71 +75,28 @@
 
 
 
+<div class="tourBodyContainer">
 <p id="notice"><%= notice %></p>
 
-<h1>Tour Guide:</h1>
-<%= link_to @tour.guide.name, @tour.guide %>
-
-<h3>Title:</h3>
-<%= @tour.title %>
-<h3>Tour Score:</h3>
-<%= @tour.average_score %>
-<h3>Description:</h3>
-<%= @tour.description %>
-<br><br>
 <% @tour.reviews.each do |review| %>
-  <%= review.rating %>/5<br>
-  <%= review.content %><br><br>
-<% end %><br>
-<h3>Tags:</h3>
-<ul>
-<% @tour.tags.each do |tag| %>
-  <li><%= tag.name %></li>
+  <div class="grayBoxBG">
+  <h3>Rated: <%= review.rating %>/5</h3>
+  <%= review.content %>
+  </div>
 <% end %>
-</ul>
-<br>
-<% if @tour.cities.count > 1 %>
-  <h3>Cities:</h3>
-<% else %>
-  <h3>City:</h3>
-<% end %>
-<ul>
-<% @tour.cities.each do |city| %>
-  <li><%= city.accent %></li>
-<% end %>
-</ul>
-
-<h3>Locations:</h3>
-<ul>
-<% @locationsarr = [] %>
-  <% @tour.locations.each do |location| %>
-    <li><%= link_to "#{location.title}", tour_location_path(@tour, location) %></li>
-    <%= location.address %><br>
-  <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
-  <% end %>
-</ul>
-
- <% @tour.comments.each do |comment| %>
-   <li>
-     <%= link_to "#{comment.participant.name}", "/users/#{comment.participant.id}" %> wrote:
-   <%= comment.content %>
-   <%= comment.created_at.to_date %>
-   </li>
- <% end %>
-<br>
  <% if user_signed_in? %>
    <%= form_tag("/participate") %>
    <%= hidden_field_tag(:user_id, current_user.id) %>
    <%= hidden_field_tag(:id, @tour.id) %>
-   <%= submit_tag("Participate") %>
+   <%= submit_tag("Participate", class: "linkBtn") %>
  <% else %>
    <%= link_to "Log In", new_user_session_path %>
    or
    <%= link_to "Sign Up", new_user_registration_path %>
    To Participate
  <% end %><br>
- <%= link_to 'Back', tours_path %>
 
+</div>
  <!-- <div id="map" style="opacity: 0.9;"> -->
 
 
