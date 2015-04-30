@@ -52,7 +52,7 @@
 
 
 <div class="tourImageFloat">
-      
+
       <div class="userTourAvatar">
         <div class="thumb" title="Portrait: 400x800"></div>
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
@@ -68,7 +68,7 @@
     </div>
 
 
-  
+
 
 
 </div>
@@ -99,8 +99,12 @@
  <% end %><br>
 
 </div>
- <!-- <div id="map" style="opacity: 0.9;"> -->
 
+<% @locationsarr = [] %>
+  <% @tour.locations.each do |location| %>
+  <% @locationsarr << ["<a href=""></a><br><br>", location.lat.to_f,location.lng.to_f] %>
+  <% end %>
+</div>
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>
 
