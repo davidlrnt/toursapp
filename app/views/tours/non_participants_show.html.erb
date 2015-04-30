@@ -58,7 +58,9 @@
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
 
       <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
-      <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
+      <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
+      <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
+      <% end %>
       </div>
 
       <div id="map" class="map"></div>

@@ -15,7 +15,6 @@
     <%= link_to "Inbox", mailbox_inbox_path %>
     <%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %>
     <%= link_to 'New Tour', new_tour_path %>
-    <%= link_to "Badges", user_badges_path(current_user) %></li>
   <% else %>
     <%= link_to 'Log In', new_user_session_path %>
     <%= link_to 'Register', new_user_registration_path %>
