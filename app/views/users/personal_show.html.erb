@@ -1,14 +1,13 @@
 <div class="userProfileAvatar">
 <h2><%= @user.name %></h2>
-<%= link_to "Edit Profile", edit_user_path %><br>
+<%= link_to 'Edit Profile', edit_user_registration_path if current_user.provider.nil? %><br>
 <% if @user.images.count > 1 %>
   <%=image_tag("http://flatirontours.s3.amazonaws.com/#{@user.images.last.image_url}", size:"100x100")%>
   <% elsif @user.images.empty? %>
-    <img src="http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg">
+    <img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_1.png">
     <% else %>
     <%= image_tag(@user.images.last.image_url, size:"100x100") %>
     <h2><%= @user.name %></h2>
-    <%= link_to "Edit Profile", edit_user_path %><br>
   <% end %>
 </div>
 
@@ -17,12 +16,14 @@
     <% @user.badges.each do |badge| %>
       <div class="userBadge">
     <%= image_tag("#{badge.image_url}", size: "300x300") %><br>
-    <h4><%= badge.name %> </h4> 
+    <h4><%= badge.name %> </h4>
     </div>
 <% end %>
+<% else %>
+    <h4>You currently don't have any <%= link_to("badges!", user_badges_path(current_user)) %></h4>
 </div>
-<% end %>
 
+<% end %>
 
   <div class="profileListContainer">
   <div class="userToursList">
@@ -45,19 +46,19 @@
 
       <div class="userFriendsList">
       <h3>Friends</h3>
-     
+
         <% @user.friends.each do |friend| %>
           <%= link_to "#{friend.name}", user_path(friend) %>
           <% if current_user == @user %>
-            <%= link_to "Remove", friendship_path(:id => friend), :method => :delete %>
+              | <%= link_to "Remove", friendship_path(:id => friend), :method => :delete %>
           <% end %>
       <% end %>
       </div>
       </div>
-    
+
 
     <% if current_user == @user %>
-       
+
             <% @user.requested_friendships.each do |request| %>
              <li>
               <%= link_to "#{request.name}", user_path(request) %>
@@ -65,5 +66,11 @@
                <%= link_to "Decline", friendship_path(:id => request), :method => :delete %>
              </li>
            <% end %>
-        
+
     <% end %>
+
+
+
+
+
+
