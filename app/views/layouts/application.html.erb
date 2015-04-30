@@ -13,17 +13,10 @@
 </head>
 <body>
   <%= render 'layouts/nav' %>
-
-  <% flash.each do |key, value| %>
-    <div class="text-center <%= flash_class(key) %>">
-    <%= value %>
-    </div>
-  <% end %>
-
+  <br><br><br><br>
   <div class="container">
     <%= yield %>
   </div>
-
 
 </body>
 </html>

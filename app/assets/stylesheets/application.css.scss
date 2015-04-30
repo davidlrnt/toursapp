@@ -34,14 +34,18 @@ body {
 }
 
 nav {
-  margin: 0;
-  position: fixed;
-  width: 100%;
   color: white;
-  height: 4em;
+  height: 5.1em;
   background-color: #DB5120;
   padding: 1.4em .8em .8em .8em;
+  width: 100%;
   z-index: 1;
+  position: fixed;
+}
+
+nav img{
+  float: left;
+  margin-left: .5em;
 }
 
 
@@ -57,15 +61,27 @@ a{
   color: #DB5120;
 }
 
+h4 {
+  display: inline-block;
+}
+
 /*.searchBar{
   display: inline;
   float: left;
 }
 */
+
+
+.searchBar{
+  display: inline;
+  float: left;
+  padding: .6em 0 0 2em;
+}
+
 .userSettings{
   display: inline;
   float: right;
-
+  padding: .6em 0 0 0;
 }
 
 .cityImage{
@@ -95,11 +111,10 @@ a{
 }
 
 .tourDescription{
-  left: 2em;
-  top: 25%;
-  width: 33%;
+  padding: 4em;
+  width: 50%;
   color: white;
-  position: absolute;
+  display: inline-block;
 }
 
 .tourImage{
@@ -110,12 +125,72 @@ a{
   background-position: 50% 50%;
   width: 100%;
   height: 500px;
-  position: relative;
-  margin-bottom: 5em;
+}
+
+.userTourAvatar {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 6.5em;
+}
+
+
+.map{
+  z-index: 0;
+  display: inline-block;
+  height: 350px;
+  width: 500px;
+  background-color: yellow;
+  float: right;
+}
+
+.tourImageFloat {
+display: block;
+margin-top: -13em;
+margin-bottom: 3em;
+padding: 3em;
+}
+
+.linkBtnGray {
+  background-color: #9B9B9B;
+  border: 0 none;
+  display: inline-block;
+  height: 3em;
+  padding: .9em 1.5em;
+  margin-right: 1em;
+  color: white;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.linkBtn{
+  background-color: #DB5120;
+  display: inline-block;
+  border: 0 none;
+  height: 3em;
+  padding: .9em 1.5em;
+  margin-right: 1em;
+  color: white;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.linkBtnSmall {
+  background-color: #9B9B9B;
+  border: 0 none;
+  display: inline-block;
+  height: 2em;
+  padding: .5em 1em;
+  margin-right: 1em;
+  color: white;
+  font-size: .7em;
 }
 
 ul, li {
   list-style: none;
+}
+
+.tourBodyContainer {
+  margin: 3em;
 }
 
 .tourSnippet{
@@ -128,6 +203,26 @@ ul, li {
 
 }
 
+.grayBoxBG {
+  background-color: #E7E7E7;
+  padding: 3em;
+  margin-bottom: 5em; 
+}
+
+.tourSnippet{
+  display: inline-block;
+  width: 33%;
+  padding: 3em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+
+}
+
+.tourSnippet img{
+  float: right;
+  margin-top: 1em;
+}
+
 
 h4 {
   font-weight: normal;
@@ -137,12 +232,79 @@ p{
   font-size: 0.9em;
 }
 
-
-.tourSnippet img{
-  float: right;
-  margin-top: 1em;
+.userProfileAvatar img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
+.userProfileAvatar{
+  margin: 3em 0;
+}
+
+.userProfileAvatar h2, .userProfileAvatar a{
+  text-align: center;
+  clear: both;
+  display: block;
+}
+
+.userBadgesContainer{
+  width: 95%;
+  height: 14em;
+  padding: 2.5em;
+  margin: 0 auto;
+  background-color: #F7F7F7;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.userBadge{
+  display: inline-block;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+.userBadgesContainer img{
+  width: 5em;
+  height: 5em;
+}
+
+.userBadgesContainer h4{
+  text-align: center;
+  display: inline-block;
+  width: 9.5em;
+}
+
+.userToursList, .userCurrentToursList, .userFriendsList{
+  display: inline-block;
+  width: 33%;
+  padding: 3em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  vertical-align: top;
+}
+
+
+.featuredCities {
+
+}
+
+.featuredCities img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.featuredCitiesImage {
+  width: 10em;
+  height: 13em;
+  position: relative;
+  display: inline-block;
+}
+/*
 .map{
   z-index: 0;
   right: 3em;
@@ -153,22 +315,7 @@ p{
   position: absolute;
   bottom: -12em;
   display: inline;
-}
-
-.userTourAvatar {
-    position: absolute;
-    bottom: -6em;
-    display: inline;
-}
-
-.userTourAvatar{
-  left: 2em ;
-}
-#nav{
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-}
+}*/
 
 #tourResult {
   border: 1px solid #DB5120;
@@ -229,6 +376,3 @@ p{
 .rating {
   /*border: 2px solid black;*/
 }
-
-
-
