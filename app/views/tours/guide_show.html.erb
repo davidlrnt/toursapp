@@ -3,21 +3,14 @@
 <style>
 .tourImage{
  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  margin-bottom: 5em;
-}
-
 }
 </style>
 <% end %>
+
+  <div class="thumb" style="background-image: url("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg");" title="Portrait: 400x800"></div>
+
   <div class="userTourAvatar">
-  <%= image_tag("http://www.clker.com/cliparts/a/4/2/3/12428064951741648425Silver_circle.svg.hi.png", size: "64x64")%>
+  <%= image_tag("http://38north.org/wp-content/uploads/2013/04/kim-jong-un.jpg", size: "64x64")%>
   <%= link_to @tour.guide.name, @tour.guide %>
   <button>Message</button>
   </div>

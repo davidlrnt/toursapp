@@ -2,7 +2,6 @@ class Search
   attr_accessor :city, :category, :tags
 
   def initialize(hash = {"city" => "", "category" => "", "tags" => ""})
-    # binding.pry
     @city = hash["city"]
     @category = hash["category"]
     @tags = hash["tags"]

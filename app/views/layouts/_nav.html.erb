@@ -1,5 +1,5 @@
 <nav>
-    <%= image_tag("logo/Logo.png", size: "40x40")%>
+    <%= link_to image_tag("logo/Logo.png", size: "40x40"), root_path%>
   <div class="searchBar">
     <%= form_for :search, url: searches_path  do |f| %>
     <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>

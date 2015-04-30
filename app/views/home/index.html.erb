@@ -9,7 +9,7 @@
     <div class= "tourSnippet">
     <%= image_tag("http://www.clker.com/cliparts/a/4/2/3/12428064951741648425Silver_circle.svg.hi.png", size: "64x64")%>
     <h3><%= link_to "#{tour.title}", tour_path(tour)%></h3>
-    <h4><%= tour.guide.name %></h4>
+    <h4><%= link_to"#{tour.guide.name}", user_path(tour.guide) %></h4>
     <p><%= tour.description %></p>
     </div>
 <% end %>

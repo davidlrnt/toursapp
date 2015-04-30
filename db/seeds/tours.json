@@ -1,9 +1,8 @@
-
 [
   {
     "category_id": 6,
     "title": "Upper East Side Tour",
-    "description": "Discover the Upper East Side",
+    "description": "Discover the Upper East Side where it's sleek, chic, and classy NYC lives",
     "guide_id": 1,
     "city": "New York",
     "published" : true,
@@ -11,9 +10,9 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/001.jpg"
   },
   {
-    "category_id": 6,
-    "title": "Manhattan classic touristy spots",
-    "description": "The 'tourist' must see places in Manhattan",
+    "category_id": 9,
+    "title": "Manhattan Classic Spots",
+    "description": "All the 'tourists' must see places in Manhattan!",
     "guide_id": 1,
     "city": "New York",
     "published" : true,
@@ -22,17 +21,17 @@
   },
   {
     "category_id": 1,
-    "title": "Art galleries in Manhattan",
-    "description": "Cool art galleries in the city",
+    "title": "Art Galleries in Manhattan",
+    "description": "Discover the best art galleries and art exhibitions in Manhattan.",
     "guide_id": 1,
     "city": "New York",
     "published" : true,
-    "tags": ["Paintings", "gallery"],
+    "tags": ["Paintings", "Gallery"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/003.jpg"
   },
   {
     "category_id": 1,
-    "title": "Bookstores in Manhattan",
+    "title": "Manhattan Bookstrores",
     "description": "Missing the days before e-readers? Visit some of the most famous book stores in the city",
     "guide_id": 1,
     "city": "New York",
@@ -52,8 +51,8 @@
   },
   {
     "category_id": 8,
-    "title": "NY Mafia Tour",
-    "description": "Discover the places where some of the Mafia cappos used to hang-out",
+    "title": "New York Mafia Tour",
+    "description": "Discover the places where some of the Mafia cappos used to dominate and rules",
     "guide_id": 1,
     "city": "New York",
     "published" : true,
@@ -61,9 +60,9 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/006.jpg"
   },
   {
-    "category_id": 6,
+    "category_id": 2,
     "title": "MAMA MIA!",
-    "description": "Get a pie here in Queens, some of the best pizzerias are here! Look no more.",
+    "description": "Get a pie here in Queens, some of the best pizzerias are here! Look no other.",
     "guide_id": 2,
     "city": "New York",
     "published" : true,
@@ -71,7 +70,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/007.jpg"
   },
   {
-    "category_id": 6,
+    "category_id": 2,
     "title": "Did somebody say coffee? Is it that time already?",
     "description": "It's late in the afternoon and you have deadlines, you're in Queens and you need to get a cup of Joe. Well, you're in luck!",
     "guide_id": 2,
@@ -82,7 +81,7 @@
   },
   {
     "category_id": 1,
-    "title": "Museums, galleries, and more!",
+    "title": "Museums, Galleries, and More!",
     "description": "Check out the PS1 in Queens, the Museum of the Moving Image, and more!",
     "guide_id": 2,
     "city": "New York",
@@ -91,9 +90,9 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/009.jpg"
   },
   {
-    "category_id": 1,
+    "category_id": 7,
     "title": "Bars in Queens",
-    "description": "What about bars in Queens? Yes, we have bars in Queens.",
+    "description": "Some of my favorite bars in Queens, ideal for those who prefer less crowded experience",
     "guide_id": 2,
     "city": "New York",
     "published" : true,
@@ -101,7 +100,7 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/010.jpg"
   },
   {
-    "category_id": 3,
+    "category_id": 2,
     "title": "Ra-Ra-Ra Ramen",
     "description": "Slurp on a bowl of ramen, get instantly teleported to a Japanese ramen stand in Queens!",
     "guide_id": 2,
@@ -111,9 +110,9 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/011.jpg"
   },
   {
-    "category_id": 7,
+    "category_id": 9,
     "title": "Hustle in Brooklyn",
-    "description": "Sightseeing Around Brooklyn",
+    "description": "Sightseeing around Brooklyn, the most exciting borough in NYC",
     "guide_id": 4,
     "city": "New York",
     "published" : true,
@@ -123,7 +122,7 @@
   {
     "category_id": 1,
     "title": "Brooklyn's Finest Art",
-    "description": "Art Adventure in Brooklyn",
+    "description": "Around some of the best world's best museums and art collections",
     "guide_id": 4,
     "city": "New York",
     "published" : true,
@@ -133,7 +132,7 @@
   {
     "category_id": 2,
     "title": "Foodgasm in Brooklyn",
-    "description": "It's All About The Food",
+    "description": "If You are a foodie, this list is for you! Some of awesome restaurants and places that I visit all the time!",
     "guide_id": 4,
     "city": "New York",
     "published" : true,
@@ -143,7 +142,7 @@
   {
     "category_id": 4,
     "title": "Shop Of My Life",
-    "description": "Never Gets Enough",
+    "description": "Bunch of vintage shops, and deals for clothes, shoes, bags. Never gets enough of classy and hip looks",
     "guide_id": 4,
     "city": "New York",
     "published" : true,
@@ -172,8 +171,8 @@
   },
     {
     "category_id": 2,
-    "title": "Take a tour of Korea Town",
-    "description": " Have a little taste of Korea in NYC",
+    "title": "NYC Korea Town",
+    "description": "Tiny slice of the best asian food and culture at the moment",
     "guide_id": 3,
     "city": "New York",
     "published" : true,
@@ -191,19 +190,19 @@
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/019.jpg"
   },
     {
-    "category_id": 5,
-    "title": "Abandoned subway stations",
-    "description": "Take tour of New York's forgotten subway stations",
+    "category_id": 8,
+    "title": "Abandoned Subway Stations",
+    "description": "Tour of New York's forgotten subway stations",
     "guide_id": 3,
     "city": "New York",
     "published" : true,
-    "tags": ["subways staions", "closed"],
+    "tags": ["Subways Staions", "Closed"],
     "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/020.jpg"
   },
     {
     "category_id": 2,
     "title": "3 Star Michelin Restaurants",
-    "description": "Eat food prepared by best chefs in the world.",
+    "description": "Grab the hallmark of the fine dining quality and service prepared by top international chefs",
     "guide_id": 3,
     "city": "New York",
     "published" : true,

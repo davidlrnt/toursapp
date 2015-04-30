@@ -79,7 +79,7 @@ class LocationsController < ApplicationController
 
   def checkin_static
     current_user.checkin_static(@location)
-    redirect_to @tour
+    redirect_to(:back)
   end
 
   def checkin

@@ -1,32 +1,88 @@
 <div class="tourImage">
+
   <div class="tourDescription">
-    <h1>Visit Moscow!</h1>
-    <h3>Best everything in Russia's best city.</h3>
-  </div>
-</div>
+    <h1><%= @tour.title %></h1>
+    <p><%= @tour.description %></p>
+    <h4>Tour score:</h4> <%= @tour.average_score %>,
 
+    <h4>tags:</h4>
+  <% @tour.tags.each do |tag| %>
+  <%= tag.name %>,
+  <% end %>
 
-<div class="user_progress">
-<% if !@tour.images.empty? %>
-  <%= image_tag(@tour.images[0].image_url, height: '500') %>
+  <% if @tour.cities.count > 1 %>
+<h4>cities:</h4>
+<% else %>
+<h4>city:</h4>
 <% end %>
+  <% @tour.cities.each do |city| %>
+  <%= city.accent %>
+  <% end %>
 
-  <h2>Your Progress</h2>
-  <%= number_to_percentage((@progress*100), precision: 0) %>
-<ul>
-<%= link_to "Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
+  <br><br>
+    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
 <% @x = 0 %>
 <% @tour.locations.each do |location| %>
 <% if current_user.checked_in_locations.include?(location) %>
 <% @x += 1 %>
-<h3>YOU'VE BEEN TO <%= location.title %></h3>
+
+  </div>
+
+<% if @tour.images.first %>
+    <style>
+    .tourImage{
+     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
+      background-color: black;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .thumb {
+        background: url("http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/03/kim-jong-un.jpg?itok=PfhgNBHM");
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+<% end %>
+
+</div>
+</div>
+
+
+<div class="tourImageFloat">
+  
+  <div class="userTourAvatar">
+    <div class="thumb" title="Portrait: 400x800"></div>
+  <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
+
+  <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
+  <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
+  </div>
+
+  <div id="map" class="map"></div>
+
+</div>
+
+<div class="tourProgressContainer">
+
+<h3>You're <%= number_to_percentage((@progress*100), precision: 0) %> into the tour</h3>
+  
+
+Last checked in at <%= location.title %><br><br><br>
 <% else %>
 <%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %>
   <%= hidden_field_tag :tour_id , @tour.id %>
-  <%= label_tag(:address, location.address)%><br>
   <%= link_to location.title, [@tour , location] %>
+  <%= submit_tag "Check In", class: "btn_search", my_parameter: 1, class: "linkBtnSmall" %>
+  <br>
+  <%= label_tag(:address, location.address)%><br><br>
   <!-- "#{@tour.id}/location/#{location.id}" -->
-  <%= submit_tag "Checkin", class: "btn_search", my_parameter: 1 %>
+ 
 <% end %>
 <br>
 <% end %>
@@ -53,44 +109,21 @@
 <% end %>
 <% end %>
 <% end %>
-</ul>
-</div>
 
+<br>
 <%= form_tag('/quit') do %>
 <%= hidden_field_tag(:user_id, current_user.id) %>
 <%= hidden_field_tag(:id, @tour.id) %>
-<%= submit_tag"Quit" %>
+<%= submit_tag"Quit", class: "linkBtnGray" %>
 <% end %>
+<br>
+<%= link_to "GET DIRECTIONS", "#{@tour.id}/directions", class: "linkBtn" %>
+</div>
 
-<%= link_to "GET DIRECTIONS", "#{@tour.id}/directions" %>
+
 
 
 <p id="notice"><%= notice %></p>
-<h1>Tour Guide:</h1>
-<%= link_to @tour.guide.name, @tour.guide %>
-<h3>Title:</h3>
-<%= @tour.title %>
-<h3>Tour Score:</h3>
-<%= @tour.average_score %>
-<h3>Description:</h3>
-<%= @tour.description %>
-<h3>Tags:</h3>
-<ul>
-  <% @tour.tags.each do |tag| %>
-  <li><%= tag.name %></li>
-  <% end %>
-</ul>
-<br>
-<% if @tour.cities.count > 1 %>
-<h3>Cities:</h3>
-<% else %>
-<h3>City:</h3>
-<% end %>
-<ul>
-  <% @tour.cities.each do |city| %>
-  <li><%= city.accent %></li>
-  <% end %>
-</ul>
 
 <h3>Locations:</h3>
 <ul>
@@ -114,9 +147,11 @@
  <% end %>
 
  <%= link_to 'Back', tours_path %>
+</div>
 
 
    <div id="map" style="opacity: 0.9;"></div>
+
 
 
 <script src="http://jawj.github.com/OverlappingMarkerSpiderfier/bin/oms.min.js"></script>

@@ -60,6 +60,10 @@ a{
   color: #DB5120;
 }
 
+h4 {
+  display: inline-block;
+}
+
 .searchBar{
   display: inline;
   float: left;
@@ -92,11 +96,10 @@ a{
 }
 
 .tourDescription{
-  left: 2em;
-  top: 25%;
-  width: 33%;
+  padding: 4em;
+  width: 50%;
   color: white;
-  position: absolute;
+  display: inline-block;
 }
 
 .tourImage{
@@ -107,27 +110,88 @@ a{
   background-position: 50% 50%;
   width: 100%;
   height: 500px;
-  position: relative;
-  margin-bottom: 5em;
+}
+
+
+.userTourAvatar {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 6.5em;
+}
+
+
+.map{
+  z-index: 2;
+  display: inline-block;
+  height: 350px;
+  width: 500px;
+  background-color: yellow;
+  float: right;
+}
+
+
+
+.tourImageFloat {
+display: block;
+margin-top: -13em;
+margin-bottom: 3em;
+padding: 3em;
+}
+
+
+.linkBtn{
+  background-color: #DB5120;
+  display: inline-block;
+  height: 3em;
+  padding: .9em 1.5em;
+  margin-right: 1em;
+  color: white;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.linkBtnGray {
+  background-color: #9B9B9B;
+  border: 0 none;
+  display: inline-block;
+  height: 3em;
+  padding: .9em 1.5em;
+  margin-right: 1em;
+  color: white;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.linkBtnSmall {
+  background-color: #9B9B9B;
+  border: 0 none;
+  display: inline-block;
+  height: 2em;
+  padding: .5em 1em;
+  margin: 1em;
+  color: white;
 }
 
 ul, li {
   list-style: none;
 }
 
+.tourProgressContainer {
+  background-color: #E7E7E7;
+  padding: 2em;
+  margin: 0 auto;
+  width: 95%;
+}
+
 .tourSnippet{
   display: inline-block;
   width: 33%;
-  padding: 2em;
+  padding: 3em;
   margin: 0 auto;
   margin-bottom: 2em;
 
 }
 
-
-h4 {
-  font-weight: normal;
-}
 
 p{
   font-size: 0.9em;
@@ -139,37 +203,59 @@ p{
   margin-top: 1em;
 }
 
-.tourMap{
+.userProfileAvatar img{
+  width: 250px;
   height: 250px;
-  width: 400px;
-  background-color: yellow;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
-.userTourAvatar, .tourMap{
-    position: absolute;
-    bottom: -2em;
-    display: inline;
+.userProfileAvatar{
+  margin: 3em 0;
+  display: inline-block;
 }
 
-.tourMap{
-  right: 3em;
+.userProfileAvatar h2, .userProfileAvatar a{
+  text-align: center;
+  clear: both;
+  display: block;
 }
 
-.userTourAvatar{
-  left: 2em ;
+.userBadgesContainer{
+  width: 95%;
+  height: 14em;
+  padding: 2.5em;
+  margin: 0 auto;
+  background-color: #F7F7F7;
+  border-radius: 25px;
+  text-align: center;
+  margin-bottom: 4em;
 }
 
-
-
-
-#map
-{
-    position: absolute;
-    z-index: -1;
-    float: left;
-    width: 60%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    opacity: 0.5;
+.userBadge{
+  display: inline-block;
+  margin-right: 2em;
+  vertical-align: top;
 }
+
+.userBadgesContainer img{
+  width: 5em;
+  height: 5em;
+}
+
+.userBadgesContainer h4{
+  text-align: center;
+  display: inline-block;
+  width: 9.5em;
+}
+
+.userToursList, .userCurrentToursList, .userFriendsList{
+  display: inline-block;
+  width: 33%;
+  padding: 3em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  vertical-align: top;
+}
+
