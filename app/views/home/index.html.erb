@@ -5,14 +5,17 @@
   </div>
 </div>
 
-<% Tour.all.each do |tour| %>
+
+
+<% City.all.each do |city| %>
     <div class= "tourSnippet">
-    <%= image_tag("http://www.clker.com/cliparts/a/4/2/3/12428064951741648425Silver_circle.svg.hi.png", size: "64x64")%>
-    <h3><%= link_to "#{tour.title}", tour_path(tour)%></h3>
-    <h4><%= link_to"#{tour.guide.name}", user_path(tour.guide) %></h4>
-    <p><%= tour.description %></p>
+      <div class="cityImage">
+         <%= image_tag(city.image, size: "250x250")%>
+         <h3><%= link_to "#{city.name}", city_path(city)%></h3>
+      </div>
     </div>
 <% end %>
+
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
