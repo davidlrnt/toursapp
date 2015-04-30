@@ -51,14 +51,20 @@
 
 
 
-    <div class="tourImageFloat">
-      
+    <div class="tourImageFloat">      
       <div class="userTourAvatar">
+  <% if @tour.guide.images.count >= 1 %>
+  <%=image_tag("#{@tour.guide.images.last.image_url}", size:"100x100")%>
+  <% elsif @tour.guide.images.empty? %>
         <div class="thumb" title="Portrait: 400x800"></div>
+    <% else %>
+    <h2><%= @tour.guide.name %></h2>
+    <%= link_to "Edit Profile", edit_user_path %><br>
+  <% end %>
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
 
       <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
-      <%= link_to "Add Friend", friendships_path(:friend_id => @user), class: "linkBtn", :method => :post%>
+      <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
       </div>
 
       <div id="map" class="map"></div>
