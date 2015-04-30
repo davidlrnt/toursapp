@@ -1,6 +1,5 @@
 <div class="userProfileAvatar">
 <h2><%= @user.name %></h2>
-<%= link_to "Edit Profile", edit_user_path %><br>
 <% if @user.images.count > 1 %>
   <%=image_tag("http://flatirontours.s3.amazonaws.com/#{@user.images.last.image_url}", size:"100x100")%>
   <% elsif @user.images.empty? %>
@@ -8,7 +7,6 @@
     <% else %>
     <%= image_tag(@user.images.last.image_url, size:"100x100") %>
     <h2><%= @user.name %></h2>
-    <%= link_to "Edit Profile", edit_user_path %><br>
   <% end %>
 </div>
 
@@ -17,7 +15,7 @@
     <% @user.badges.each do |badge| %>
       <div class="userBadge">
     <%= image_tag("#{badge.image_url}", size: "300x300") %><br>
-    <h4><%= badge.name %> </h4> 
+    <h4><%= badge.name %> </h4>
   </div>
 <% end %>
 <% else %>
@@ -47,7 +45,7 @@
 
       <div class="userFriendsList">
       <h3>Friends</h3>
-     
+
         <% @user.friends.each do |friend| %>
           <%= link_to "#{friend.name}", user_path(friend) %>
           <% if current_user == @user %>
