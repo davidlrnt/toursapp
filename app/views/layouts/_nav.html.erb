@@ -3,7 +3,7 @@
   <div class="searchBar">
     <%= form_for :search, url: searches_path  do |f| %>
     <%= f.text_field :city, placeholder: "New York", id: "autocomplete-city" %>
-    <%= f.collection_select(:category, Category.all, :name, :name, {:prompt => 'Choose a Category...'}) %>
+    <label class="select"><%= f.collection_select(:category, Category.all, :name, :name, {:prompt => 'Choose a Category...'}) %></label>
     <%= f.text_field :tags, placeholder: "Music", id: "autocomplete-tag" %>
     <%= f.submit "Find" %>
   <% end %>
