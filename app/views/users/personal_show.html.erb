@@ -7,7 +7,6 @@
     <img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_1.png">
     <% else %>
     <%= image_tag(@user.images.last.image_url, size:"100x100") %>
-    <h2><%= @user.name %></h2>
   <% end %>
 </div>
 
@@ -38,8 +37,8 @@
           <h3>Tours I'm On</h3>
         <% @trips.each do |participant| %>
           <%= participant.title %>
-          <%= participant.description %>
-          <%= link_to 'Go To Tour', tour_path(participant.id) %><br>
+          <%= participant.description %><br><br>
+          <%= link_to 'Go To Tour', tour_path(participant.id), class: "linkBtn" %><br>
         <% end %>
           </div>
 

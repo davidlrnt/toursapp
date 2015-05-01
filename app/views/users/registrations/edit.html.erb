@@ -1,36 +1,43 @@
-<h2>Update <%= resource_name.to_s.humanize %></h2>
+<div class="tourBodyContainer"><h2>Update <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-
+  <div class="tourBodyContainer">
   <div><%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %></div>
-  <div><%= f.select :gender, ["Male", "Female"] %> </div>
-  <div><%= f.label :dob %><br />
+
+<br>
+
+  Gender<br>
+   <%= f.select :gender, ["Male", "Female"] %> 
+   <br><br>
+  <div><%= f.label :dob %><br>
+
     <%= f.date_field :dob %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  <br>
   <div class="field">
     <%= f.label :password, "Password" %><br />
     <%= f.password_field :password, :autocomplete => "off"  %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
+    <%= f.submit "Update", class: "linkBtnSmallGray" %>
   </div>
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+
 <% end %>
-
-ADD IMAGE
-
+<br>
+Add profile photo
 <%= direct_upload_form_for @uploader do |f| %>
   <%= f.file_field :image %>
-  <%= f.submit %>
+  <%= f.submit "Upload", class: "linkBtnSmallGray" %>
 <% end %>
+</div>
 
 
  <%# direct_upload_form_for @uploader do |f| %>
@@ -40,8 +47,9 @@ ADD IMAGE
   <%#= form_for(:uploader, as: resource_name. url: registration_path())
 <% end %>
 
-<h3>Delete Account</h3>
+<h4>Delete Account</h4>
 
-<p>Unhappy?! <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<p>Unhappy?! <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "linkBtnSmall", method: :delete %></p>
+<br><br>
+<%= link_to "Save and Go back", :back, class: "linkBtn" %>
+</div>

@@ -2,24 +2,7 @@
 
 <div class="tourDescription">
     <h1><%= @tour.title %></h1>
-    <p><%= @tour.description %></p>
-    <h4>Tour score:</h4> <%= @tour.average_score %>,
-
-    <h4>tags:</h4>
-  <% @tour.tags.each do |tag| %>
-  <%= tag.name %>,
-  <% end %>
-
-  <% if @tour.cities.count > 1 %>
-<h4>cities:</h4>
-<% else %>
-<h4>city:</h4>
-<% end %>
-  <% @tour.cities.each do |city| %>
-  <%= city.accent %>
-  <% end %>
-
-  </div>
+    <h4><%= @tour.description %></h4>
   </div>
 </div>
 
@@ -51,24 +34,32 @@
 
 
 
-<div class="tourImageFloat">
-
+   <div class="tourImageFloat">      
       <div class="userTourAvatar">
+  <% if @tour.guide.images.count >= 1 %>
+  <%=image_tag("#{@tour.guide.images.last.image_url}", size:"100x100")%>
+  <% elsif @tour.guide.images.empty? %>
         <div class="thumb" title="Portrait: 400x800"></div>
+    <% else %>
+    <h2><%= @tour.guide.name %></h2>
+    <%= link_to "Edit Profile", edit_user_path %><br>
+  <% end %>
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
+  
     <% if user_signed_in? %>
+      <br>
       <%# link_to "Message Me", new_conversation_path, class: "linkBtn"  %>
       <%= form_tag("/conversations/new",method: "get") do %>
       <%= hidden_field_tag(:friend_id, @tour.guide.id) %>
-      <%= submit_tag("Message Me", class: "linkBtnsmall")%>
+      <%= submit_tag("Message Me", class: "linkBtnGray")%>
       <% end %>
+      <br>
       <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
       <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
       <% end %>
     <% end %>
 
       </div>
-
       <div id="map" class="map"></div>
 
     </div>
@@ -83,6 +74,30 @@
 
 
 <div class="tourBodyContainer">
+
+<div class="tourInfoContainer">
+    <h4 style="margin-left:0">Tour score:</h4> <%= @tour.average_score %>
+
+  <h4>Tags:</h4><p>
+  <% @tour.tags.each do |tag| %>
+  <%= tag.name %>
+  <% end %>
+  </p>
+
+  <% if @tour.cities.count > 1 %>
+<h4>Cities:</h4>
+<% else %>
+<h4>City:</h4>
+<% end %>
+  <% @tour.cities.each do |city| %>
+  <%= city.accent %>
+  <% end %>
+
+  <br><br>
+    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <% @tour.reviews.each do |review| %>
