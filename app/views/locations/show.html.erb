@@ -1,4 +1,5 @@
-<h3><%= @location.title %></h3><br>
+<div class="tourBodyContainer">
+<h1><%= @location.title %></h1><br>
 
 <% if !@location.images.empty? %>
   <% @location.images.each do |image| %>
@@ -24,7 +25,7 @@
   <% if current_user.checked_in_locations.include?(@location) %>
   <p>You've been here</p>
   <% elsif current_user.places.include?(@location) %>
-  <button id="check" onclick="getLocation()">Check In!</button>
+  <button id="check" class="linkBtn" onclick="getLocation()">Check In!</button>
   <p id="checkp"></p>
   <% end %>
 <% end %>
@@ -102,7 +103,8 @@ function ajaxPosition(position) {
 
     <textarea rows="4" cols="50" id="content">
     </textarea>
-    <button id="submitcomment">
+    <br>
+    <button id="submitcomment" class="linkBtn">
     Post</button>
 
     <div id="imageupload"></div>
@@ -111,7 +113,7 @@ function ajaxPosition(position) {
       <%# f.submit(:id => "submitimage") %>
     <%# end %>
 <% end %>
-<%= link_to "Back", @tour %>
+
 <script>
 $('#submitcomment').click(function(){
   content = document.getElementById('content').value;
@@ -134,3 +136,4 @@ $('#submitcomment').click(function(){
     });
 });
 </script>
+</div>

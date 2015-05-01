@@ -12,12 +12,16 @@
 <%= form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
     <div class="form-group">
       <%= f.label :recipients %>
-      <%= f.text_field :recipients, placeholder: "Friends", id: "autocomplete-friend" %>
+      <% if @friend.nil? %>
+        <%= f.text_field :recipients, placeholder: "Friends Name", id: "autocomplete-friend" %>
+        <% else %>
+        <%= f.text_field :recipients, name: "#{@friend.name}" %>
+        <% end %>
       <%# f.text_field(:recipients, current_user.friends.collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
     </div>
     <div class="form-group">
       <%= f.label :subject %>
-      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+      <%= f.text_field :subject, placeholder: "Subject", id: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.label :message %>
@@ -25,12 +29,11 @@
     </div>
     <%= f.submit "Send Message", class: "btn btn-success" %>
 
-<% end %>
 
-<% binding.pry %>
+<% end %>
 
 <script>
 $( "#autocomplete-friend" ).autocomplete({
   source: <%= raw current_user.friends.collect{|x| x.name} %>
-}); 
+});
 </script>
