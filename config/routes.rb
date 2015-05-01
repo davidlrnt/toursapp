@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "/tours/:id/mobiletour", to: 'tours#mobiletour'
 
   get '/tours/:id/locations/:id/comment', to: 'comments#content'
+  get '/tours/:id/locations/:id/content', to: 'locations#content'
+
 
   get '/tours/:id/locations/:id/video_amazon', to: 'locations#video_amazon'
   get '/tours/:id/locations/:id/image_amazon', to: 'locations#image_amazon'
