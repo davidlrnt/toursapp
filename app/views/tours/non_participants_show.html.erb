@@ -57,7 +57,11 @@
         <div class="thumb" title="Portrait: 400x800"></div>
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
     <% if user_signed_in? %>
-      <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %>
+      <%# link_to "Message Me", new_conversation_path, class: "linkBtn"  %>
+      <%= form_tag("/conversations/new",method: "get") do %>
+      <%= hidden_field_tag(:friend_id, @tour.guide.id) %>
+      <%= submit_tag("Message Me", class: "linkBtnsmall")%>
+      <% end %>
       <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
       <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
       <% end %>
@@ -68,7 +72,6 @@
       <div id="map" class="map"></div>
 
     </div>
-
 
 
 
@@ -185,5 +188,3 @@
     }
     autoCenter();
   </script>
-
-

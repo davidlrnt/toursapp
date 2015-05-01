@@ -1,11 +1,11 @@
 class ConversationsController < ApplicationController
 	before_action :authenticate_user!
-
+	before_action :set_friend, only: [:new]
 	def new
 	end
 
 	def create
-    recipients = User.where(id: conversation_params[:recipients])
+    recipients = User.where(name: conversation_params[:recipients])
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
     flash[:success] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
@@ -39,6 +39,10 @@ class ConversationsController < ApplicationController
   end
 
   def conversation_params
-    params.require(:conversation).permit(:subject, :body,recipients:[])
+    params.require(:conversation).permit(:subject, :body, :recipients)
   end
+
+	def set_friend
+		@friend = User.find(params[:friend_id]) if !params[:friend_id].nil?
+	end
 end
