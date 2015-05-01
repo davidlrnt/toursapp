@@ -5,11 +5,11 @@
 	["Marco Polo", 4, "guide", "creating 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge4.png"],
 	["Ferdinand Magellan", 5, "guide", "creating 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
 
-	["Brigadier General", 1, "participant", "completed a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
-	["Major General", 2, "participant", "completed 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
-	["Lieutenant General", 3, "participant", "completed 3 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
-	["General", 4, "participant", "completed 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
-	["Gerneral of the Army", 5, "participant", "completed 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["Brigadier General", 1, "participant", "completed a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge11.png"],
+	["Major General", 2, "participant", "completed 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge12.png"],
+	["Lieutenant General", 3, "participant", "completed 3 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge13.png"],
+	["General", 4, "participant", "completed 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge14.png"],
+	["Gerneral of the Army", 5, "participant", "completed 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge15.png"],
 
 	["Opinionated", 1, "review", "giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge6.png"],
 	["Reviewer", 2, "review", "giving 2 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge7.png"],

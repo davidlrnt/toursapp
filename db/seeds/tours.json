@@ -77,7 +77,7 @@
     "city": "New York",
     "published" : true,
     "tags": ["Coffee", "Coffee Shops"],
-    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/008.jpeg"
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/008.jpg"
   },
   {
     "category_id": 1,
@@ -117,7 +117,7 @@
     "city": "New York",
     "published" : true,
     "tags": ["City", "Design", "Building"],
-    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/012.jpeg"
+    "image": "https://s3.amazonaws.com/flatirontours/uploads/tour/image/012.jpg"
   },
   {
     "category_id": 1,
