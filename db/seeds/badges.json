@@ -1,19 +1,19 @@
 [
-	["Pioneer", 1, "guide", "creating a tour", "http://i.imgur.com/L854A9b.png"],
-	["Wanderer", 2, "guide", "creating 2 tours","http://i.imgur.com/2fzsk8q.png"],
-	["Road Warrior", 3, "guide", "creating 3 tours","http://i.imgur.com/Oxp8myw.png"],
-	["Marco Polo", 4, "guide", "creating 4 tours","http://i.imgur.com/3W4IEcH.png"],
-	["Ferdinand Magellan", 5, "guide", "creating 5 tours","http://i.imgur.com/0TqoFXP.png"],
+	["Pioneer", 1, "guide", "creating a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge1.png"],
+	["Wanderer", 2, "guide", "creating 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge2.png"],
+	["Road Warrior", 3, "guide", "creating 3 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge3.png"],
+	["Marco Polo", 4, "guide", "creating 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge4.png"],
+	["Ferdinand Magellan", 5, "guide", "creating 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
 
-	["Follower", 1, "participant", "completed a tour"],
-	["Scout", 2, "participant", "completed 2 tours"],
-	["Adventurer", 3, "participant", "completed 3 tours"],
-	["Expeditioner", 4, "participant", "completed 4 tours"],
-	["Nomad", 5, "participant", "completed 5 tours"],
+	["Brigadier General", 1, "participant", "completed a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["Major General", 2, "participant", "completed 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["Lieutenant General", 3, "participant", "completed 3 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["General", 4, "participant", "completed 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["Gerneral of the Army", 5, "participant", "completed 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
 
-	["Opinionated", 1, "review", "giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge6.svg"],
-	["Reviewer", 2, "review", "giving 2 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge7.svg"],
-	["Critique", 3, "review", "giving 3 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge8.svg"],
-	["Analyst", 4, "review", "giving 4 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge9.svg"],
-	["Anchor", 5, "review", "giving 5 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge10.svg"]
+	["Opinionated", 1, "review", "giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge6.png"],
+	["Reviewer", 2, "review", "giving 2 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge7.png"],
+	["Critique", 3, "review", "giving 3 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge8.png"],
+	["Analyst", 4, "review", "giving 4 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge9.png"],
+	["Anchor", 5, "review", "giving 5 reviews","https://s3.amazonaws.com/flatirontours/uploads/badges/badge10.png"]
 ]
