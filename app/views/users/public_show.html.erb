@@ -15,7 +15,7 @@
     <% @user.badges.each do |badge| %>
       <div class="userBadge">
     <%= image_tag("#{badge.image_url}", size: "300x300") %><br>
-    <h4><%= badge.name %> </h4>
+
   </div>
 <% end %>
 <% else %>
