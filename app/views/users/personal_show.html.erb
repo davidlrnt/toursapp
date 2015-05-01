@@ -50,7 +50,7 @@
         <% @user.friends.each do |friend| %>
           <%= link_to "#{friend.name}", user_path(friend) %>
           <% if current_user == @user %>
-              | <%= link_to "Remove", friendship_path(:id => friend), :method => :delete %>
+              | <%= link_to "Unfriend", friendship_path(:id => friend), :method => :delete %>
           <% end %>
       <% end %>
       </div>

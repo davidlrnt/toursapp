@@ -1,7 +1,6 @@
 <div class="eventImage">
   <div class="eventDescription">
-    <h1>Visit Moscow!</h1>
-    <h3>Best everything in Russia's best city.</h3>
+    <div class="element"><h2></h2></div>
   </div>
 </div>
 
@@ -40,11 +39,36 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-<script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <%= javascript_include_tag 'typed.js' %>
+  <%= stylesheet_link_tag 'application.css.scss' %>
+
+  <script>
+  $(function(){
+    $(".element").typed({
+      strings: ["Created with ❤️", "Andrew Cabrera", "Anton Halim", "David Lorente", "In Ho Hwang"],
+      typeSpeed: 0,
+      backDelay: 500,
+      loop: true,
+      loopCount: true,
+      cursorChar: "💴 💴 💴 💴",
+      callback: function(){ foo(); },
+      resetCallback: function() { newTyped(); }
+    });
+    $(".reset").click(function(){
+        $("#typed").typed('reset');
+    });
+  });
+
+  function newTyped(){ /* A new typed object */ }
+  function foo(){ console.log("Callback"); }
+
   $( "#autocomplete-city" ).autocomplete({
     source: <%= raw City.pluck(:name) %>
   });
   $( "#autocomplete-tag" ).autocomplete({
     source: <%= raw Tag.pluck(:name) %>
-  });
+});
+
 </script>

@@ -22,9 +22,9 @@
 </div>
 </nav>
 <script>
-// $( "#autocomplete" ).autocomplete({
-//   source: <%= raw Tag.pluck(:name) %>
-// });
+$( "#autocompletetag" ).autocomplete({
+  source: <%= raw Tag.pluck(:name) %>
+});
 $( "#autocompletecity" ).autocomplete({
   source: <%= raw City.pluck(:name) %>
 });
