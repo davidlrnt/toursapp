@@ -13,7 +13,6 @@
 <% if !@user.badges.empty? %>
 <div class="userBadgesContainer">
     <% @user.badges.each do |badge| %>
-    <% binding.pry %>
       <div class="userBadge">
     <%= image_tag("#{badge.image_url}", size: "500x500") %><br>
 

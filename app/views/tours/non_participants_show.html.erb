@@ -34,7 +34,7 @@
 
 
 
-   <div class="tourImageFloat">      
+   <div class="tourImageFloat">
       <div class="userTourAvatar">
   <% if @tour.guide.images.count >= 1 %>
   <%=image_tag("#{@tour.guide.images.last.image_url}", size:"100x100")%>
@@ -45,7 +45,7 @@
     <%= link_to "Edit Profile", edit_user_path %><br>
   <% end %>
       <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
-  
+
     <% if user_signed_in? %>
       <br>
       <%# link_to "Message Me", new_conversation_path, class: "linkBtn"  %>
@@ -94,7 +94,6 @@
   <% end %>
 
   <br><br>
-    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
 </div>
 
 
