@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_friend, only: [:new]
+	
 	def new
 	end
 

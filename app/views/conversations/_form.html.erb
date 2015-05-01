@@ -15,7 +15,9 @@
       <% if @friend.nil? %>
         <%= f.text_field :recipients, placeholder: "Friends Name", id: "autocomplete-friend" %>
         <% else %>
-        <%= f.text_field :recipients, name: "#{@friend.name}" %>
+        <%# binding.pry %>
+        <%=  %>
+        <%= f.text_field :recipients, value: "#{@friend.name}" %>
         <% end %>
       <%# f.text_field(:recipients, current_user.friends.collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
     </div>
