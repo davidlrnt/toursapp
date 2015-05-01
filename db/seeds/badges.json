@@ -1,9 +1,9 @@
 [
-	["Pioneer", 1, "guide", "creating a tour", "giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge1.png"],
-	["Wanderer", 2, "guide", "creating 2 tours","giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge2.png"],
-	["Road Warrior", 3, "guide", "creating 3 tours","giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge3.png"],
-	["Marco Polo", 4, "guide", "creating 4 tours","giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge4.png"],
-	["Ferdinand Magellan", 5, "guide", "creating 5 tours","giving a review", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
+	["Pioneer", 1, "guide", "creating a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge1.png"],
+	["Wanderer", 2, "guide", "creating 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge2.png"],
+	["Road Warrior", 3, "guide", "creating 3 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge3.png"],
+	["Marco Polo", 4, "guide", "creating 4 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge4.png"],
+	["Ferdinand Magellan", 5, "guide", "creating 5 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
 
 	["Brigadier General", 1, "participant", "completed a tour", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
 	["Major General", 2, "participant", "completed 2 tours", "https://s3.amazonaws.com/flatirontours/uploads/badges/badge5.png"],
