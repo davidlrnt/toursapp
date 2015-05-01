@@ -1,46 +1,27 @@
 <div class="tourImage">
 
-  <div class="tourDescription">
+<div class="tourDescription">
     <h1><%= @tour.title %></h1>
-    <p><%= @tour.description %></p>
-    <h4>Tour score:</h4> <%= @tour.average_score %>,
-
-    <h4>tags:</h4>
-  <% @tour.tags.each do |tag| %>
-  <%= tag.name %>,
-  <% end %>
-
-  <% if @tour.cities.count > 1 %>
-<h4>cities:</h4>
-<% else %>
-<h4>city:</h4>
-<% end %>
-  <% @tour.cities.each do |city| %>
-  <%= city.accent %>
-  <% end %>
-
-  <br><br>
-    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
-
-  </div>
+    <h4><%= @tour.description %></h4>
   </div>
 </div>
 
+
 <% if @tour.images.first %>
-    <style>
+<style>
     .tourImage{
      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= @tour.images.first.image_url %>);
       background-color: black;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 50%;
+      display: inline-block;
     }
 
     .thumb {
         background: url("http://ih1.redbubble.net/image.38250018.7772/flat,550x550,075,f.u1.jpg");
         width: 100px;
         height: 100px;
-        border-radius: 50%;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -51,31 +32,48 @@
 
 
 
-    <div class="tourImageFloat">      
-      <div class="userTourAvatar">
-  <% if @tour.guide.images.count >= 1 %>
-  <%=image_tag("#{@tour.guide.images.last.image_url}", size:"100x100")%>
-  <% elsif @tour.guide.images.empty? %>
-        <div class="thumb" title="Portrait: 400x800"></div>
-    <% else %>
-    <h2><%= @tour.guide.name %></h2>
-    <%= link_to "Edit Profile", edit_user_path %><br>
+
+<div class="tourImageFloat">
+  <div class="userTourAvatar">
+  <div class="thumb" title="Portrait: 400x800"></div>
+  <h3><%= link_to @tour.guide.name, @tour.guide %></h3><br>
+  <%= form_tag("/conversations/new",method: "get") do %>
+    <%= hidden_field_tag(:friend_id, @tour.guide.id) %>
+    <%= submit_tag("Message Me", class: "linkBtnGray")%>
   <% end %>
-      <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
-
-      <%=link_to "Message Me", new_conversation_path, class: "linkBtn"  %> 
-      <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
-      </div>
-
-      <div id="map" class="map"></div>
-
-    </div>
+  <br>
+  <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
+    <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
+  <% end %>
+  </div>
+<div id="map" class="map"></div>
+</div>
 
 
 
 
+<div class="tourBodyContainer">
+<div class="tourInfoContainer">
+    <h4 style="margin-left:0">Tour score:</h4> <%= @tour.average_score %>
 
+  <h4>Tags:</h4><p>
+  <% @tour.tags.each do |tag| %>
+  <%= tag.name %>
+  <% end %>
+  </p>
 
+  <% if @tour.cities.count > 1 %>
+<h4>Cities:</h4>
+<% else %>
+<h4>City:</h4>
+<% end %>
+  <% @tour.cities.each do |city| %>
+  <%= city.accent %>
+  <% end %>
+
+  <br><br>
+    <%= link_to "View Mobile Tour","#{@tour.id}/mobiletour?id=#{@tour.id}" %>
+</div>
 
 
 <div class="grayBoxBG">
@@ -95,12 +93,13 @@
   <br>
   <%= label_tag(:address, location.address)%><br><br>
   <!-- "#{@tour.id}/location/#{location.id}" -->
- 
+
 <% end %>
 
 
 <% end %>
 <% end %>
+
 
 
 
@@ -138,7 +137,7 @@
 <%= link_to "Get Directions", "#{@tour.id}/directions", class: "linkBtn" %>
 </div>
 
-
+</div>
 
 
 
