@@ -33,21 +33,36 @@
 
 
 
-<div class="tourImageFloat">
-  <div class="userTourAvatar">
-  <div class="thumb" title="Portrait: 400x800"></div>
-  <h3><%= link_to @tour.guide.name, @tour.guide %></h3><br>
-  <%= form_tag("/conversations/new",method: "get") do %>
-    <%= hidden_field_tag(:friend_id, @tour.guide.id) %>
-    <%= submit_tag("Message Me", class: "linkBtnGray")%>
+
+   <div class="tourImageFloat">
+      <div class="userTourAvatar">
+  <% if @tour.guide.images.count >= 1 %>
+  <%=image_tag("#{@tour.guide.images.last.image_url}", size:"100x100")%>
+  <% elsif @tour.guide.images.empty? %>
+        <div class="thumb" title="Portrait: 400x800"></div>
+    <% else %>
+    <h2><%= @tour.guide.name %></h2>
+    <%= link_to "Edit Profile", edit_user_path %><br>
   <% end %>
-  <br>
-  <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
-    <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
-  <% end %>
-  </div>
-<div id="map" class="map"></div>
-</div>
+      <h3><%= link_to @tour.guide.name, @tour.guide %></h3>
+
+    <% if user_signed_in? %>
+      <br>
+      <%# link_to "Message Me", new_conversation_path, class: "linkBtn"  %>
+      <%= form_tag("/conversations/new",method: "get") do %>
+      <%= hidden_field_tag(:friend_id, @tour.guide.id) %>
+      <%= submit_tag("Message Me", class: "linkBtnGray")%>
+      <% end %>
+      <br>
+      <% if !current_user.friends.include?(@tour.guide) && !current_user.pending_friends.include?(@tour.guide)  %>
+      <%= link_to "Add Friend", friendships_path(:friend_id => @tour.guide), class: "linkBtn", :method => :post%>
+      <% end %>
+    <% end %>
+
+      </div>
+      <div id="map" class="map"></div>
+
+    </div>
 
 
 
@@ -83,15 +98,18 @@
   <% if current_user.checked_in_locations.include?(location) %>
   <% @x += 1 %>
   <%= location.title %><br>
+
 <% else %></div>
+
 <%= form_tag("#{@tour.id}/locations/#{location.id}/checkinstatic", :method => "post") do %></div>
 
 <div class="tourBodyContainer">
   <%= hidden_field_tag :tour_id , @tour.id %>
-  <%= link_to location.title, [@tour , location] %>
+  <%= link_to location.title, [@tour , location] %><br>
+    <%= label_tag(:address, location.address)%><br>
+
   <%= submit_tag "Check In", my_parameter: 1, class: "linkBtnSmall" %>
   <br>
-  <%= label_tag(:address, location.address)%><br><br>
   <!-- "#{@tour.id}/location/#{location.id}" -->
 
 <% end %>

@@ -30,12 +30,21 @@
 
 <% if current_user.checked_in_locations.include?(@nextlocations[0]) %>
 <p>You've been here</p>
+<button id="check" class="linkBtn" onclick="window.history.back()">Tour</button>
+
 <% else %>
-<button id="check" onclick="checkin()">Check In!</button>
+<button id="check" class="linkBtn" onclick="checkin()">Check In!</button>
+<button id="check" class="linkBtn" onclick="window.history.back()">Tour</button>
+
 <p id="checkp"></p>
 
 <% end %>
 <%= button_to "Go To Next Location", '', :method => :get,:id => "nextl", :style => "display: none;"%>
+
+<div id="map-canvas" style="width:500px;height:380px;"></div><br>
+    <button onclick="getLocation()" class="linkBtn">Get Directions</button>
+
+    <div id="directions-panel"></div>
 
 
 <p id="demo"></p>
@@ -139,11 +148,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
 
-<div id="map-canvas" style="width:500px;height:380px;"></div>
-    <button onclick="getLocation()">Get Directions</button>
+<!-- <div id="map-canvas" style="width:500px;height:380px;"></div>
+    <button onclick="getLocation()" class="linkBtn">Get Directions</button>
 
     <div id="directions-panel"></div>
-
+ -->
 
 
 <script>

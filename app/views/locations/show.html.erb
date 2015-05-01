@@ -25,10 +25,11 @@
   <% if current_user.checked_in_locations.include?(@location) %>
   <p>You've been here</p>
   <% elsif current_user.places.include?(@location) %>
-  <button id="check" class="linkBtn" onclick="getLocation()">Check In!</button>
-  <p id="checkp"></p>
+  <button id="check" class="linkBtn" onclick="getLocation()">Check In!</button><span id="checkp"></span>
+
   <% end %>
 <% end %>
+<button id="check" class="linkBtn" onclick="window.history.back()">Tour</button>
 <p id="demo"></p>
 
 <script>
@@ -85,15 +86,17 @@ function ajaxPosition(position) {
 
 <% if !@location.comments.nil? %>
 	<% @location.comments.each do |comment| %>
+  <div class="grayBoxC">
 		<%= link_to "#{comment.participant.name}", "/user/#{comment.participant.id}" %> wrote:
-		  <%= comment.content %>
+		  <%= comment.content %><br>
       <% if !comment.images.empty? %>
      <% comment.images.each do |image| %>
-     <%= image_tag("http://flatirontours.s3.amazonaws.com/#{image.image_url}") %>
+     <%= image_tag("http://flatirontours.s3.amazonaws.com/#{image.image_url}", height:"250") %><br>
   <% end %>
 
 		<%= comment.created_at.to_date %><br>
 	<% end %>
+  </div>
 <% end %>
 <% end %>
 

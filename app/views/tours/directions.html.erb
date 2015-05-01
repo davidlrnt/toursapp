@@ -4,7 +4,8 @@
 <% unless i >= @tour.locations.count-1 %>
 <br>
 <p id="demo"></p>
-<h1><%= location.title %></h1>
+<h1><%= location.title %></h1> <button id="check" class="linkBtn" onclick="window.history.back()">Tour</button>
+
 <p><%= location.address %></p>
 
 <script>
@@ -51,7 +52,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
 
-    
+
 
 
 <div id="map-canvas<%= i %>" style="min-width:300px; max-width: 80%; height:380px;"></div>
