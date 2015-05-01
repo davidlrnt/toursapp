@@ -75,10 +75,11 @@ class User < ActiveRecord::Base
   end
 
   def checkin(location, coords)
-    if location.lat.to_f.round(2) == coords["latitude"].to_f.round(2) && location.lng.to_f.round(2) == coords["longitude"].to_f.round(2)
-    checked_in_locations << location
+    if (location.lat.to_f.round(2) == coords["latitude"].to_f.round(2)) &&
+    (location.lng.to_f.round(2) == coords["longitude"].to_f.round(2))
+      checked_in_locations << location
     else
-      "wrong location"
+      "You are not in the right location"
     end
   end
 

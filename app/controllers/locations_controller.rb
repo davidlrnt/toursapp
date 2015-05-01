@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy, :checkin, :checkin_static, :content, :comment]
+  before_action :set_tour, only: [:create]
   protect_from_forgery :except => [:checkin]
 
 
@@ -11,7 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-   
+
   end
 
 
@@ -43,15 +44,13 @@ class LocationsController < ApplicationController
   end
 
   def create
-    tour = Tour.find(params["tour_id"])
-    @location = Location.new(location_params)
+    @location = @tour.locations.new(location_params)
     if @location.save
-      tour.locations << @location
       @location.update(@location.get_coordinates)
-      flash[:notice] = "Successfully Add location"
+      flash[:notice] = "Successfully Added location"
       redirect_to "/tours/#{tour.id}"
     else
-      flash[:alert] = "Necessary forms need to be filled in."
+      flash[:alert] = "Necessary forms need to be filled."
       redirect_to(:back)
     end
   end
@@ -95,6 +94,11 @@ class LocationsController < ApplicationController
   end
 
 private
+
+  def set_tour
+    @tour = Tour.find(params["tour_id"])
+  end
+
   def location_params
     params.require(:location).permit(:title, :address, :lat, :lng, :step, :description, :image_url)
   end

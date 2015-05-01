@@ -21,8 +21,8 @@ class Location < ActiveRecord::Base
   # before_create :set_coordinates
 
   def get_coordinates
-    zipcode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?'
-    api_response = HTTParty.get(zipcode_uri, :query => {:address => self.address})["results"][0]["geometry"]["location"]
+    geocode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?'
+    HTTParty.get(geocode_uri, :query => {:address => self.address})["results"][0]["geometry"]["location"]
   end
 
   def set_coordinates
