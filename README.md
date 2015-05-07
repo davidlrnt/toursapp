@@ -9,25 +9,25 @@ Besides users being able to find new and interesting tours in their neighborhood
 It was an interesting experiment to see how many features we could push while still having a cohesive and bug-free experience for users in under three weeks.
 
 Tourtillas!
-<li>
-<ul>Devise User Login - Used to manage login/session handling, alongside securing user credentials.</ul>
-<ul>Facebook OAuth - Alternative login used for Facebook users.</ul>
-<ul>Google Maps API - Enabling a map view to each tour/location's show page and allowing waypoints for the user to get from location to location within a tour.</ul>
-<ul>HTML5 Geolocation - Permission requests from user's unique browser to know the user's location.</ul>
-<ul>jQuery/AJAX - In-page live reloading during user location check-in.</ul>
-<ul>Carrierwave - Content uploads used for user accounts, reviews, comments, tour pages, location pages.</ul>
-<ul>fog-AWS - Gem used for AWS server configuration to handle cloud uploading.</ul>
-</li>
+<ul>
+<li>Devise User Login - Used to manage login/session handling, alongside securing user credentials.</li>
+<li>Facebook OAuth - Alternative login used for Facebook users.</li>
+<li>Google Maps API - Enabling a map view to each tour/location's show page and allowing waypoints for the user to get from location to location within a tour.</li>
+<li>HTML5 Geolocation - Permission requests from user's unique browser to know the user's location.</li>
+<li>jQuery/AJAX - In-page live reloading during user location check-in.</li>
+<li>Carrierwave - Content uploads used for user accounts, reviews, comments, tour pages, location pages.</li>
+<li>fog-AWS - Gem used for AWS server configuration to handle cloud uploading.</li>
+</ul>
 
 Instructions to install this web app to your local computer:
-<li>
-<ul>Find the Download Zip button, unzip the folder and install it</ul>
-<ul>Change your terminal directory to the folder, usually downloads directory</ul>
-<ul>Open the folder directory with your terminal</ul>
-<ul>example: if you are in the root directory of your computer, type 'cd Downloads/toursapp-development/'</ul>
-<ul>Make sure you are in the app folder directory</ul>
-<ul>type 'bundle install' in your console</ul>
-<ul>type 'rake db:rebuild' in your console</ul>
-<ul>type 'rails s' in your console and make sure the server is running</ul>
-<ul>Open your browser and type 'localhost:3000'</ul>
-</li>
+<ul>
+<li>Find the Download Zip button, unzip the folder and install it</li>
+<li>Change your terminal directory to the folder, usually downloads directory</li>
+<li>Open the folder directory with your terminal</li>
+<li>example: if you are in the root directory of your computer, type 'cd Downloads/toursapp-development/'</li>
+<li>Make sure you are in the app folder directory</li>
+<li>type 'bundle install' in your console</li>
+<li>type 'rake db:rebuild' in your console</li>
+<li>type 'rails s' in your console and make sure the server is running</li>
+<li>Open your browser and type 'localhost:3000'</li>
+</ul>
