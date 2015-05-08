@@ -21,10 +21,10 @@ Tourtillas!
 
 Instructions to install this web app to your local computer:
 <ul>
-<li>Find the Download Zip button, unzip the folder and install it</li>
-<li>Change your terminal directory to the folder, usually downloads directory</li>
-<li>Open the folder directory with your terminal</li>
-<li>example: if you are in the root directory of your computer, type 'cd Downloads/toursapp-development/'</li>
+<li>Find the Download Zip button on this page,download and unzip the folder</li>
+<li>Change your terminal directory to the folder, by default, it is downloaded to the Downloads directory</li>
+<li>Open the folder directory with your 'terminal'</li>
+<li>eg: if you are in the root directory of your computer, type 'cd Downloads/toursapp-development/'</li>
 <li>Make sure you are in the app folder directory</li>
 <li>type 'bundle install' in your console</li>
 <li>type 'rake db:rebuild' in your console</li>
