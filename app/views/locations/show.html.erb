@@ -11,6 +11,14 @@
   <%= video_tag("http://flatirontours.s3.amazonaws.com/#{video.video_url}", controls: true, autobuffer: true) %>
   <% end %>
 <% end %>
+
+
+<% if @location.id == 31 %>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5AHjbH2nJUA" frameborder="0" allowfullscreen></iframe>
+<% end %>
+
+
 <% if !@location.audios.empty? %>
   <% @location.audios.each do |audio| %>
   <%= audio_tag("http://flatirontours.s3.amazonaws.com/#{audio.audio_url}", controls: true, autobuffer: true) %>
@@ -18,8 +26,10 @@
 <% end %>
 
 <br><br>
+<div class="grayBoxBG">
 <p><%= @location.description %></p><br>
 <%= @location.address if @location.address %><br>
+</div>
 
 <% if user_signed_in?  %>
   <% if current_user.checked_in_locations.include?(@location) %>

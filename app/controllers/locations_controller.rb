@@ -82,7 +82,7 @@ class LocationsController < ApplicationController
   end
 
   def checkin
-  if current_user.checkin(@location, params["position"]["coords"]) == "wrong location"
+  if current_user.checkin(@location, params["position"]["coords"]) == "You are not in the right location"
       respond_to do |format|
           format.json { render json: "error".to_json }
       end
