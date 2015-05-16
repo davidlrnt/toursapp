@@ -6,6 +6,6 @@ class CreateGuideratings < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :guideratings, :guides
+    add_foreign_key :guideratings, :users, column: :guide_id
   end
 end
