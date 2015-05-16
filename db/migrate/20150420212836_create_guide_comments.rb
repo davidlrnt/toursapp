@@ -6,7 +6,6 @@ class CreateGuideComments < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :guide_comments, :guides
-    add_foreign_key :guide_comments, :comments
+    add_foreign_key :guide_comments, :users, column: :guide_id
   end
 end
