@@ -13,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def edit
     @uploader = User.new.image
-    @uploader.success_action_redirect = "http://localhost:3000/users/#{@user.id}/amazon"
+    @uploader.success_action_redirect = "/users/#{@user.id}/amazon"
   end
 
   def create
