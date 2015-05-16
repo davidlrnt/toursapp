@@ -3,8 +3,8 @@ class CreateComments < ActiveRecord::Migration
     create_table :comments do |t|
       t.integer :participant_id, index: true
       t.integer :guide_id, index: true
-      t.references :location, index: true
-      t.references :tour, index: true
+      t.integer :location_id, index: true
+      t.integer :tour_id, index: true
       t.string :content
 
       t.timestamps null: false

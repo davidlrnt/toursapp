@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "participant_id"
+    t.integer  "guide_id"
     t.integer  "location_id"
     t.integer  "tour_id"
     t.string   "content"
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150429141554) do
     t.datetime "updated_at",     null: false
   end
 
+  add_index "comments", ["guide_id"], name: "index_comments_on_guide_id"
   add_index "comments", ["location_id"], name: "index_comments_on_location_id"
   add_index "comments", ["participant_id"], name: "index_comments_on_participant_id"
   add_index "comments", ["tour_id"], name: "index_comments_on_tour_id"
