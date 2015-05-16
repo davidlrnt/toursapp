@@ -9,9 +9,12 @@ class CreateReviews < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :reviews, :users, primary_key: "participant_id"
+    add_foreign_key :reviews, :users, column: :participant_id
     add_foreign_key :reviews, :tours
   end
 end
+
+
+    # add_foreign_key :reviews, :users, column: :author_id, primary_key: "participant_id"
 
 
