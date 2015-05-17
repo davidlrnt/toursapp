@@ -53,7 +53,7 @@ class Tour < ActiveRecord::Base
   end
 
   def completed(user)
-    participant_tours.where(completed = true)
+    participant_tours.where(completed: true)
   end
 
   def get_directions
