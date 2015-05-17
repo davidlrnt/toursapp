@@ -46,14 +46,14 @@ class Tour < ActiveRecord::Base
       end
     end
     if x == locations.count
-    user.participant_tours.find_by(self.id).update(completed: true)
+    user.participant_tours.find_by(self.id).update(completed: TRUE)
     completed(user)
     end
     x.to_f/locations.count.to_f
   end
 
   def completed(user)
-    participant_tours.where(completed: true)
+    participant_tours.where(completed: TRUE)
   end
 
   def get_directions
